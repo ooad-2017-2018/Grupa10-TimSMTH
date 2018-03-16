@@ -9,7 +9,7 @@
 - Haris Mašović 
 - Samra Salihić
 \
-![pic](https://ibb.co/fW1CAH)
+![pic](https://imgur.com/a/OYJLg)
 
 
 ## Opis teme
