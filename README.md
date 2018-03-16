@@ -55,7 +55,8 @@ Korisnik ima mogućnost da za svaki restoran koji mu je preporučen da pozove ta
 #### Generisanje preporučenih restorana
 Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) koji su po nekom algoritmu generisani (npr. top tier restorani, restorani sa najboljom ocjenom, najviše posjećeni restorani preko naše aplikacije itd).
 
-### Funkcionalnosti
+## Funkcionalnosti
+
 * Mogućnost poziva restorana/objekta
 * Mogućnost registracije
 * Mogućnost uređivanje svog profila
@@ -68,7 +69,8 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 * Izbor iz skupa preporučenih restorana od strane aplikacije
 
 
-### Akteri
+## Akteri
+
 - Korisnik usluga (Registrovani korisnik, neregistrovani korisnik)
 - Administrator sistema 
 
