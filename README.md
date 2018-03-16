@@ -76,3 +76,6 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 
 ### [Tačka 2/3] su urađene pod:
 - https://github.com/ooad-2017-2018/Grupa10-TimSMTH/tree/master/UseCaseIScenarij
+
+### [Tačka 4] je urađena pod:
+- https://github.com/ooad-2017-2018/Grupa10-TimSMTH/tree/master/Projekat/Vicinor
