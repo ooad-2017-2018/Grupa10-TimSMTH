@@ -8,8 +8,9 @@
 - Dženana Šabović
 - Haris Mašović 
 - Samra Salihić
+
 \
-![pic](https://imgur.com/a/OYJLg)
+![alt tag](https://imgur.com/a/OYJLg "vicinor")
 
 
 ## Opis teme
