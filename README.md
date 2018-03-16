@@ -9,10 +9,6 @@
 - Haris Mašović 
 - Samra Salihić
 
-\
-![alt tag](https://imgur.com/a/OYJLg "vicinor")
-
-
 ## Opis teme
 
 
