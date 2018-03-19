@@ -55,6 +55,9 @@ Korisnik ima mogućnost poziva svakog restorana (obični telefonski poziv) iz li
 #### Generisanje preporučenih restorana
 Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) koji su po nekom algoritmu generisani (npr. top tier restorani, restorani sa najboljom ocjenom, najviše posjećeni restorani pomoću naše aplikacije itd).
 
+#### Prikaz statistike administratoru / za preporučene restorane /
+Administratori će imati prikaz nekih od osnovih statistika pomoću čega će se moći generisati razni načini za prikaz preporučenih restorana za korisnike aplikacije.
+
 ## Funkcionalnosti
 
 * Mogućnost poziva restorana/objekta
