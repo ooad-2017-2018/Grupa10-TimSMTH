@@ -1,4 +1,4 @@
-# Grupa10 ~ Team - something
+﻿# Grupa10 ~ Team - something
 
 \
 ![gif](https://media.giphy.com/media/l41YzQX6Zf3YgT4Ri/giphy.gif)
@@ -60,22 +60,24 @@ Administratori će imati prikaz nekih od osnovih statistika pomoću čega će se
 
 ## Funkcionalnosti
 
-* Mogućnost poziva restorana/objekta
 * Mogućnost registracije korisnika
 * Mogućnost uređivanje korisničkog profila
 * Mogućnost pravljenja liste želja za registrovane korisnike (lista omiljenih mjesta za jelo)
 * Mogućnost ostavljanja feedbacka u vidu ratinga i komantara (neobavezno)
 * Mogućnost korištenja aplikacije neregistrovanim korisnicima
-* Mogućnost odabira radijusa u kojem će se vršiti pretraga restorana
+* Mogućnost izbora/promijene radijusa pretrage restorana u odnosu na lokaciju korisnika
 * Mogućnost izbora restorana
+* Mogućnost pregleda historije obiđenih restorana
 * Mogućnost dobijanja uputa do odabranog restorana
+* Mogućnost poziva restorana/objekta
 * Mogućnost izbora iz skupa restorana preporučenih od strane aplikacije
-
+* Mogućnost poznavanja korisnikove lokacije pomoću GPS uređaja
 
 ## Akteri
 
-- Korisnik usluga (Registrovani korisnik, neregistrovani korisnik/ guest user)
-- Administrator sistema 
+- Korisnik usluga (Registrovani korisnik, neregistrovani korisnik/ guest user) - Klijent ima mogućnost da se registruje na sistem i da tako koristi aplikaciju, ali također moguće je pristupati aplikaciji i kao "Gost user".
+- Administrator sistema - Ima zadatak da nadgleda sistem
+
 
 ### [Tačka 2/3] su urađene pod:
 - https://github.com/ooad-2017-2018/Grupa10-TimSMTH/tree/master/UseCaseIScenarij
