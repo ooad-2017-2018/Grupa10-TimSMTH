@@ -75,7 +75,9 @@ Administratori će imati prikaz nekih od osnovih statistika pomoću čega će se
 
 ## Akteri
 
-- Korisnik usluga (Registrovani korisnik, neregistrovani korisnik/ guest user) - Klijent ima mogućnost da se registruje na sistem i da tako koristi aplikaciju, ali također moguće je pristupati aplikaciji i kao "Gost user".
+- Korisnik usluga Klijent ima mogućnost da se registruje na sistem i da tako koristi aplikaciju, ali također moguće je pristupati aplikaciji i kao "Gost user".
+- Neregistrovani korisnik (guest user)
+- Registrovani korisnik
 - Administrator sistema - Ima zadatak da nadgleda sistem
 
 
