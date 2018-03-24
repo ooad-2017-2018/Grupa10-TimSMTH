@@ -3,7 +3,6 @@
 \
 ![gif](https://media.giphy.com/media/l41YzQX6Zf3YgT4Ri/giphy.gif)
 
-# [Tačka 1]
 
 ### Tema: Vicinor
 \
@@ -79,10 +78,3 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 - Neregistrovani korisnik (guest user) - ima mogućnost da se registruje na sistem i da tako koristi aplikaciju, ali može koristiti aplikaciju i kao guest user.
 - Registrovani korisnik - može sve što i neregistrovani korisnik i ima mogućnost ostavljanja recenzija, sastavljanja liste želja idr. 
 - Administrator sistema - Ima zadatak da nadgleda sistem.
-
-
-### [Tačka 2/3] su urađene pod:
-- https://github.com/ooad-2017-2018/Grupa10-TimSMTH/tree/master/UseCaseIScenarij
-
-### [Tačka 4] je urađena pod:
-- https://github.com/ooad-2017-2018/Grupa10-TimSMTH/tree/master/Projekat/Vicinor
