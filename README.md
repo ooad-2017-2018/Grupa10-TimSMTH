@@ -52,7 +52,7 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 
 ## Funkcionalnosti
 
--Korisnik:
+#### Korisnik:
 * Mogućnost izbora/promijene radijusa pretrage restorana u odnosu na lokaciju korisnika
 * Mogućnost pregleda restorana u vidu liste
 * Mogućnost izbora restorana
@@ -60,16 +60,16 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 * Mogućnost poziva restorana/objekta
 * Mogućnost izbora iz skupa restorana preporučenih od strane aplikacije
 
--Registrovani korisnik:
+#### Registrovani korisnik:
 * Mogućnost uređivanje korisničkog profila
 * Mogućnost pravljenja liste želja (lista omiljenih restorana)
 * Mogućnost ostavljanja feedbacka u vidu ratinga i komantara (neobavezno)
 * Mogućnost pregleda historije obiđenih restorana
 
--Neregistrovani korisnik: 
+#### Neregistrovani korisnik: 
 * Mogućnost registracije korisnika
 
--Administrator:
+#### Administrator:
 * Prikaz statistike
 * Praćenje registrovanih korisnika sistema te banovanje korisnika po potrebi
 
