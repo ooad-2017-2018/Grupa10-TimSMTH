@@ -32,9 +32,11 @@ Korisnik ima mogućnost da izabere tip user-a odnosno da bude obični guest user
 Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 * Ime
 * Prezime
-* E-mail
 * Password
-* Kontakt telefon
+* Korisničko ime 
+* E-mail (nije obavezno)
+* Datum rođenja (nije obavezno)
+* Slika (nije obavezno)
 
 #### Prikaz, filtriranje i odabir restorana u željenom radijusu
 Ovaj proces mora biti automatizovan. Kada korisnik zatraži spisak restorana/mjesta za jesti, proces mora prvo provjeriti da li je lokacija ispravno uspostavljena i nakon toga mora pokupiti sva mjesta za jesti koja se nalaze u radijusu koji je definisan unaprijed od strane korisnika (možda korisnik ne želi previše hodati/putovati, samim tim ima mogućnost da bira radjius).
