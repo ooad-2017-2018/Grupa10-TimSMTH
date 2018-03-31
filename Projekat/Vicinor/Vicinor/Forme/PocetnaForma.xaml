@@ -1,0 +1,135 @@
+﻿<Page
+    x:Class="Vicinor.Forme.PocetnaForma"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vicinor.Forme"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,-229,-147">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-615,-147</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="hyperlinkButton.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>892,873,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>440,117,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>354,327,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>354,426,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>354,517,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="hyperlinkButton1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>629,557,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="textBox.(FrameworkElement.Width)" Value="347"/>
+                        <Setter Target="textBox1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="textBox1.(FrameworkElement.Width)" Value="347"/>
+                        <Setter Target="button.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="button.(FrameworkElement.Width)" Value="347"/>
+                        <Setter Target="hyperlinkButton1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="image.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="image.(FrameworkElement.Width)" Value="170"/>
+                        <Setter Target="textBox1.(FrameworkElement.VerticalAlignment)" Value="Top"/>
+                        <Setter Target="textBox1.(FrameworkElement.Height)" Value="32"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-999,-147</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="hyperlinkButton.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>1254,873,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="hyperlinkButton.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="hyperlinkButton.(FrameworkElement.Width)" Value="167"/>
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>621,113,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>535,322,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>535,421,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>535,512,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="hyperlinkButton1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>810,552,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="textBox.(FrameworkElement.Width)" Value="348"/>
+                        <Setter Target="textBox1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="textBox1.(FrameworkElement.Width)" Value="348"/>
+                        <Setter Target="button.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="button.(FrameworkElement.Width)" Value="347"/>
+                        <Setter Target="hyperlinkButton1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="image.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="image.(FrameworkElement.Width)" Value="170"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1200"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="167" Margin="259,84,0,0" VerticalAlignment="Top" Width="170" Source="ms-appx:///Assets/vicinor-logo.png"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="173,293,0,0" TextWrapping="Wrap" Text="Username..." VerticalAlignment="Top" Height="31" Width="347"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="173,392,0,0" TextWrapping="Wrap" Text="Password..." VerticalAlignment="Top" Height="32" Width="347"/>
+        <Button x:Name="button" Content="Log in" HorizontalAlignment="Left" Margin="173,483,0,0" VerticalAlignment="Top" Height="35" Width="347" Background="#33FF0000" BorderBrush="#FF150000"  Foreground="#FF300000"/>
+        <HyperlinkButton x:Name="hyperlinkButton1" Content="or Register" HorizontalAlignment="Left" Margin="448,523,0,0" VerticalAlignment="Top"/>
+        <HyperlinkButton x:Name="hyperlinkButton" Content="Continue as guest" HorizontalAlignment="Left" Margin="494,879,0,0" VerticalAlignment="Top" Width="167"/>
+
+    </Grid>
+</Page>
