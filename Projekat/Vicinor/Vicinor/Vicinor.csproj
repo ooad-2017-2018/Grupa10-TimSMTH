@@ -95,11 +95,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Komentari.xaml.cs">
+      <DependentUpon>Komentari.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forme\PocetnaForma.xaml.cs">
       <DependentUpon>PocetnaForma.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\PrikazOdabranogRestorana.xaml.cs">
       <DependentUpon>PrikazOdabranogRestorana.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\SearchForRestaurants.xaml.cs">
+      <DependentUpon>SearchForRestaurants.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\StartSearch.xaml.cs">
+      <DependentUpon>StartSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forme\Komentari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forme\PocetnaForma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +145,14 @@
     <Page Include="Forme\PrikazOdabranogRestorana.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forme\SearchForRestaurants.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forme\StartSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

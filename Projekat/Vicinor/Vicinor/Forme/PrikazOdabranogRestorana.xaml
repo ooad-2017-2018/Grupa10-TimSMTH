@@ -148,7 +148,7 @@
                 <CompositeTransform/>
             </Image.RenderTransform>
         </Image>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,23,0,0" TextWrapping="Wrap" Text="Naziv restorana:" VerticalAlignment="Top" Height="53" Width="320" FontSize="30"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,23,0,0" TextWrapping="Wrap" Text="Naziv restorana" VerticalAlignment="Top" Height="53" Width="320" FontSize="30"/>
 
     </Grid>
 </Page>
