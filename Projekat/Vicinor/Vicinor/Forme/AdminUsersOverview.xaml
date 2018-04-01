@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="Vicinor.Forme.AdminUsersOverview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vicinor.Forme"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+   >
+
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="updateButton" Content="Update Profile" HorizontalAlignment="Left" Height="43" Margin="288,725,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="StatisticsButton" Content="Statistics" HorizontalAlignment="Left" Height="43" Margin="144,725,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="UsersButton" Content="Users" HorizontalAlignment="Left" Height="43" Margin="0,725,0,0" VerticalAlignment="Top" Width="144"/>
+        <AutoSuggestBox HorizontalAlignment="Left" Margin="123,54,0,0" VerticalAlignment="Top" Width="245"/>
+        <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Margin="48,66,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" TextAlignment="Right"/>
+        <Button x:Name="showProfileButton" Content="Show Profile" HorizontalAlignment="Left" Margin="48,197,0,0" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="banUserButto" Content="Ban User" HorizontalAlignment="Left" Margin="243,197,0,0" VerticalAlignment="Top" Width="125"/>
+
+
+    </Grid>
+</UserControl>

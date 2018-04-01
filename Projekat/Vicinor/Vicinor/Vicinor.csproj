@@ -95,6 +95,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forme\AdminStatistics.xaml.cs">
+      <DependentUpon>AdminStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\AdminUpdateProfile.xaml.cs">
+      <DependentUpon>AdminUpdateProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\AdminUsersOverview.xaml.cs">
+      <DependentUpon>AdminUsersOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
     </Compile>
@@ -134,6 +143,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forme\AdminStatistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forme\AdminUpdateProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forme\AdminUsersOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forme\Komentari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
