@@ -12,28 +12,12 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="13*"></RowDefinition>
         </Grid.RowDefinitions>
+        
         <TextBlock Text="Favourite Resorants" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <ListView x:Name="listView1" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="x:String">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="47"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="Assets/placeholder.png" Width="32" Height="32" 
-                       HorizontalAlignment="Left"/>
-                        <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
-               
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <x:String>Item 1</x:String>
-            <x:String>Item 2</x:String>
-            <x:String>Item 3</x:String>
-            <x:String>Item 4</x:String>
-            <x:String>Item 5</x:String>
+        <ListView x:Name="listView1" Grid.Row="1" ItemsSource="{x:Bind }">
+            
+
+
         </ListView>
 
     </Grid>

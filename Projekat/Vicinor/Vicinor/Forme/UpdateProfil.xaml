@@ -7,53 +7,106 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+    <Grid x:Name="grid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="firstName.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="lastName.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="Username.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="Password.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="ConfPassword.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock5.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="Email.(Control.FontSize)" Value="12"/>
+                        <Setter Target="textBlock7.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="AddImage.(Control.FontSize)" Value="14"/>
+                        <Setter Target="Register.(Control.FontSize)" Value="14"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>
 
-            </Grid.ColumnDefinitions>
-            <TextBlock Text="-Registracija korisnika-"  Grid.Row="0"  Grid.ColumnSpan="3"  TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" ></TextBlock>
-            <TextBox Name="firstName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ></TextBox>
-            <TextBlock  Text="First Name: " Grid.Row="1" Grid.Column="0" TextAlignment="Center"></TextBlock>
-            <TextBox Name="lastName" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" ></TextBox>
-            <TextBlock  Text="Last Name: " Grid.Row="2" Grid.Column="0" TextAlignment="Center"></TextBlock>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
 
-            <TextBox Name="Username" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  ></TextBox>
-            <TextBlock  Text="Username: " Grid.Row="3" Grid.Column="0" TextAlignment="Center"></TextBlock>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="firstName.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="lastName.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="Username.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="Password.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="ConfPassword.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock6.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="textBlock5.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="Email.(Control.FontSize)" Value="18"/>
+                        <Setter Target="textBlock7.(TextBlock.FontSize)" Value="18"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
 
-            <TextBox Name="Password" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  ></TextBox>
-            <TextBlock  Text="Password: " Grid.Row="4" Grid.Column="0" TextAlignment="Center"></TextBlock>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
 
-            <TextBox Name="ConfPassword" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" ></TextBox>
-            <TextBlock  Text="Confirm password: " Grid.Row="5" Grid.Column="0" TextAlignment="Center"></TextBlock>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBlock" Text="-Registracija korisnika-"  Grid.Row="0"  Grid.ColumnSpan="3"  TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" ></TextBlock>
+        <TextBox Name="firstName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ></TextBox>
+        <TextBlock x:Name="textBlock1"  Text="First Name: " Grid.Row="1" Grid.Column="0" TextAlignment="Center"></TextBlock>
+        <TextBox Name="lastName" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" ></TextBox>
+        <TextBlock x:Name="textBlock2"  Text="Last Name: " Grid.Row="2" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-            <DatePicker Name="DateOfBirth" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" ></DatePicker>
-            <TextBlock  Text="Date of Birth: " Grid.Row="6" Grid.Column="0" TextAlignment="Center"></TextBlock>
-            <TextBox Name="Email" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" ></TextBox>
+        <TextBox Name="Username" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  ></TextBox>
+        <TextBlock x:Name="textBlock3"  Text="Username: " Grid.Row="3" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-            <Image Name="Picture" Grid.Column="1"  Grid.Row="7" Stretch="Fill" ></Image>
+        <TextBox Name="Password" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  ></TextBox>
+        <TextBlock x:Name="textBlock4"  Text="Password: " Grid.Row="4" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-            <TextBlock  Text="Picture: " Grid.Row="7" Grid.Column="0" TextAlignment="Center"></TextBlock>
+        <TextBox Name="ConfPassword" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" ></TextBox>
+        <TextBlock x:Name="textBlock5"  Text="Confirm password: " Grid.Row="5" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-            <Button Name="AddImage" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Stretch">Add Image</Button>
-            <Button Name="Update" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Update</Button>
+        <DatePicker Name="DateOfBirth" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" ></DatePicker>
+        <TextBlock x:Name="textBlock6"  Text="Date of Birth: " Grid.Row="6" Grid.Column="0" TextAlignment="Center" FontSize="15"></TextBlock>
+        <TextBox Name="Email" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" ></TextBox>
 
+        <Image Name="Picture" Grid.Column="1"  Grid.Row="7" Stretch="Fill" ></Image>
 
+        <TextBlock x:Name="textBlock7"  Text="Picture: " Grid.Row="7" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-        </Grid>
+        <Button Name="AddImage" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Stretch">Add Image</Button>
+        <Button Name="Update" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Update</Button>
+
+    </Grid>
 </Page>
