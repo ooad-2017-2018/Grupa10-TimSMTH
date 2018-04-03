@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="Vicinor.Forme.AdminStatistika"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vicinor.Forme"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="57*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="brojRegistrovanihTextBlock" HorizontalAlignment="Left" Margin="40,34,0,0" TextWrapping="Wrap" Text="Broj registrovanih:" VerticalAlignment="Top" Width="128" Grid.Row="1" Height="20"/>
+        <TextBox x:Name="brRegistrovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" Grid.Row="1" Height="32"/>
+        <TextBlock x:Name="brojBanovanihTextBlock" HorizontalAlignment="Right" Height="19" Margin="0,35,10,0" Grid.Row="2" TextWrapping="Wrap" Text="Broj banovanih:" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="brBanovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <TextBlock x:Name="statistikaTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Statistika korisnika" VerticalAlignment="Top" Width="134"  FontWeight="Bold"/>
+        <TextBlock x:Name="regNeregTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Odnos registrovanih i neregistrovanih:" VerticalAlignment="Top" Width="166"/>
+        <TextBlock x:Name="regProcenatTextBlock" HorizontalAlignment="Left" Height="26" Margin="12,28,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Registrovani(procenat):" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="procenatRegTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"></TextBox>
+        <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Neegistrovani(procenat):" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.504,1.2"/>
+        <TextBox x:Name="procenatNeregTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"></TextBox>
+       
+        <Button x:Name="returnButton" Content="Return" Grid.Column="1" HorizontalAlignment="Left" Margin="10,131,0,0" Grid.Row="9" VerticalAlignment="Top" Width="208"/>
+
+    </Grid>
+</Page>

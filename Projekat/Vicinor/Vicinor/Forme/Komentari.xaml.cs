@@ -22,6 +22,7 @@ namespace Vicinor.Forme
         public Komentari()
         {
             this.InitializeComponent();
+
         }
     }
 }

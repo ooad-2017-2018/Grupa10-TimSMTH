@@ -95,14 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\AdminStatistics.xaml.cs">
-      <DependentUpon>AdminStatistics.xaml</DependentUpon>
+    <Compile Include="Forme\AdminStatistika.xaml.cs">
+      <DependentUpon>AdminStatistika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\AdminUpdateProfile.xaml.cs">
-      <DependentUpon>AdminUpdateProfile.xaml</DependentUpon>
+    <Compile Include="Forme\AdminUpdateProflie.xaml.cs">
+      <DependentUpon>AdminUpdateProflie.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\AdminUsersOverview.xaml.cs">
-      <DependentUpon>AdminUsersOverview.xaml</DependentUpon>
+    <Compile Include="Forme\AdminUserOverview.xaml.cs">
+      <DependentUpon>AdminUserOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\FavRestorauntsList.xaml.cs">
       <DependentUpon>FavRestorauntsList.xaml</DependentUpon>
@@ -152,15 +152,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Forme\AdminStatistics.xaml">
+    <Page Include="Forme\AdminStatistika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\AdminUpdateProfile.xaml">
+    <Page Include="Forme\AdminUpdateProflie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\AdminUsersOverview.xaml">
+    <Page Include="Forme\AdminUserOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
