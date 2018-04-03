@@ -11,8 +11,8 @@
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <!--RatingControl-->
         <TextBlock x:Name="ssTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Pick your favourite..." VerticalAlignment="Top"/>
-        <Button x:Name="favListButton" Content="Fav list" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="43" Width="108" Click="button_Click"/>
-        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="107,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="button_Click"/>
+        <Button x:Name="favListButton" Content="Fav list" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="43" Width="108" />
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="107,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" />
         <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108"/>
         <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="323,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108"/>
         <Image x:Name="restaurantImage" HorizontalAlignment="Left" Height="425" VerticalAlignment="Top" Width="412" Margin="10,35,0,0"/>

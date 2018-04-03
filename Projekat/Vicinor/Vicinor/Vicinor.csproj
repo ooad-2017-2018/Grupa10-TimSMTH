@@ -104,6 +104,9 @@
     <Compile Include="Forme\AdminUsersOverview.xaml.cs">
       <DependentUpon>AdminUsersOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forme\FavRestorauntsList.xaml.cs">
+      <DependentUpon>FavRestorauntsList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
     </Compile>
@@ -113,11 +116,17 @@
     <Compile Include="Forme\PrikazOdabranogRestorana.xaml.cs">
       <DependentUpon>PrikazOdabranogRestorana.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forme\RegistracijaKorisnika.xaml.cs">
+      <DependentUpon>RegistracijaKorisnika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forme\SearchForRestaurants.xaml.cs">
       <DependentUpon>SearchForRestaurants.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\StartSearch.xaml.cs">
       <DependentUpon>StartSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\UpdateProfil.xaml.cs">
+      <DependentUpon>UpdateProfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,6 +164,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forme\FavRestorauntsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forme\Komentari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,11 +180,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Forme\RegistracijaKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forme\SearchForRestaurants.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forme\StartSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forme\UpdateProfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
