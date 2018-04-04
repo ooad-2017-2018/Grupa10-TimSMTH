@@ -8,6 +8,52 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="banTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="banButton.(Control.FontSize)" Value="16"/>
+                        <Setter Target="showProfileButton.(Control.FontSize)" Value="16"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="banTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="banButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="showProfileButton.(Control.FontSize)" Value="18"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="banTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="banButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="showProfileButton.(Control.FontSize)" Value="18"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*"></RowDefinition>

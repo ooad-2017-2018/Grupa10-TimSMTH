@@ -98,8 +98,8 @@
     <Compile Include="Forme\AdminStatistika.xaml.cs">
       <DependentUpon>AdminStatistika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\AdminUpdateProflie.xaml.cs">
-      <DependentUpon>AdminUpdateProflie.xaml</DependentUpon>
+    <Compile Include="Forme\AdminUpdate.xaml.cs">
+      <DependentUpon>AdminUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\AdminUserOverview.xaml.cs">
       <DependentUpon>AdminUserOverview.xaml</DependentUpon>
@@ -156,7 +156,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\AdminUpdateProflie.xaml">
+    <Page Include="Forme\AdminUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

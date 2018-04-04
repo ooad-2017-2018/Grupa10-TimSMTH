@@ -8,26 +8,98 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="returnButton.(Control.FontSize)" Value="16"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="regProcenatTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="regNeregTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="neregProcenatTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="statistikaTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="brojBanovanihTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="brojRegNeregTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="procenatRegTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="brRegistrovanihTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="brBanovanihTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="neregProcenatTextBox.(Control.FontSize)" Value="16"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+           
+                        <Setter Target="returnButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="regProcenatTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="regNeregTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="neregProcenatTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="statistikaTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojBanovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojRegNeregTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="procenatRegTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brRegistrovanihTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brBanovanihTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="neregProcenatTextBox.(Control.FontSize)" Value="18"/>
+
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="returnButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="regProcenatTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="regNeregTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="neregProcenatTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="statistikaTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojBanovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojRegNeregTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="procenatNeregTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="procenatRegTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brRegistrovanihTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="brBanovanihTextBox.(Control.FontSize)" Value="18"/>
+                        <Setter Target="neregProcenatTextBox.(Control.FontSize)" Value="18"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
 
 
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="44*"></ColumnDefinition>
-            <ColumnDefinition Width="57*"></ColumnDefinition>
-            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="7*"/>
 
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="brojRegistrovanihTextBlock" HorizontalAlignment="Left" Margin="40,34,0,0" TextWrapping="Wrap" Text="Broj registrovanih:" VerticalAlignment="Top" Width="128" Grid.Row="1" Height="20"/>
@@ -37,10 +109,11 @@
         <TextBlock x:Name="statistikaTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Statistika korisnika" VerticalAlignment="Top" Width="134"  FontWeight="Bold"/>
         <TextBlock x:Name="regNeregTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Odnos registrovanih i neregistrovanih:" VerticalAlignment="Top" Width="166"/>
         <TextBlock x:Name="regProcenatTextBlock" HorizontalAlignment="Left" Height="26" Margin="12,28,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Registrovani(procenat):" VerticalAlignment="Top" Width="156"/>
-        <TextBox x:Name="procenatRegTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"></TextBox>
+        <TextBox x:Name="neregProcenatTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
+        <TextBox x:Name="procenatRegTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
         <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Neegistrovani(procenat):" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.504,1.2"/>
-        <TextBox x:Name="procenatNeregTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"></TextBox>
-       
+        <TextBox x:Name="procenatNeregTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"/>
+
         <Button x:Name="returnButton" Content="Return" Grid.Column="1" HorizontalAlignment="Left" Margin="10,131,0,0" Grid.Row="9" VerticalAlignment="Top" Width="208"/>
 
     </Grid>
