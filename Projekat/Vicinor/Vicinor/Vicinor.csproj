@@ -88,10 +88,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -128,6 +124,15 @@
     <Compile Include="Forme\UpdateProfil.xaml.cs">
       <DependentUpon>UpdateProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\KorisnikUSistemu.cs" />
+    <Compile Include="Model\Lokacija.cs" />
+    <Compile Include="Model\NeregistrovaniKorisnik.cs" />
+    <Compile Include="Model\Pretraga.cs" />
+    <Compile Include="Model\Recenzija.cs" />
+    <Compile Include="Model\RegistrovaniKorisnik.cs" />
+    <Compile Include="Model\Restoran.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
