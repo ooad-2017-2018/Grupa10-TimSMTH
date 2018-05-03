@@ -20,11 +20,16 @@ namespace Vicinor.Forme
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FavRestorauntsList : Page
+    public sealed partial class FavouritesList : Page
     {
-        public FavRestorauntsList()
+        public FavouritesList()
         {
             this.InitializeComponent();
+        }
+
+        private void returnButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SearchRestaurants));
         }
     }
 }

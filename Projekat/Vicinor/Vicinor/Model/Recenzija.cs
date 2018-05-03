@@ -9,7 +9,7 @@ namespace Vicinor.Model
     {
         String comment;
         int starRating, userId;
-        Time timeOfRez;
+        DateTime timeOfRez;
 
         public String Comment
         {
@@ -37,7 +37,7 @@ namespace Vicinor.Model
             }
         }
 
-        public Time TimeOfRez
+        public DateTime TimeOfRez
         {
             get
             {

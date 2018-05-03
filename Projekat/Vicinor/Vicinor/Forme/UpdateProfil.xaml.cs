@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -25,6 +26,28 @@ namespace Vicinor.Forme
         public UpdateProfil()
         {
             this.InitializeComponent();
+        }
+
+        async void messageDialog(String s)
+        {
+            var dialog = new MessageDialog(s);
+            await dialog.ShowAsync();
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+
+            //Otvaranje pocetne forme
+            messageDialog("Update succesful");
+            this.Frame.Navigate(typeof(SearchRestaurants));
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+
+            //Otvaranje pocetne forme
+            messageDialog("Update canceled");
+            this.Frame.Navigate(typeof(SearchRestaurants));
         }
     }
 }

@@ -100,8 +100,8 @@
     <Compile Include="Forme\AdminUserOverview.xaml.cs">
       <DependentUpon>AdminUserOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\FavRestorauntsList.xaml.cs">
-      <DependentUpon>FavRestorauntsList.xaml</DependentUpon>
+    <Compile Include="Forme\FavouritesList.xaml.cs">
+      <DependentUpon>FavouritesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
@@ -115,8 +115,8 @@
     <Compile Include="Forme\RegistracijaKorisnika.xaml.cs">
       <DependentUpon>RegistracijaKorisnika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\SearchForRestaurants.xaml.cs">
-      <DependentUpon>SearchForRestaurants.xaml</DependentUpon>
+    <Compile Include="Forme\SearchRestaurants.xaml.cs">
+      <DependentUpon>SearchRestaurants.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\StartSearch.xaml.cs">
       <DependentUpon>StartSearch.xaml</DependentUpon>
@@ -169,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\FavRestorauntsList.xaml">
+    <Page Include="Forme\FavouritesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,7 +189,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\SearchForRestaurants.xaml">
+    <Page Include="Forme\SearchRestaurants.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

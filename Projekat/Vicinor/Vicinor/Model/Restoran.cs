@@ -1,4 +1,5 @@
 ﻿using System;
+//using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ namespace Vicinor.Model
     public class Restoran
     {
         string name, description, phoneNumber;
-        Bitmap image;
+        //Bitmap image;
         Lokacija location;
-        LinkedList<Recenzija> listRezension;
+        List<Recenzija> listRezension;
 
 
 
@@ -54,7 +55,7 @@ namespace Vicinor.Model
             }
         }
 
-        public BitMap Image
+       /* public Bitmap Image
         {
             get
             {
@@ -66,7 +67,7 @@ namespace Vicinor.Model
                 image = value;
             }
         }
-
+        */
         public Lokacija Location
         {
             get

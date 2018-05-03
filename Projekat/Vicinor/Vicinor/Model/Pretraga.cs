@@ -9,8 +9,8 @@ namespace Vicinor.Model
     public class Pretraga
     {
         RegistrovaniKorisnik user;
-        LinkedList<Restoran> listRestaurant;
-        Time timeOfSearch;
+        List<Restoran> listRestaurant;
+        DateTime timeOfSearch;
         Restoran chosenRestaurant;
 
         public RegistrovaniKorisnik User
@@ -26,7 +26,7 @@ namespace Vicinor.Model
             }
         }
 
-        public LinkedList<Restoran> ListRestaurant
+        public List<Restoran> ListRestaurant
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Vicinor.Model
             }
         }
 
-        public Time TimeOfSearch
+        public DateTime TimeOfSearch
         {
             get
             {

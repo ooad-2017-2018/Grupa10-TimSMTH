@@ -20,35 +20,34 @@ namespace Vicinor.Forme
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StartSearch1 : Page
+    public sealed partial class SearchRestaurants : Page
     {
-        public StartSearch1()
+        public SearchRestaurants()
         {
             this.InitializeComponent();
         }
 
-        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        private void startSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            this.Frame.Navigate(typeof(PocetnaForma));
-        }
-
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.Frame.Navigate(typeof(UpdateProfil));
-        }
-
-        private void searchButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.Frame.Navigate(typeof(SearchRestaurants));
+            //Otvaranje forme za pretragu
+            this.Frame.Navigate(typeof(StartSearch1));
         }
 
         private void favListButton_Click(object sender, RoutedEventArgs e)
         {
-            //Otvaranje forme za registraciju korisnika
+            //Otvaranje forme FavList
             this.Frame.Navigate(typeof(FavouritesList));
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Otvaranje forme za update profila korisnika
+            this.Frame.Navigate(typeof(UpdateProfil));
+        }
+
+        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PocetnaForma));
         }
     }
 }

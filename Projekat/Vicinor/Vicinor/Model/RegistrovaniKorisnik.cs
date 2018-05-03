@@ -1,4 +1,5 @@
 ﻿using System;
+//using System.Drawing;
 using System.Collections.Generic;
 
 namespace Vicinor.Model
@@ -8,8 +9,8 @@ namespace Vicinor.Model
         String firstName, lastName, email;
         int id;
         Boolean banovan;
-        Date dateOfBirth;
-        Bitmap image;
+        DateTime dateOfBirth;
+        //Bitmap image;
         LinkedList<Restoran> listOfRestaurants;
 
         public System.String FirstName
@@ -77,7 +78,7 @@ namespace Vicinor.Model
             }
         }
 
-        public Date DateOfBirth
+        public DateTime DateOfBirth
         {
             get
             {
@@ -90,7 +91,7 @@ namespace Vicinor.Model
             }
         }
 
-        public Bitmap Image
+        /*public Bitmap Image
         {
             get
             {
@@ -101,8 +102,8 @@ namespace Vicinor.Model
             {
                 image = value;
             }
-        }
-
+        }*/
+        
         public LinkedList<Restoran> ListOfRestaurants
         {
             get

@@ -73,7 +73,7 @@
             <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -104,8 +104,8 @@
 
         <TextBlock x:Name="textBlock7"  Text="Picture: " Grid.Row="7" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-        <Button Name="AddImage" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Stretch">Add Image</Button>
-        <Button Name="Register" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Register</Button>
-
+        <Button Name="AddImageButton" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Stretch">Add Image</Button>
+        <Button Name="RegisterButton" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="RegisterButton_Click" >Register</Button>
+        <Button Name="CancelButton" Grid.Column="1"  Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="CancelButton_Click" >Cancel</Button>
     </Grid>
 </Page>
