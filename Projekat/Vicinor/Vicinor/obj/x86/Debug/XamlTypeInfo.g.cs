@@ -138,13 +138,13 @@ namespace Vicinor.Vicinor_XamlTypeInfo
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Vicinor.Forme.AdminUpdate";
             _typeNameTable[4] = "Vicinor.Forme.AdminUserOverview";
-            _typeNameTable[5] = "Vicinor.Forme.FavRestorauntsList";
+            _typeNameTable[5] = "Vicinor.Forme.FavouritesList";
             _typeNameTable[6] = "Vicinor.Forme.Komentari";
             _typeNameTable[7] = "Vicinor.Forme.PocetnaForma";
             _typeNameTable[8] = "Vicinor.MainPage";
             _typeNameTable[9] = "Vicinor.Forme.RegistracijaKorisnika";
-            _typeNameTable[10] = "Vicinor.Forme.SearchForRestaurants";
-            _typeNameTable[11] = "Vicinor.Forme.StartSearch";
+            _typeNameTable[10] = "Vicinor.Forme.SearchRestaurants";
+            _typeNameTable[11] = "Vicinor.Forme.StartSearch1";
             _typeNameTable[12] = "Vicinor.Forme.UpdateProfil";
 
             _typeTable = new global::System.Type[13];
@@ -153,13 +153,13 @@ namespace Vicinor.Vicinor_XamlTypeInfo
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Vicinor.Forme.AdminUpdate);
             _typeTable[4] = typeof(global::Vicinor.Forme.AdminUserOverview);
-            _typeTable[5] = typeof(global::Vicinor.Forme.FavRestorauntsList);
+            _typeTable[5] = typeof(global::Vicinor.Forme.FavouritesList);
             _typeTable[6] = typeof(global::Vicinor.Forme.Komentari);
             _typeTable[7] = typeof(global::Vicinor.Forme.PocetnaForma);
             _typeTable[8] = typeof(global::Vicinor.MainPage);
             _typeTable[9] = typeof(global::Vicinor.Forme.RegistracijaKorisnika);
-            _typeTable[10] = typeof(global::Vicinor.Forme.SearchForRestaurants);
-            _typeTable[11] = typeof(global::Vicinor.Forme.StartSearch);
+            _typeTable[10] = typeof(global::Vicinor.Forme.SearchRestaurants);
+            _typeTable[11] = typeof(global::Vicinor.Forme.StartSearch1);
             _typeTable[12] = typeof(global::Vicinor.Forme.UpdateProfil);
         }
 
@@ -198,13 +198,13 @@ namespace Vicinor.Vicinor_XamlTypeInfo
         private object Activate_0_AdminStatistika() { return new global::Vicinor.Forme.AdminStatistika(); }
         private object Activate_3_AdminUpdate() { return new global::Vicinor.Forme.AdminUpdate(); }
         private object Activate_4_AdminUserOverview() { return new global::Vicinor.Forme.AdminUserOverview(); }
-        private object Activate_5_FavRestorauntsList() { return new global::Vicinor.Forme.FavRestorauntsList(); }
+        private object Activate_5_FavouritesList() { return new global::Vicinor.Forme.FavouritesList(); }
         private object Activate_6_Komentari() { return new global::Vicinor.Forme.Komentari(); }
         private object Activate_7_PocetnaForma() { return new global::Vicinor.Forme.PocetnaForma(); }
         private object Activate_8_MainPage() { return new global::Vicinor.MainPage(); }
         private object Activate_9_RegistracijaKorisnika() { return new global::Vicinor.Forme.RegistracijaKorisnika(); }
-        private object Activate_10_SearchForRestaurants() { return new global::Vicinor.Forme.SearchForRestaurants(); }
-        private object Activate_11_StartSearch() { return new global::Vicinor.Forme.StartSearch(); }
+        private object Activate_10_SearchRestaurants() { return new global::Vicinor.Forme.SearchRestaurants(); }
+        private object Activate_11_StartSearch1() { return new global::Vicinor.Forme.StartSearch1(); }
         private object Activate_12_UpdateProfil() { return new global::Vicinor.Forme.UpdateProfil(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -246,9 +246,9 @@ namespace Vicinor.Vicinor_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  Vicinor.Forme.FavRestorauntsList
+            case 5:   //  Vicinor.Forme.FavouritesList
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_FavRestorauntsList;
+                userType.Activator = Activate_5_FavouritesList;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -281,16 +281,16 @@ namespace Vicinor.Vicinor_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 10:   //  Vicinor.Forme.SearchForRestaurants
-                userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_10_SearchForRestaurants;
+            case 10:   //  Vicinor.Forme.SearchRestaurants
+                userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_SearchRestaurants;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Vicinor.Forme.StartSearch
-                userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_11_StartSearch;
+            case 11:   //  Vicinor.Forme.StartSearch1
+                userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_11_StartSearch1;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

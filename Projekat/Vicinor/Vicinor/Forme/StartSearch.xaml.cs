@@ -13,15 +13,42 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Vicinor.Forme
 {
-    public sealed partial class StartSearch : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class StartSearch1 : Page
     {
-        public StartSearch()
+        public StartSearch1()
         {
             this.InitializeComponent();
+        }
+
+        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.Frame.Navigate(typeof(PocetnaForma));
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.Frame.Navigate(typeof(UpdateProfil));
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.Frame.Navigate(typeof(SearchRestaurants));
+        }
+
+        private void favListButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Otvaranje forme za registraciju korisnika
+            this.Frame.Navigate(typeof(FavouritesList));
         }
     }
 }

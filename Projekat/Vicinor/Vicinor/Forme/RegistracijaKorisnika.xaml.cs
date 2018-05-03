@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -25,6 +26,27 @@ namespace Vicinor.Forme
         public RegistracijaKorisnika()
         {
             this.InitializeComponent();
+        }
+
+        async void messageDialog(String s)
+        {
+            var dialog = new MessageDialog(s);
+            await dialog.ShowAsync();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Povratak na pocetnu formu
+
+            messageDialog("Registration canceled");
+            this.Frame.Navigate(typeof(PocetnaForma));
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Otvaranje pocetne forme
+            messageDialog("Registration succesful");
+            this.Frame.Navigate(typeof(PocetnaForma));
         }
     }
 }

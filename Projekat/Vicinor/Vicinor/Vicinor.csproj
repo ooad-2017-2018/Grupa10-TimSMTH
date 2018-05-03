@@ -88,10 +88,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -104,8 +100,8 @@
     <Compile Include="Forme\AdminUserOverview.xaml.cs">
       <DependentUpon>AdminUserOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\FavRestorauntsList.xaml.cs">
-      <DependentUpon>FavRestorauntsList.xaml</DependentUpon>
+    <Compile Include="Forme\FavouritesList.xaml.cs">
+      <DependentUpon>FavouritesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
@@ -119,8 +115,8 @@
     <Compile Include="Forme\RegistracijaKorisnika.xaml.cs">
       <DependentUpon>RegistracijaKorisnika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\SearchForRestaurants.xaml.cs">
-      <DependentUpon>SearchForRestaurants.xaml</DependentUpon>
+    <Compile Include="Forme\SearchRestaurants.xaml.cs">
+      <DependentUpon>SearchRestaurants.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forme\StartSearch.xaml.cs">
       <DependentUpon>StartSearch.xaml</DependentUpon>
@@ -128,6 +124,15 @@
     <Compile Include="Forme\UpdateProfil.xaml.cs">
       <DependentUpon>UpdateProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\KorisnikUSistemu.cs" />
+    <Compile Include="Model\Lokacija.cs" />
+    <Compile Include="Model\NeregistrovaniKorisnik.cs" />
+    <Compile Include="Model\Pretraga.cs" />
+    <Compile Include="Model\Recenzija.cs" />
+    <Compile Include="Model\RegistrovaniKorisnik.cs" />
+    <Compile Include="Model\Restoran.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\FavRestorauntsList.xaml">
+    <Page Include="Forme\FavouritesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,7 +189,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\SearchForRestaurants.xaml">
+    <Page Include="Forme\SearchRestaurants.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
