@@ -6,8 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid x:Name="grid">
+    
+    <Grid x:Name="grid" MinHeight="400" MinWidth="200">
+        
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -25,11 +26,11 @@
                         <Setter Target="textBlock5.(TextBlock.FontSize)" Value="12"/>
                         <Setter Target="Email.(Control.FontSize)" Value="12"/>
                         <Setter Target="textBlock7.(TextBlock.FontSize)" Value="12"/>
-                        <Setter Target="AddImage.(Control.FontSize)" Value="14"/>
-                        <Setter Target="Register.(Control.FontSize)" Value="14"/>
+                        <Setter Target="AddImageButton.(Control.FontSize)" Value="14"/>
+                        <Setter Target="RegisterButton.(Control.FontSize)" Value="14"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger/>
+                        <AdaptiveTrigger MinWindowWidth="200"/>
                     </VisualState.StateTriggers>
 
                 </VisualState>

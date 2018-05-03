@@ -1,6 +1,8 @@
 ﻿using System;
 //using System.Drawing;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +12,23 @@ namespace Vicinor.Model
     public class Restoran
     {
         string name, description, phoneNumber;
-        //Bitmap image;
+        byte[] image;
         Lokacija location;
-        List<Recenzija> listRezension;
+        private ICollection<Recenzija> listRezension;
+
+        public virtual ICollection<Recenzija> ListRezension
+        {
+            get { return listRezension; }
+            set { listRezension = value; }
+        }
+
+        private int restoranId;
+
+        public int RestoranId
+        {
+            get { return restoranId; }
+            set { restoranId = value; }
+        }
 
 
 
@@ -55,7 +71,7 @@ namespace Vicinor.Model
             }
         }
 
-       /* public Bitmap Image
+        public byte[] Image
         {
             get
             {
@@ -67,8 +83,8 @@ namespace Vicinor.Model
                 image = value;
             }
         }
-        */
-        public Lokacija Location
+        
+        public virtual Lokacija Location
         {
             get
             {
@@ -80,6 +96,12 @@ namespace Vicinor.Model
                 location = value;
             }
         }
-
+        public System.Drawing.Image GetBitmap()
+        {
+            using (var stream = new MemoryStream(Image))
+            {
+                return System.Drawing.Image.FromStream(stream);
+            }
+        }
     }
 }
