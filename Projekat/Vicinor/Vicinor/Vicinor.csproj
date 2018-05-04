@@ -91,6 +91,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forme\AdminStartPage.xaml.cs">
+      <DependentUpon>AdminStartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forme\AdminStatistika.xaml.cs">
       <DependentUpon>AdminStatistika.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forme\AdminStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forme\AdminStatistika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

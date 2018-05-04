@@ -132,35 +132,37 @@ namespace Vicinor.Vicinor_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[13];
-            _typeNameTable[0] = "Vicinor.Forme.AdminStatistika";
+            _typeNameTable = new string[14];
+            _typeNameTable[0] = "Vicinor.Forme.AdminStartPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Vicinor.Forme.AdminUpdate";
-            _typeNameTable[4] = "Vicinor.Forme.AdminUserOverview";
-            _typeNameTable[5] = "Vicinor.Forme.FavouritesList";
-            _typeNameTable[6] = "Vicinor.Forme.Komentari";
-            _typeNameTable[7] = "Vicinor.Forme.PocetnaForma";
-            _typeNameTable[8] = "Vicinor.MainPage";
-            _typeNameTable[9] = "Vicinor.Forme.RegistracijaKorisnika";
-            _typeNameTable[10] = "Vicinor.Forme.SearchRestaurants";
-            _typeNameTable[11] = "Vicinor.Forme.StartSearch1";
-            _typeNameTable[12] = "Vicinor.Forme.UpdateProfil";
+            _typeNameTable[3] = "Vicinor.Forme.AdminStatistika";
+            _typeNameTable[4] = "Vicinor.Forme.AdminUpdate";
+            _typeNameTable[5] = "Vicinor.Forme.AdminUserOverview";
+            _typeNameTable[6] = "Vicinor.Forme.FavouritesList";
+            _typeNameTable[7] = "Vicinor.Forme.Komentari";
+            _typeNameTable[8] = "Vicinor.Forme.PocetnaForma";
+            _typeNameTable[9] = "Vicinor.MainPage";
+            _typeNameTable[10] = "Vicinor.Forme.RegistracijaKorisnika";
+            _typeNameTable[11] = "Vicinor.Forme.SearchRestaurants";
+            _typeNameTable[12] = "Vicinor.Forme.StartSearch1";
+            _typeNameTable[13] = "Vicinor.Forme.UpdateProfil";
 
-            _typeTable = new global::System.Type[13];
-            _typeTable[0] = typeof(global::Vicinor.Forme.AdminStatistika);
+            _typeTable = new global::System.Type[14];
+            _typeTable[0] = typeof(global::Vicinor.Forme.AdminStartPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Vicinor.Forme.AdminUpdate);
-            _typeTable[4] = typeof(global::Vicinor.Forme.AdminUserOverview);
-            _typeTable[5] = typeof(global::Vicinor.Forme.FavouritesList);
-            _typeTable[6] = typeof(global::Vicinor.Forme.Komentari);
-            _typeTable[7] = typeof(global::Vicinor.Forme.PocetnaForma);
-            _typeTable[8] = typeof(global::Vicinor.MainPage);
-            _typeTable[9] = typeof(global::Vicinor.Forme.RegistracijaKorisnika);
-            _typeTable[10] = typeof(global::Vicinor.Forme.SearchRestaurants);
-            _typeTable[11] = typeof(global::Vicinor.Forme.StartSearch1);
-            _typeTable[12] = typeof(global::Vicinor.Forme.UpdateProfil);
+            _typeTable[3] = typeof(global::Vicinor.Forme.AdminStatistika);
+            _typeTable[4] = typeof(global::Vicinor.Forme.AdminUpdate);
+            _typeTable[5] = typeof(global::Vicinor.Forme.AdminUserOverview);
+            _typeTable[6] = typeof(global::Vicinor.Forme.FavouritesList);
+            _typeTable[7] = typeof(global::Vicinor.Forme.Komentari);
+            _typeTable[8] = typeof(global::Vicinor.Forme.PocetnaForma);
+            _typeTable[9] = typeof(global::Vicinor.MainPage);
+            _typeTable[10] = typeof(global::Vicinor.Forme.RegistracijaKorisnika);
+            _typeTable[11] = typeof(global::Vicinor.Forme.SearchRestaurants);
+            _typeTable[12] = typeof(global::Vicinor.Forme.StartSearch1);
+            _typeTable[13] = typeof(global::Vicinor.Forme.UpdateProfil);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -195,17 +197,18 @@ namespace Vicinor.Vicinor_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AdminStatistika() { return new global::Vicinor.Forme.AdminStatistika(); }
-        private object Activate_3_AdminUpdate() { return new global::Vicinor.Forme.AdminUpdate(); }
-        private object Activate_4_AdminUserOverview() { return new global::Vicinor.Forme.AdminUserOverview(); }
-        private object Activate_5_FavouritesList() { return new global::Vicinor.Forme.FavouritesList(); }
-        private object Activate_6_Komentari() { return new global::Vicinor.Forme.Komentari(); }
-        private object Activate_7_PocetnaForma() { return new global::Vicinor.Forme.PocetnaForma(); }
-        private object Activate_8_MainPage() { return new global::Vicinor.MainPage(); }
-        private object Activate_9_RegistracijaKorisnika() { return new global::Vicinor.Forme.RegistracijaKorisnika(); }
-        private object Activate_10_SearchRestaurants() { return new global::Vicinor.Forme.SearchRestaurants(); }
-        private object Activate_11_StartSearch1() { return new global::Vicinor.Forme.StartSearch1(); }
-        private object Activate_12_UpdateProfil() { return new global::Vicinor.Forme.UpdateProfil(); }
+        private object Activate_0_AdminStartPage() { return new global::Vicinor.Forme.AdminStartPage(); }
+        private object Activate_3_AdminStatistika() { return new global::Vicinor.Forme.AdminStatistika(); }
+        private object Activate_4_AdminUpdate() { return new global::Vicinor.Forme.AdminUpdate(); }
+        private object Activate_5_AdminUserOverview() { return new global::Vicinor.Forme.AdminUserOverview(); }
+        private object Activate_6_FavouritesList() { return new global::Vicinor.Forme.FavouritesList(); }
+        private object Activate_7_Komentari() { return new global::Vicinor.Forme.Komentari(); }
+        private object Activate_8_PocetnaForma() { return new global::Vicinor.Forme.PocetnaForma(); }
+        private object Activate_9_MainPage() { return new global::Vicinor.MainPage(); }
+        private object Activate_10_RegistracijaKorisnika() { return new global::Vicinor.Forme.RegistracijaKorisnika(); }
+        private object Activate_11_SearchRestaurants() { return new global::Vicinor.Forme.SearchRestaurants(); }
+        private object Activate_12_StartSearch1() { return new global::Vicinor.Forme.StartSearch1(); }
+        private object Activate_13_UpdateProfil() { return new global::Vicinor.Forme.UpdateProfil(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -217,9 +220,9 @@ namespace Vicinor.Vicinor_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Vicinor.Forme.AdminStatistika
+            case 0:   //  Vicinor.Forme.AdminStartPage
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_AdminStatistika;
+                userType.Activator = Activate_0_AdminStartPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -232,72 +235,79 @@ namespace Vicinor.Vicinor_XamlTypeInfo
                 xamlType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Vicinor.Forme.AdminUpdate
+            case 3:   //  Vicinor.Forme.AdminStatistika
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_AdminUpdate;
+                userType.Activator = Activate_3_AdminStatistika;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Vicinor.Forme.AdminUserOverview
+            case 4:   //  Vicinor.Forme.AdminUpdate
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_AdminUserOverview;
+                userType.Activator = Activate_4_AdminUpdate;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Vicinor.Forme.FavouritesList
+            case 5:   //  Vicinor.Forme.AdminUserOverview
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_FavouritesList;
+                userType.Activator = Activate_5_AdminUserOverview;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Vicinor.Forme.Komentari
+            case 6:   //  Vicinor.Forme.FavouritesList
+                userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_FavouritesList;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Vicinor.Forme.Komentari
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_6_Komentari;
+                userType.Activator = Activate_7_Komentari;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Vicinor.Forme.PocetnaForma
+            case 8:   //  Vicinor.Forme.PocetnaForma
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_PocetnaForma;
+                userType.Activator = Activate_8_PocetnaForma;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Vicinor.MainPage
+            case 9:   //  Vicinor.MainPage
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_MainPage;
+                userType.Activator = Activate_9_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  Vicinor.Forme.RegistracijaKorisnika
+            case 10:   //  Vicinor.Forme.RegistracijaKorisnika
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_RegistracijaKorisnika;
+                userType.Activator = Activate_10_RegistracijaKorisnika;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Vicinor.Forme.SearchRestaurants
+            case 11:   //  Vicinor.Forme.SearchRestaurants
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_SearchRestaurants;
+                userType.Activator = Activate_11_SearchRestaurants;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Vicinor.Forme.StartSearch1
+            case 12:   //  Vicinor.Forme.StartSearch1
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_StartSearch1;
+                userType.Activator = Activate_12_StartSearch1;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Vicinor.Forme.UpdateProfil
+            case 13:   //  Vicinor.Forme.UpdateProfil
                 userType = new global::Vicinor.Vicinor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_UpdateProfil;
+                userType.Activator = Activate_13_UpdateProfil;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
