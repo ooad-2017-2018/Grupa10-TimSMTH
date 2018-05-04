@@ -100,6 +100,10 @@
     <Compile Include="Model\Recenzija.cs" />
     <Compile Include="Model\RegistrovaniKorisnik.cs" />
     <Compile Include="Model\Restoran.cs" />
+    <Compile Include="ViewModel\AdminStartPageViewModel.cs" />
+    <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
+    <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
+    <Compile Include="ViewModel\AdminUserOverviewViewModel.cs" />
     <Compile Include="View\AdminStartPage.xaml.cs">
       <DependentUpon>AdminStartPage.xaml</DependentUpon>
     </Compile>
