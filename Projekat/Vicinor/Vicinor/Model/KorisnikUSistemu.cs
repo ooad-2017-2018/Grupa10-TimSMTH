@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Vicinor.Model
 {
     public abstract class KorisnikUSistemu: Korisnik
     {
-        String username, password;
 
+        
+        String username, password;
+        [Required]
         public String Password
         {
             get
@@ -20,7 +23,7 @@ namespace Vicinor.Model
                 password = value;
             }
         }
-
+        [Required]
         public String Username
         {
             get

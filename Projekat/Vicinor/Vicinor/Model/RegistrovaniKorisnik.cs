@@ -1,19 +1,20 @@
 ﻿using System;
 //using System.Drawing;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace Vicinor.Model
 {
     public class RegistrovaniKorisnik: KorisnikUSistemu
     {
         String firstName, lastName, email;
-        int id;
-        Boolean banovan;
+        Boolean banned;
         DateTime dateOfBirth;
-        //Bitmap image;
-        LinkedList<Restoran> listOfRestaurants;
-
-        public System.String FirstName
+        byte[] image;
+        ICollection<Restoran> listOfRestaurants;
+        [Required]
+        public String FirstName
         {
             get
             {
@@ -25,8 +26,8 @@ namespace Vicinor.Model
                 firstName = value;
             }
         }
-
-        public System.String LastName
+        [Required]
+        public String LastName
         {
             get
             {
@@ -52,29 +53,18 @@ namespace Vicinor.Model
             }
         }
 
-        public System.Int32 Id
+     
+
+        public Boolean Banned
         {
             get
             {
-                return id;
+                return banned;
             }
 
             set
             {
-                id = value;
-            }
-        }
-
-        public Boolean Banovan
-        {
-            get
-            {
-                return banovan;
-            }
-
-            set
-            {
-                banovan = value;
+                banned = value;
             }
         }
 
@@ -91,7 +81,7 @@ namespace Vicinor.Model
             }
         }
 
-        /*public Bitmap Image
+        public byte[] Image
         {
             get
             {
@@ -102,9 +92,9 @@ namespace Vicinor.Model
             {
                 image = value;
             }
-        }*/
+        }
         
-        public LinkedList<Restoran> ListOfRestaurants
+        public virtual ICollection<Restoran> ListOfRestaurants
         {
             get
             {
@@ -116,5 +106,20 @@ namespace Vicinor.Model
                 listOfRestaurants = value;
             }
         }
+        Lokacija location;
+
+        public virtual Lokacija Location
+        {
+            get
+            {
+                return location;
+            }
+
+            set
+            {
+                location = value;
+            }
+        }
+
     }
 }

@@ -8,12 +8,19 @@ namespace Vicinor.Model
 {
     public class Pretraga
     {
-        RegistrovaniKorisnik user;
-        List<Restoran> listRestaurant;
+        Korisnik user;
+        ICollection<Restoran> listRestaurant;
         DateTime timeOfSearch;
         Restoran chosenRestaurant;
+        private int pretragaId;
 
-        public RegistrovaniKorisnik User
+        public int PretragaId
+        {
+            get { return pretragaId; }
+            set { pretragaId = value; }
+        }
+
+        public virtual Korisnik User
         {
             get
             {
@@ -26,7 +33,7 @@ namespace Vicinor.Model
             }
         }
 
-        public List<Restoran> ListRestaurant
+        public virtual ICollection<Restoran> ListRestaurant
         {
             get
             {
@@ -52,7 +59,7 @@ namespace Vicinor.Model
             }
         }
 
-        public Restoran ChosenRestaurant
+        public virtual Restoran ChosenRestaurant
         {
             get
             {

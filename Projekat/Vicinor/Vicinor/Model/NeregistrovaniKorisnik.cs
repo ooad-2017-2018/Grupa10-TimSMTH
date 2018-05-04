@@ -10,7 +10,7 @@ namespace Vicinor.Model
     {
         Lokacija location;
 
-        public Lokacija Location
+        public virtual Lokacija Location
         {
             get
             {

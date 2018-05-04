@@ -7,9 +7,26 @@ namespace Vicinor.Model
 {
     public class Recenzija
     {
+        private int recenzijaId;
+
+        public int RecenzijaId
+        {
+            get { return recenzijaId; }
+            set { recenzijaId = value; }
+        }
+
         String comment;
-        int starRating, userId;
+        int starRating;
         DateTime timeOfRez;
+
+        private RegistrovaniKorisnik user;
+
+        public virtual RegistrovaniKorisnik User
+        {
+            get { return user; }
+            set { user = value; }
+        }
+
 
         public String Comment
         {
@@ -50,17 +67,6 @@ namespace Vicinor.Model
             }
         }
 
-        public System.Int32 UserId
-        {
-            get
-            {
-                return userId;
-            }
-
-            set
-            {
-                userId = value;
-            }
-        }
+        
     }
 }
