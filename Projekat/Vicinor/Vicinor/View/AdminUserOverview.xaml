@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20, 0, 0, 10">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -43,7 +43,7 @@
                         <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="banTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="18"/>
-                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="18"/>
+                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="20"/>
                         <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="18"/>
                         <Setter Target="banButton.(Control.FontSize)" Value="18"/>
                         <Setter Target="showProfileButton.(Control.FontSize)" Value="18"/>
@@ -77,12 +77,12 @@
 
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="banTextBlock" HorizontalAlignment="Left" Height="44" Margin="14,22,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Banovanje korisnika" VerticalAlignment="Top" Width="154" FontWeight="Bold" Grid.RowSpan="2"/>
+        <TextBlock x:Name="banTextBlock" HorizontalAlignment="Left" Height="44" Margin="14,22,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Ban users" VerticalAlignment="Top" Width="154" FontWeight="Bold" Grid.RowSpan="2"/>
         <AutoSuggestBox x:Name="usernameAusoSuggestBox" Grid.Column="1" HorizontalAlignment="Left" Margin="20,22,0,0" Grid.Row="4" VerticalAlignment="Top" Width="208"/>
-        <TextBlock x:Name="banUserTextBlock" HorizontalAlignment="Left" Height="32" Margin="100,22,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="76"/>
-        <Button x:Name="banButton" Content="Ban User" Grid.Column="1" HorizontalAlignment="Left" Margin="20,22,0,0" Grid.Row="5" VerticalAlignment="Top" Width="208"/>
+        <TextBlock x:Name="banUserTextBlock" HorizontalAlignment="Right" Grid.Row="4" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" />
+        <Button x:Name="banButton" Content="Ban User" Grid.Column="1" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="5" VerticalAlignment="Center" />
         <Button x:Name="showProfileButton" Content="Show User Profile" Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" Grid.Row="2" VerticalAlignment="Top" Width="208"/>
-        <TextBlock x:Name="showTextBlock" HorizontalAlignment="Left" Height="44" Margin="14,20,0,0" TextWrapping="Wrap" Text="Pretraga korisnika" VerticalAlignment="Top" Width="154" FontWeight="Bold"/>
+        <TextBlock x:Name="showTextBlock" HorizontalAlignment="Left" Margin="14,20,0,0" Text="Search users" VerticalAlignment="Top" FontWeight="Bold"/>
 
         <ListView x:Name="usersListView" Grid.Column="1" HorizontalAlignment="Left" Height="177" Margin="10,-0.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208">
             <x:String>User 1</x:String>
@@ -91,7 +91,7 @@
             <x:String>User 4</x:String>
 
         </ListView>
-        <TextBlock x:Name="listaKorisnikaTextBlock" HorizontalAlignment="Left" Margin="70,11.8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Lista korisnika:" VerticalAlignment="Top" Width="96"/>
+        <TextBlock x:Name="listaKorisnikaTextBlock" HorizontalAlignment="Right"  Grid.Row="1" Grid.Column="0" Text="Users list:" VerticalAlignment="Top" />
 
     </Grid>
 </Page>
