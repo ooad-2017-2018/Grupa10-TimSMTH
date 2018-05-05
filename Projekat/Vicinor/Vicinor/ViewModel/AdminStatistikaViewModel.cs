@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vicinor.ViewModel
 {
-    class AdminStatistikaViewModel
+    public class AdminStatistikaViewModel
     {
     }
 }
