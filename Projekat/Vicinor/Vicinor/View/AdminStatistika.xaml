@@ -5,9 +5,10 @@
     xmlns:local="using:Vicinor.Forme"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" MinHeight="700" MinWidth="650">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10, 0, 0, 10">
+    <Grid Background="AntiqueWhite" Margin="10, 0, 0, 10" MinHeight="500" >
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -71,20 +72,18 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        
         <Grid.RowDefinitions>
-
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
-
-
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="*" MinHeight="50"/>
+            <RowDefinition Height="3*" MinHeight="50"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -93,17 +92,19 @@
             <ColumnDefinition Width="7*"/>
 
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="brojRegistrovanihTextBlock" HorizontalAlignment="Right" Text="Number of registered users:" VerticalAlignment="Center" Grid.Row="1" />
-        <TextBox x:Name="brRegistrovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" Grid.Row="1" Height="32"/>
-        <TextBlock x:Name="brojBanovanihTextBlock" HorizontalAlignment="Right" Grid.Row="2"  Text="Number of baned users:" VerticalAlignment="Center" />
-        <TextBox x:Name="brBanovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208"/>
-        <TextBlock x:Name="statistikaTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Users statistics" VerticalAlignment="Center" Width="166"  FontWeight="Bold"/>
-        <TextBlock x:Name="regNeregTextBlock" HorizontalAlignment="Left"  Grid.Row="3" TextWrapping="Wrap" Text="Registered/Unregistered users percentage" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock x:Name="regProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="4" TextWrapping="Wrap" Text="Registred users:" VerticalAlignment="Center" />
-        <TextBox x:Name="neregProcenatTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
-        <TextBox x:Name="procenatRegTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
-        <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="5"  Text="Unregistred users:" VerticalAlignment="Center" />
-        <TextBox x:Name="procenatNeregTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"/>
 
+        <TextBlock x:Name="brojRegistrovanihTextBlock"   HorizontalAlignment="Right" Text="Number of registered users:" VerticalAlignment="Center" Grid.Row="1" />
+        <TextBox x:Name="brRegistrovanihTextBox"  Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" Grid.Row="1" Height="32" Background="White"/>
+        <TextBlock x:Name="brojBanovanihTextBlock"  HorizontalAlignment="Right" Grid.Row="2"  Text="Number of baned users:" VerticalAlignment="Center" />
+        <TextBox x:Name="brBanovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208"  Background="White"/>
+        <TextBlock x:Name="statistikaTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Users statistics" VerticalAlignment="Center" Width="166"  FontWeight="Bold"/>
+        <TextBlock x:Name="regNeregTextBlock"   HorizontalAlignment="Left"  Grid.Row="3" TextWrapping="Wrap" Text="Registered/Unregistered users percentage" VerticalAlignment="Top" FontWeight="Bold"  />
+        <TextBlock x:Name="regProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="4" TextWrapping="Wrap" Text="Registred users:" VerticalAlignment="Center" />
+        <TextBox x:Name="neregProcenatTextBox"  Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"  />
+        <TextBox x:Name="procenatRegTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
+        <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="5"  Text="Unregistred users:" VerticalAlignment="Center" />
+
+        <TextBox x:Name="procenatNeregTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"/>
     </Grid>
+
 </Page>

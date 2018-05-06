@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Vicinor.Model;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,6 +28,7 @@ namespace Vicinor.Forme
         public AdminStatistika()
         {
             this.InitializeComponent();
+    
             Initial();
         }
         public async void  Initial()

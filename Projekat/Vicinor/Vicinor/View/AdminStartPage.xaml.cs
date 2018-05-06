@@ -25,6 +25,15 @@ namespace Vicinor.Forme
         public AdminStartPage()
         {
             this.InitializeComponent();
+            var appView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+            appView.TitleBar.BackgroundColor = Windows.UI.Colors.LightBlue; // or {a: 255, r: 0, g: 0, b: 0}
+            appView.TitleBar.InactiveBackgroundColor = Windows.UI.Colors.Black;
+            appView.TitleBar.ButtonBackgroundColor = Windows.UI.Colors.LightBlue;
+            appView.TitleBar.ButtonHoverBackgroundColor = Windows.UI.Colors.Black;
+            appView.TitleBar.ButtonPressedBackgroundColor = Windows.UI.Colors.LightBlue;
+            appView.TitleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.Black;
+
+
         }
 
         private void adminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
