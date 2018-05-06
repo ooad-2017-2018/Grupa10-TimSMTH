@@ -120,6 +120,13 @@ namespace Vicinor.Model
                 location = value;
             }
         }
-
+        /*
+        public System.Drawing.Image GetBitmap()
+        {
+            using (var stream = new MemoryStream(Image))
+            {
+                return System.Drawing.Image.FromStream(stream);
+            }
+        }   */
     }
 }

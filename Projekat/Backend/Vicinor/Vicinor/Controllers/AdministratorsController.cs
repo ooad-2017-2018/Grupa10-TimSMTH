@@ -125,5 +125,16 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public JsonResult GetAccount(string username, string password)
+        {
+            Administrator registrovaniKorisnik = db.Korisnik.OfType<Administrator>().SingleOrDefault(s => s.Username == username && s.Password == password);
+
+            if (registrovaniKorisnik == null)
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+            return Json(registrovaniKorisnik, JsonRequestBehavior.AllowGet);
+        }
     }
 }

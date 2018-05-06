@@ -1,6 +1,10 @@
-﻿//using System.Drawing;
+﻿using System;
+//using System.Drawing;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Vicinor.Model
 {
@@ -91,6 +95,13 @@ namespace Vicinor.Model
                 location = value;
             }
         }
-
+        /*
+        public System.Drawing.Image GetBitmap()
+        {
+            using (var stream = new MemoryStream(Image))
+            {
+                return System.Drawing.Image.FromStream(stream);
+            }
+        }   */
     }
 }

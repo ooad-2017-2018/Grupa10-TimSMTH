@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Vicinor.Model
@@ -8,7 +9,7 @@ namespace Vicinor.Model
     {
 
         private int lokacijaId;
-
+        [ScaffoldColumn(false)]
         public int LokacijaId
         {
             get { return lokacijaId; }
@@ -16,7 +17,7 @@ namespace Vicinor.Model
         }
 
         private int x, y;
-
+        [Required]
         public int X
         {
             get

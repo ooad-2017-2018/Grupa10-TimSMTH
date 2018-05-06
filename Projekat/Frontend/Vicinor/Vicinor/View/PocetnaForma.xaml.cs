@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Vicinor.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,8 +24,10 @@ namespace Vicinor.Forme
    
     public sealed partial class PocetnaForma : Page
     {
+        PocetnaFormaViewModel pvm;
         public PocetnaForma()
         {
+            pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
         }
 
@@ -33,7 +36,21 @@ namespace Vicinor.Forme
             //LogIn korisnika
             //Otvaranje forme search for restaurants
             //SearchForRestaurants sfr = new SearchForRestaurants();
-           Frame.Navigate(typeof(SearchRestaurants));
+            Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
+            Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
+            if (b1)
+            {
+                Frame.Navigate(typeof(AdminStartPage));
+            }
+            else if (b2)
+            {
+                Frame.Navigate(typeof(SearchRestaurants));
+            }
+            else {
+                textBox1.Text = "Again";
+                // prijava greske
+                // neki vid
+            }
           
 
         }
