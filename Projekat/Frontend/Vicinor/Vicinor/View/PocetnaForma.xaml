@@ -48,7 +48,7 @@
         <TextBox x:Name="textBox1" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
         <Button x:Name="logInButton" Content="Log in" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="1" Background="#33FF0000" BorderBrush="#FF150000"  Foreground="#FF300000" Click="logInButton_Click"/>
         <HyperlinkButton x:Name="registerHyperlinkButton" Content="or Register" HorizontalAlignment="Right"  Grid.Column="1" Grid.Row="4" Click="registerHyperlinkButton_Click"/>
-        <HyperlinkButton x:Name="continueHyperlinkButton" Content="Continue as guest" HorizontalAlignment="Right"  Grid.Row="6" FontStretch="Expanded" Margin="0,10,159,6" RenderTransformOrigin="1.99,1.363" Grid.Column="1" Click="continueHyperlinkButton_Click"/>
+        <HyperlinkButton x:Name="continueHyperlinkButton" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="6" FontStretch="Expanded" Margin="0,10.5,0,0" RenderTransformOrigin="1.99,1.363" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Top" Width="119"/>
 
     </Grid>
 </Page>

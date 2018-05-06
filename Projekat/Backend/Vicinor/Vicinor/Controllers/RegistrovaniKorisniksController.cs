@@ -124,5 +124,19 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // [Route("RegistrovaniKorisniks")]
+        public JsonResult GetAccount(string username, string password)
+        {
+            RegistrovaniKorisnik registrovaniKorisnik = db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.Username == username && s.Password == password);
+
+            if (registrovaniKorisnik == null)
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+            return Json(registrovaniKorisnik, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }
