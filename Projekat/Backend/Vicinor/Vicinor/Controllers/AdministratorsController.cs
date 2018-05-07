@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Vicinor.Model;
@@ -125,8 +126,9 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpGet]
 
-        public JsonResult GetAccount(string username, string password)
+        public JsonResult  GetAccount(string username, string password)
         {
             Administrator registrovaniKorisnik = db.Korisnik.OfType<Administrator>().SingleOrDefault(s => s.Username == username && s.Password == password);
 

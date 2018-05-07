@@ -13,6 +13,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Vicinor.ViewModel;
+using System.Threading;
+using System.Diagnostics;
+using System.Threading;
+using System.Linq;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -42,17 +47,16 @@ namespace Vicinor.Forme
             {
                 Frame.Navigate(typeof(AdminStartPage));
             }
-            else if (b2)
+             else if (b2)
+             {
+                 Frame.Navigate(typeof(SearchRestaurants));
+             }
+            else
             {
-                Frame.Navigate(typeof(SearchRestaurants));
-            }
-            else {
                 textBox1.Text = "Again";
                 // prijava greske
                 // neki vid
             }
-          
-
         }
 
         private void registerHyperlinkButton_Click(object sender, RoutedEventArgs e)

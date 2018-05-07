@@ -103,7 +103,6 @@
         <TextBox x:Name="neregProcenatTextBox"  Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"  />
         <TextBox x:Name="procenatRegTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
         <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="5"  Text="Unregistred users:" VerticalAlignment="Center" />
-
         <TextBox x:Name="procenatNeregTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"/>
     </Grid>
 

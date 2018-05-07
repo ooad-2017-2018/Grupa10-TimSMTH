@@ -124,5 +124,15 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpGet]
+        public JsonResult GetAll()
+        {
+            List<NeregistrovaniKorisnik> registrovaniKorisnici = db.Korisnik.OfType<NeregistrovaniKorisnik>().ToList();
+            if (registrovaniKorisnici == null)
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+            return Json(registrovaniKorisnici, JsonRequestBehavior.AllowGet);
+        }
     }
 }
