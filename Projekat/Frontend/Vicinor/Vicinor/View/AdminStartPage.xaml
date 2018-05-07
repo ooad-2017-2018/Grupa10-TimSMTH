@@ -13,7 +13,7 @@
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
                     <VisualState.Setters>
-
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="18"/>
 
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
@@ -22,7 +22,7 @@
                 </VisualState>
                 <VisualState x:Name="Tablet">
                     <VisualState.Setters>
-
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="18"/>
 
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
@@ -31,7 +31,7 @@
                 </VisualState>
                 <VisualState x:Name="Desktop">
                     <VisualState.Setters>
-
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="20"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -77,6 +77,8 @@
             </SplitView.Content>
 
         </SplitView>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Welcome!" VerticalAlignment="Top" RenderTransformOrigin="-8.226,-2.6" FontSize="20" FontWeight="Bold"/>
+        <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="1" Source="ms-appx:///Assets/admin_logo.png"/>
 
     </Grid>
 </Page>

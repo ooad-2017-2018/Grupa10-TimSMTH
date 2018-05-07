@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Windows;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -38,9 +38,28 @@ namespace Vicinor.Forme
 
         private void adminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (sListBoxItem.IsSelected) { myFrame.Navigate(typeof(AdminStatistika)); }
-            else if (upListBoxItem.IsSelected) { myFrame.Navigate(typeof(AdminUserOverview)); }
-            else if (uoListBoxItem.IsSelected) { myFrame.Navigate(typeof(AdminUpdate)); }
+            if (sListBoxItem.IsSelected)
+            {
+                myFrame.Navigate(typeof(AdminStatistika));
+                image.Visibility = Visibility.Collapsed;
+               textBlock.Visibility = Visibility.Collapsed;
+            }
+            else if (uoListBoxItem.IsSelected)
+            {
+                myFrame.Navigate(typeof(AdminUserOverview));
+                image.Visibility = Visibility.Collapsed;
+                textBlock.Visibility = Visibility.Collapsed;
+            }
+            else if (upListBoxItem.IsSelected)
+            {
+                myFrame.Navigate(typeof(AdminUpdate));
+                image.Visibility = Visibility.Collapsed;
+                textBlock.Visibility = Visibility.Collapsed;
+            }
+            else {
+                image.Visibility = Visibility.Visible;
+                textBlock.Visibility = Visibility.Visible;
+            }
         }
 
         private void hamburgerButton_Click(object sender, RoutedEventArgs e)
