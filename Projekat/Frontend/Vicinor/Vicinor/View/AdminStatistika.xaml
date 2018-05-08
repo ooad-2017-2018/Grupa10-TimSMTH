@@ -94,16 +94,16 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock x:Name="brojRegistrovanihTextBlock"   HorizontalAlignment="Right" Text="Number of registered users:" VerticalAlignment="Center" Grid.Row="1" />
-        <TextBox x:Name="brRegistrovanihTextBox"  Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" Grid.Row="1" Height="32" Background="White"/>
+        <TextBox x:Name="brRegistrovanihTextBox"  Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" Grid.Row="1" Height="32" Background="White" IsReadOnly="True"/>
         <TextBlock x:Name="brojBanovanihTextBlock"  HorizontalAlignment="Right" Grid.Row="2"  Text="Number of baned users:" VerticalAlignment="Center" />
-        <TextBox x:Name="brBanovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208"  Background="White"/>
+        <TextBox x:Name="brBanovanihTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208"  Background="White" IsReadOnly="True"/>
         <TextBlock x:Name="statistikaTextBlock" HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Users statistics" VerticalAlignment="Center" Width="166"  FontWeight="Bold"/>
         <TextBlock x:Name="regNeregTextBlock"   HorizontalAlignment="Left"  Grid.Row="3" TextWrapping="Wrap" Text="Registered/Unregistered users percentage" VerticalAlignment="Top" FontWeight="Bold"  />
         <TextBlock x:Name="regProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="4" TextWrapping="Wrap" Text="Registred users:" VerticalAlignment="Center" />
         <TextBox x:Name="neregProcenatTextBox"  Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"  />
-        <TextBox x:Name="procenatRegTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
+        <TextBox x:Name="procenatRegTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="4" IsReadOnly="True"/>
         <TextBlock x:Name="neregProcenatTextBlock" HorizontalAlignment="Right" Grid.Row="5"  Text="Unregistred users:" VerticalAlignment="Center" />
-        <TextBox x:Name="procenatNeregTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5"/>
+        <TextBox x:Name="procenatNeregTextBox"   Background="White" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="10,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="208" RenderTransformOrigin="0.5,0.5" Grid.Row="5" IsReadOnly="True"/>
     </Grid>
 
 </Page>

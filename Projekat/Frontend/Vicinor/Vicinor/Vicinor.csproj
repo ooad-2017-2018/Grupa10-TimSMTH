@@ -123,7 +123,7 @@
     <Compile Include="View\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\loginUserControl.xaml.cs">
+    <Compile Include="View\loginUserControl.xaml.cs">
       <DependentUpon>loginUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PocetnaForma.xaml.cs">
@@ -199,9 +199,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\loginUserControl.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="View\loginUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PocetnaForma.xaml">
       <SubType>Designer</SubType>

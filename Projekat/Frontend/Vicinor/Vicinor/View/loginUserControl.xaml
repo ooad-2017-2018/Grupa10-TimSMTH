@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -19,6 +19,7 @@
                         <Setter Target="textBox.(TextBox.FontSize)" Value="16"/>
                         <Setter Target="textBox1.(TextBox.FontSize)" Value="16"/>
                         <Setter Target="logInButton.(Control.FontSize)" Value="16"/>
+                        <Setter Target="errorTextBlock.(TextBlock.FontSize)" Value="16"/>
                     </VisualState.Setters>
                             <VisualState.StateTriggers>
                         <AdaptiveTrigger/>
@@ -31,6 +32,8 @@
                         <Setter Target="textBox.(TextBox.FontSize)" Value="18"/>
                         <Setter Target="textBox1.(TextBox.FontSize)" Value="18"/>
                         <Setter Target="logInButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="errorTextBlock.(TextBlock.FontSize)" Value="18"/>
+
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="600"/>
@@ -44,6 +47,7 @@
                         <Setter Target="textBox.(TextBox.FontSize)" Value="18"/>
                         <Setter Target="textBox1.(TextBox.FontSize)" Value="18"/>
                         <Setter Target="logInButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="errorTextBlock.(TextBlock.FontSize)" Value="18"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -67,5 +71,7 @@
         <Button x:Name="logInButton" Content="Log in" HorizontalAlignment="Stretch" Grid.Row="4"  Margin="20,0,20,0" Background="#33FF0000" BorderBrush="#FF150000"  Foreground="#FF300000" Click="logInButton_Click" />
         <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center"/>
         <TextBlock x:Name="passwordTextBlock" HorizontalAlignment="Left" Grid.Row="2" Margin="20,0,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Center"/>
+        <TextBlock x:Name="errorTextBlock" Grid.Column="1" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+
     </Grid>
 </UserControl>

@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
+using Vicinor.View;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,32 +30,40 @@ namespace Vicinor.Forme
    
     public sealed partial class PocetnaForma : Page
     {
-        PocetnaFormaViewModel pvm;
+       // PocetnaFormaViewModel pvm;
         public PocetnaForma()
         {
-            pvm = new PocetnaFormaViewModel();
+            //pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
+
+
+            loginUC.onNavigateParentReadyAdminStartPage += LoginUC_onNavigateParentReadyAdminStartPage;
+            loginUC.onNavigateParentReadySearchForRestaurants += LoginUC_onNavigateParentReadySearchForRestaurants;
+
+        }
+
+        private void LoginUC_onNavigateParentReadySearchForRestaurants(object source, EventArgs e)
+        {
+            Frame.Navigate(typeof(SearchRestaurants));
             
         }
 
-      
-        private void onNavigateParentReadyAdminStartPage(object sender, RoutedEventArgs e)
-        {        
-               Frame.Navigate(typeof(AdminStartPage));            
-        }
-
-        private void onNavigateParentReadySearchForRestaurants(object sender, RoutedEventArgs e)
+        private void LoginUC_onNavigateParentReadyAdminStartPage(object source, EventArgs e)
         {
-               Frame.Navigate(typeof(SearchRestaurants));
+ 
+            Frame.Navigate(typeof(AdminStartPage));
         }
 
-        private void logInButton_Click(object sender, RoutedEventArgs e)
+
+       /* private void logInButton_Click(object sender, RoutedEventArgs e)
         {
             //LogIn korisnika
             //Otvaranje forme search for restaurants
             //SearchForRestaurants sfr = new SearchForRestaurants();
             Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
             Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
+            errorTextBlock.Visibility = Visibility.Collapsed;
+            errorTextBlock.Text = "";
             if (b1)
             {
                 Frame.Navigate(typeof(AdminStartPage));
@@ -65,11 +74,12 @@ namespace Vicinor.Forme
              }
             else
             {
-                textBox1.Text = "Again";
-                // prijava greske
-                // neki vid
+                //textBox1.Text = "Again";
+                // prijava greske            
+                errorTextBlock.Visibility = Visibility.Visible;
+                errorTextBlock.Text = "Invalid username or password!";
             }
-        }
+        }*/
 
         private void registerHyperlinkButton_Click(object sender, RoutedEventArgs e)
         {

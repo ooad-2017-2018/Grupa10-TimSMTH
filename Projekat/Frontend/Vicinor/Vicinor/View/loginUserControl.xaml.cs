@@ -23,23 +23,29 @@ namespace Vicinor.View
         public delegate void MyEventHandler(object source, EventArgs e);
 
         public event MyEventHandler onNavigateParentReadyAdminStartPage, onNavigateParentReadySearchForRestaurants;
+
         PocetnaFormaViewModel pvm;
         public loginUserControl()
         {
             pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
+
         }
 
         private void logInButton_Click(object sender, RoutedEventArgs e)
         {
+
             //LogIn korisnika
             //Otvaranje forme search for restaurants
             //SearchForRestaurants sfr = new SearchForRestaurants();
             Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
             Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
+            errorTextBlock.Visibility = Visibility.Collapsed;
+            errorTextBlock.Text = "";
             if (b1)
             {
                 onNavigateParentReadyAdminStartPage(this, null);
+              
             }
             else if (b2)
             {
@@ -47,10 +53,13 @@ namespace Vicinor.View
             }
             else
             {
-                textBox1.Text = "Again";
-                // prijava greske
-                // neki vid
+                //textBox1.Text = "Again";
+                // prijava greske            
+                errorTextBlock.Visibility = Visibility.Visible;
+                errorTextBlock.Text = "Invalid username or password!";
             }
+          
+          
         }
     }
 }
