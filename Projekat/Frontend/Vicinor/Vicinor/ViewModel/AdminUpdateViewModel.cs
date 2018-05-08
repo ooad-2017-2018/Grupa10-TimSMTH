@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Net.Http;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +15,26 @@ namespace Vicinor.ViewModel
         {
             admin = new Administrator();
         }
-
-        public void setUsername()
+        /*
+        private Boolean updateUsername(Administrator a)
         {
-            
+            if (a == null) throw new ArgumentNullException("admin");
+            int i = _a.FindIndex(p => p.KorisnikId == a.KorisnikId);
         }
 
-        public void setPassword()
+        public HttpResponseMessage putUsernameAdmin(int id, Administrator admin)
+        {
+            admin.KorisnikId = id;
+            if (!updateUsername(admin))
+            {
+
+            }
+           
+        }*/
+
+      
+
+        public void putPasswordAdmin(int id, Administrator admin)
         {
 
         }

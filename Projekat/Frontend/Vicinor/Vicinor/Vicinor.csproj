@@ -100,6 +100,9 @@
     <Compile Include="Model\Recenzija.cs" />
     <Compile Include="Model\RegistrovaniKorisnik.cs" />
     <Compile Include="Model\Restoran.cs" />
+    <Compile Include="UserControls\banUserUserControl.xaml.cs">
+      <DependentUpon>banUserUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValidacijeAndMore.cs" />
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
@@ -145,9 +148,6 @@
       <DependentUpon>UpdateProfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\usernameUserControl.xaml.cs">
-      <DependentUpon>usernameUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\wlcomeAdminLogoUserControl.xaml.cs">
       <DependentUpon>wlcomeAdminLogoUserControl.xaml</DependentUpon>
     </Compile>
@@ -175,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="UserControls\banUserUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AdminStartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,10 +228,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UpdateProfil.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\usernameUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
