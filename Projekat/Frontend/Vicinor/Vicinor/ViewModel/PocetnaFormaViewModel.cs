@@ -12,7 +12,11 @@ namespace Vicinor.ViewModel
 {
     public class PocetnaFormaViewModel 
     {
-        String usernameG = null, passwordG = null;
+        static String usernameG = null, passwordG = null;
+
+        public static String getUsernameG() { return usernameG; }
+        public static String getPasswordG() { return passwordG; }
+
         Boolean adminDaNe=false;
         public async Task<Boolean> loginAdmin(String username, String pw)
         {

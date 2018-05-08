@@ -71,8 +71,12 @@
             <Frame x:Name="myFrame"/>
 
         </SplitView>
-
+        
+       
+           
         <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="0,20,20,20" HorizontalAlignment="Center"  Grid.Row="1"   VerticalAlignment="Top"/>
-
+            
+      
+       
     </Grid>
 </Page>

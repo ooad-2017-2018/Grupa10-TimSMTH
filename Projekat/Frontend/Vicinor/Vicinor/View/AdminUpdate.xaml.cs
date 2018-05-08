@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Vicinor.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +23,96 @@ namespace Vicinor.Forme
     /// </summary>
     public sealed partial class AdminUpdate : Page
     {
+        AdminUpdateViewModel auvm;
+        String newUsername, newPassword, confirmPassword;
         public AdminUpdate()
         {
+            auvm = new AdminUpdateViewModel();
             this.InitializeComponent();
+            newUsernameTextBox.Visibility = Visibility.Collapsed;
+            newUsernameTextBlock.Visibility = Visibility.Collapsed;
+            newPasswordTextBlock.Visibility = Visibility.Collapsed;
+            newPasswordTextBox.Visibility = Visibility.Collapsed;
+            confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
+            confirmPasswordTextBox.Visibility = Visibility.Collapsed;
+            errorTextBox.Visibility = Visibility.Collapsed;
+            String u = PocetnaFormaViewModel.getUsernameG();
+            String p = PocetnaFormaViewModel.getPasswordG();
+            if (u!= null)
+            usernameTextBox.Text = u;
+            if (p != null)
+            passwordTextBox.Text = p;
+
+        }
+
+        private void changeUsernameHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            newUsernameTextBox.Visibility = Visibility.Visible;
+            newUsernameTextBlock.Visibility = Visibility.Visible;
+        }
+
+        private void changePasswordHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            newPasswordTextBlock.Visibility = Visibility.Visible;
+            newPasswordTextBox.Visibility = Visibility.Visible;
+            confirmPasswordTextBlock.Visibility = Visibility.Visible;
+            confirmPasswordTextBox.Visibility = Visibility.Visible;
+        }
+
+        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            newUsername = newUsernameTextBox.Text.ToString();
+            newPassword = newPasswordTextBox.Text.ToString();
+            confirmPassword = confirmPasswordTextBox.Text.ToString();
+            //Spasi promjene, izvrsi validaciju promjena
+            if (!auvm.validateUsernameLength(newUsername))
+            {
+                errorTextBox.Visibility = Visibility.Visible;
+                errorTextBox.Text = "Username must contain atleast 6 characters!";
+                return;
+            }
+            if (!auvm.validateUsernameContent(newUsername))
+            {
+                errorTextBox.Visibility = Visibility.Visible;
+                errorTextBox.Text = "Username must contain atleast one number! Username can contain only lower case letters, numbers and '_'. ";
+                return;
+            }
+
+            if (!auvm.validatePasswordLength(newPassword))
+            {
+                errorTextBox.Visibility = Visibility.Visible;
+                errorTextBox.Text = "Password must contain atleast 6 characters!";
+                return;
+            }
+
+            if (!auvm.validateUsernameContent(newUsername))
+            {
+                errorTextBox.Visibility = Visibility.Visible;
+                errorTextBox.Text = "Password must contain atleast one number and one upper case letter! Only numbers, letters and '_' are allowed.";
+                return;
+            }
+
+            if (!auvm.validatePasswordConfirmPassword(newPassword, confirmPassword))
+            {
+                errorTextBox.Visibility = Visibility.Visible;
+                errorTextBox.Text = "New password is not equal to Confirm password!";
+                return;
+            }
+            errorTextBox.Text = "";
+            errorTextBox.Visibility = Visibility.Collapsed;
+
+            //Password dozvoljena samo slova, brojevi i _, mora imati barem jedno veliko slovo i jedan broj, min duzina 6
+            //Username dozvoljena samo mala slova, brojevi i _, mora biti jedinstven,  min duzina 6
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            newUsernameTextBox.Visibility = Visibility.Collapsed;
+            newUsernameTextBlock.Visibility = Visibility.Collapsed;
+            newPasswordTextBlock.Visibility = Visibility.Collapsed;
+            newPasswordTextBox.Visibility = Visibility.Collapsed;
+            confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
+            confirmPasswordTextBox.Visibility = Visibility.Collapsed;
         }
     }
 }

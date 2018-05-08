@@ -34,6 +34,18 @@ namespace Vicinor.Forme
         {
             pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
+            
+        }
+
+      
+        private void onNavigateParentReadyAdminStartPage(object sender, RoutedEventArgs e)
+        {        
+               Frame.Navigate(typeof(AdminStartPage));            
+        }
+
+        private void onNavigateParentReadySearchForRestaurants(object sender, RoutedEventArgs e)
+        {
+               Frame.Navigate(typeof(SearchRestaurants));
         }
 
         private void logInButton_Click(object sender, RoutedEventArgs e)

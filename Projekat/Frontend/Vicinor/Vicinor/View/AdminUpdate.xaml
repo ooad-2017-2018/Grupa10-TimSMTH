@@ -88,8 +88,9 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
 
 
 
@@ -101,26 +102,27 @@
 
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Height="25" Margin="10,29,0,0" Text="Username:" VerticalAlignment="Top" Width="114" TextAlignment="Right"/>
-        <TextBox x:Name="usernameTextBox"  Background="White"  Text="" Grid.Column="1" Margin="10,10,10,10"/>
+        <TextBox x:Name="usernameTextBox"  Background="White"  Text="" Grid.Column="1" Margin="10,10,10,10" IsReadOnly="True"/>
 
-        <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="1" />
+        <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="1" Click="changeUsernameHyperlinkButton_Click" />
 
         <TextBlock x:Name="newUsernameTextBlock"  Text="New Username:" Margin="21,22,8,10" Grid.Row="2"/>
         <TextBox x:Name="newUsernameTextBox"  Background="White" Text="" Margin="10,10,10,10" Grid.Row="2" Grid.Column="1"/>
 
-        <TextBox x:Name="passwordTextBox"  Background="White" Grid.Column="1" Margin="10,10,10,10" Grid.Row="3"/>
+        <TextBox x:Name="passwordTextBox"  Background="White" Grid.Column="1" Margin="10,10,10,10" Grid.Row="3" IsReadOnly="True"/>
         <TextBlock x:Name="passwordTextBlock" Text="Password:" Margin="56,29,9,10" Grid.Row="3" />
 
-        <HyperlinkButton x:Name="changePasswordHyperlinkButton" Content="Change Password" Grid.Column="1" Margin="10,0,0,0" Grid.Row="4"/>
+        <HyperlinkButton x:Name="changePasswordHyperlinkButton" Content="Change Password" Grid.Column="1" Margin="10,0,0,0" Grid.Row="4" Click="changePasswordHyperlinkButton_Click"/>
 
         <TextBlock x:Name="newPasswordTextBlock" Text="New Password:" Margin="29,17,0,10" Grid.Row="5" />
         <TextBox x:Name="newPasswordTextBox"  Background="White" Text="" Grid.Column="1" Margin="10,10,10,10" Grid.Row="5"/>
 
         <TextBlock x:Name="confirmPasswordTextBlock" Text="Confirm Password:" Margin="9,29,0,10" Grid.Row="6" />
-        <TextBox x:Name="confirmPasswordTextBox" MinHeight="20" Background="White" Margin="10,10,10,10"  Text="" Grid.Column="1" Grid.Row="6"/>
+        <TextBox x:Name="confirmPasswordTextBox" Background="White" Margin="10,10,10,10"  Text="" Grid.Column="1" Grid.Row="6"/>
 
-        <Button x:Name="confirmButton" Content="Confirm Changes" Margin="10,10,10,10" Grid.Column="1" Grid.Row="7" Background="Tan"    />
-        <Button x:Name="cancelButton" Content="Cancel" Margin="10,10,10,10" Grid.Row="8" Grid.Column="1" Background="Tan" VerticalAlignment="Top"/>
+        <Button x:Name="confirmButton" Content="Confirm Changes" Margin="10,10,10,10" Grid.Column="1" Grid.Row="8" Background="Tan" Click="confirmButton_Click"    />
+        <Button x:Name="cancelButton" Content="Cancel" Margin="10,10,10,10" Grid.Row="9" Grid.Column="1" Background="Tan" VerticalAlignment="Top" Click="cancelButton_Click"/>
+        <TextBox x:Name="errorTextBox" Grid.Column="1"  TextWrapping="Wrap"  Background="Red" Height="135" Margin="10,10,10,10" Grid.Row="7" Text="" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"   />
 
 
     </Grid>

@@ -15,8 +15,8 @@
                 <VisualState x:Name="Phone">
                     <VisualState.Setters>
                         <Setter Target="textBlock.(TextBlock.FontSize)" Value="16"/>
-                        <Setter Target="image.(Image.Height)" Value="300"></Setter>
-                        <Setter Target="image.(Image.Width)" Value="300"></Setter>
+                        <Setter Target="image.(Image.Height)" Value="100"/>
+                        <Setter Target="image.(Image.Width)" Value="100"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="100"/>
@@ -25,8 +25,8 @@
                 <VisualState x:Name="Tablet">
                     <VisualState.Setters>
                         <Setter Target="textBlock.(TextBlock.FontSize)" Value="18"/>
-                        <Setter Target="image.(Image.Height)" Value="400"></Setter>
-                        <Setter Target="image.(Image.Width)" Value="400"></Setter>
+                        <Setter Target="image.(Image.Height)" Value="200"/>
+                        <Setter Target="image.(Image.Width)" Value="200"/>
                     </VisualState.Setters>
 
                     <VisualState.StateTriggers>
@@ -36,8 +36,8 @@
                 <VisualState x:Name="Desktop">
                     <VisualState.Setters>
                         <Setter Target="textBlock.(TextBlock.FontSize)" Value="20"/>
-                        <Setter Target="image.(Image.Height)" Value="500"></Setter>
-                        <Setter Target="image.(Image.Width)" Value="500"></Setter>
+                        <Setter Target="image.(Image.Height)" Value="300"/>
+                        <Setter Target="image.(Image.Width)" Value="300"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -55,6 +55,8 @@
             <ColumnDefinition Width="0.25*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="Welcome!" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="1" Source="ms-appx:///Assets/admin_logo.png" Stretch="UniformToFill" Grid.ColumnSpan="2"/>
+        <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Source="ms-appx:///Assets/admin_logo.png" />
+   
+       
     </Grid>
 </UserControl>
