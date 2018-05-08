@@ -25,7 +25,7 @@
         <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Right" Height="25" Text="Username:" VerticalAlignment="Center"/>
         <TextBox x:Name="usernameTextBox"  Background="White"  Text="" Grid.Column="1" Margin="10,19,8.2,13"/>
 
-        <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username"   Grid.Column="1" Grid.Row="1" />
+        <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="1" />
 
         <TextBlock x:Name="newUsernameTextBlock"  Text="New Username:"  Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <TextBox x:Name="newUsernameTextBox"  Background="White" Text="" Margin="10,19,8.2,13" Grid.Row="2" Grid.Column="1"/>

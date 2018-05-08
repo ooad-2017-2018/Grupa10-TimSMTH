@@ -123,6 +123,9 @@
     <Compile Include="View\Komentari.xaml.cs">
       <DependentUpon>Komentari.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\loginUserControl.xaml.cs">
+      <DependentUpon>loginUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PocetnaForma.xaml.cs">
       <DependentUpon>PocetnaForma.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\usernameUserControl.xaml.cs">
       <DependentUpon>usernameUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wlcomeAdminLogoUserControl.xaml.cs">
+      <DependentUpon>wlcomeAdminLogoUserControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\loginUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PocetnaForma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\usernameUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\wlcomeAdminLogoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

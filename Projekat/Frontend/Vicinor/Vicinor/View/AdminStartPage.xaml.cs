@@ -41,30 +41,29 @@ namespace Vicinor.Forme
             if (sListBoxItem.IsSelected)
             {
                 myFrame.Navigate(typeof(AdminStatistika));
-                image.Visibility = Visibility.Collapsed;
-               textBlock.Visibility = Visibility.Collapsed;
+                userControlAdmin.Visibility = Visibility.Collapsed;
+                
             }
             else if (uoListBoxItem.IsSelected)
             {
                 myFrame.Navigate(typeof(AdminUserOverview));
-                image.Visibility = Visibility.Collapsed;
-                textBlock.Visibility = Visibility.Collapsed;
+                userControlAdmin.Visibility = Visibility.Collapsed;
+
             }
             else if (upListBoxItem.IsSelected)
             {
                 myFrame.Navigate(typeof(AdminUpdate));
-                image.Visibility = Visibility.Collapsed;
-                textBlock.Visibility = Visibility.Collapsed;
+                userControlAdmin.Visibility = Visibility.Collapsed;
+
             }
-            else {
-                image.Visibility = Visibility.Visible;
-                textBlock.Visibility = Visibility.Visible;
-            }
+            
         }
 
         private void hamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
+        
+           
         }
     }
 }
