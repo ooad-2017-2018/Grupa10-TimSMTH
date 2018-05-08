@@ -126,6 +126,8 @@ namespace Vicinor.Forme
 
             //Unos u bazu
 
+        
+
 
 
             //Sve uredu, uspješan unos
