@@ -5,7 +5,7 @@
     xmlns:local="using:Vicinor.Forme"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" MinHeight="700" MinWidth="650">
+    mc:Ignorable="d" MinHeight="300" MinWidth="200">
 
     <Grid Background="AntiqueWhite" Margin="10, 0, 0, 10" MinHeight="500" >
 
@@ -25,9 +25,18 @@
                         <Setter Target="brRegistrovanihTextBox.(Control.FontSize)" Value="16"/>
                         <Setter Target="brBanovanihTextBox.(Control.FontSize)" Value="16"/>
                         <Setter Target="neregProcenatTextBox.(Control.FontSize)" Value="16"/>
+                        <Setter Target="brRegistrovanihTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="brBanovanihTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="neregProcenatTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="procenatNeregTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="procenatRegTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="brojRegistrovanihTextBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="brojBanovanihTextBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="regProcenatTextBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="neregProcenatTextBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger/>
+                        <AdaptiveTrigger MinWindowHeight="300" MinWindowWidth="200"/>
                     </VisualState.StateTriggers>
                 </VisualState>
                 <VisualState x:Name="Tablet">
