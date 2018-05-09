@@ -74,7 +74,7 @@ namespace Vicinor.Forme
                 await dialog.ShowAsync();
             }
         }
-
+        /*
         private async void banButton_Click(object sender, RoutedEventArgs e)
         {
             String a = "";
@@ -90,6 +90,24 @@ namespace Vicinor.Forme
             Initiale();
         }
 
+
+        private async void unbanButton_Click(object sender, RoutedEventArgs e)
+        {
+            String a = "";
+            if (usernameAusoSuggestBox.Text != null)
+            {
+                a = usernameAusoSuggestBox.Text.ToString();
+            }
+            bool banovan = await auov.unbanujUsera(a);
+            if (!banovan)
+            {
+                var dialog = new MessageDialog("Uspješno unbanovan korisnik!");
+                await dialog.ShowAsync();
+            }
+            Initiale();
+
+        }
+        */
         /*
          private async void nekoDugme_Click(object sender, RoutedEventArgs e)
         {

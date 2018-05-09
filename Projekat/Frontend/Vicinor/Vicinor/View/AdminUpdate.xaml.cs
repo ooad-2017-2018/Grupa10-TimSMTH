@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 using Vicinor.ViewModel;
+using Vicinor.Model;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,11 +18,15 @@ namespace Vicinor.Forme
     public sealed partial class AdminUpdate : Page
     {
         AdminUpdateViewModel auvm;
+        Administrator admin;
         String newUsername, newPassword, confirmPassword;
+        String u, p;
+        int id=0;
         Boolean changeUsername = false, changePassword = false;
         public AdminUpdate()
         {
             auvm = new AdminUpdateViewModel();
+            admin = new Model.Administrator();        
             this.InitializeComponent();
             newUsernameTextBox.Visibility = Visibility.Collapsed;
             newUsernameTextBlock.Visibility = Visibility.Collapsed;
@@ -37,13 +35,21 @@ namespace Vicinor.Forme
             confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
             confirmPasswordTextBox.Visibility = Visibility.Collapsed;
             errorTextBox.Visibility = Visibility.Collapsed;
-            String u = PocetnaFormaViewModel.getUsernameG();
-            String p = PocetnaFormaViewModel.getPasswordG();
+            u = PocetnaFormaViewModel.getUsernameG();
+            p = PocetnaFormaViewModel.getPasswordG();
             if (u!= null)
             usernameTextBox.Text = u;
             if (p != null)
             passwordTextBox.Text = p;
+            Initiale();
+        }
 
+        public async void Initiale()
+        {
+            bool i = await auvm.Initial(u,p);
+            admin = auvm.dajAdmina();
+            if (admin != null)
+            id = admin.KorisnikId;
         }
 
         private void changeUsernameHyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -62,7 +68,7 @@ namespace Vicinor.Forme
             changePassword = true;
         }
 
-        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        private async void confirmButton_Click(object sender, RoutedEventArgs e)
         {
             newUsername = newUsernameTextBox.Text.ToString();
             newPassword = newPasswordTextBox.Text.ToString();
@@ -98,7 +104,16 @@ namespace Vicinor.Forme
 
                 usernameTextBox.Text = newUsernameTextBox.Text.ToString();
 
-    
+                //Unos u bazu
+            
+                bool izmjenjen = await auvm.changeUsername(id, newUsername);
+                if (izmjenjen)
+                {
+                    var dialog = new MessageDialog("Username changed successfully!");
+                    await dialog.ShowAsync();
+                }
+                Initiale();
+
             }
 
 
@@ -122,13 +137,17 @@ namespace Vicinor.Forme
                 errorTextBox.Text = "";
                 errorTextBox.Visibility = Visibility.Collapsed;
                 passwordTextBox.Text = newPasswordTextBox.Text.ToString();
+
+                //Unos u bazu
+
+                bool izmjenjen = await auvm.changePassword(id, newPassword);
+                if (izmjenjen)
+                {
+                    var dialog = new MessageDialog("Password changed successfully!");
+                    await dialog.ShowAsync();
+                }
+                Initiale();
             }
-
-            //Unos u bazu
-
-        
-
-
 
             //Sve uredu, uspješan unos
             errorTextBox.Visibility = Visibility.Collapsed;         

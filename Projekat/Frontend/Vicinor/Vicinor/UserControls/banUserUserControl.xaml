@@ -17,7 +17,8 @@
                         <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="16"/>
                         <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="16"/>
                         <Setter Target="banButton.(Control.FontSize)" Value="16"/>
-                     
+                        <Setter Target="unbanButton.(Control.FontSize)" Value="16"/>
+
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger/>
@@ -28,6 +29,7 @@
                         <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="18"/>
                         <Setter Target="banButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="unbanButton.(Control.FontSize)" Value="18"/>
 
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
@@ -39,6 +41,7 @@
                         <Setter Target="banUserTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="usernameAusoSuggestBox.(Control.FontSize)" Value="18"/>
                         <Setter Target="banButton.(Control.FontSize)" Value="18"/>
+                        <Setter Target="unbanButton.(Control.FontSize)" Value="18"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -56,9 +59,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <AutoSuggestBox x:Name="usernameAusoSuggestBox"  Background="White" Grid.Row="1" VerticalAlignment="Center" />
-        <TextBlock x:Name="banUserTextBlock" HorizontalAlignment="Left" Grid.Row="0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" />
-        <Button x:Name="banButton" Background="Tan" Content="Ban User"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" />
+        <AutoSuggestBox x:Name="usernameAusoSuggestBox"  Margin="20,20,20,20"  Background="White" Grid.Row="1" VerticalAlignment="Center" />
+        <TextBlock x:Name="banUserTextBlock"  Margin="20,20,20,20" HorizontalAlignment="Left" Grid.Row="0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" />
+        <Button x:Name="banButton" Background="Tan" Content="Ban User"  HorizontalAlignment="Left"   Margin="20,20,20,20" Grid.Row="2" VerticalAlignment="Center" Click="banButton_Click_1" />
+        <Button x:Name="unbanButton" Background="Tan" Content="Unban User" Grid.Column="1" HorizontalAlignment="Right" Margin="20,20,20,20" Grid.Row="5" VerticalAlignment="Center" Click="unbanButton_Click_1"  />
 
     </Grid>
 </UserControl>

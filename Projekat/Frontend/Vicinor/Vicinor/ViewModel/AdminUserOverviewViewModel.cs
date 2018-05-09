@@ -29,6 +29,7 @@ namespace Vicinor.ViewModel
             return listaKorisnika;
         }
 
+
         private async Task<Boolean> getAllData()
         {
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
@@ -95,7 +96,7 @@ namespace Vicinor.ViewModel
         {
             Boolean b = false;
             RegistrovaniKorisnik a = new RegistrovaniKorisnik();
-            a = listaKorisnika.Find(x => x.Username == name && x.Banned == false);
+            a = listaKorisnika.Find(x => x.Username == name && x.Banned == true);
             if (a != null)
             {
                 b = await unbanovanje(a.KorisnikId);

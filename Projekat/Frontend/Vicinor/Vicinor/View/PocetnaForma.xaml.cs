@@ -35,8 +35,7 @@ namespace Vicinor.Forme
         {
             //pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
-
-
+            
             loginUC.onNavigateParentReadyAdminStartPage += LoginUC_onNavigateParentReadyAdminStartPage;
             loginUC.onNavigateParentReadySearchForRestaurants += LoginUC_onNavigateParentReadySearchForRestaurants;
 
