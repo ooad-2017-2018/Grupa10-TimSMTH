@@ -57,21 +57,22 @@
         </VisualStateManager.VisualStateGroups>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Grid.Row="1"  VerticalAlignment="Center" Margin="20,0,20,0" />
-        <TextBox x:Name="textBox1" HorizontalAlignment="Stretch" Grid.Row="3"  VerticalAlignment="Center" Margin="20,0,20,0"/>
-        <Button x:Name="logInButton" Content="Log in" HorizontalAlignment="Stretch" Grid.Row="4"  Margin="20,0,20,0" Background="#33FF0000" BorderBrush="#FF150000"  Foreground="#FF300000" Click="logInButton_Click" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Grid.Row="1"  VerticalAlignment="Center" Margin="20,20,20,20" />
+        <TextBox x:Name="textBox1" HorizontalAlignment="Stretch" Grid.Row="3"  VerticalAlignment="Center" Margin="20,20,20,20"/>
+        <Button x:Name="logInButton" Content="Log in" HorizontalAlignment="Stretch" Grid.Row="5"  Margin="20,20,20,20" Background="#33FF0000" BorderBrush="#FF150000"  Foreground="#FF300000" Click="logInButton_Click" />
         <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center"/>
         <TextBlock x:Name="passwordTextBlock" HorizontalAlignment="Left" Grid.Row="2" Margin="20,0,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Center"/>
-        <TextBlock x:Name="errorTextBlock" Grid.Column="1" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+        <TextBlock x:Name="errorTextBlock" Grid.Column="0" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
 
     </Grid>
 </UserControl>

@@ -6,8 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" MinHeight="700" MinWidth="650">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
 
-    <Grid Background="AntiqueWhite" Margin="10, 0, 0, 10">
+        <Grid Background="AntiqueWhite" Margin="10, 0, 0, 10">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
 
@@ -27,6 +28,15 @@
                         <Setter Target="newPasswordTextBox.(Control.FontSize)" Value="16"/>
                         <Setter Target="changePasswordHyperlinkButton.(Control.FontSize)" Value="16"/>
                         <Setter Target="changeUsernameHyperlinkButton.(Control.FontSize)" Value="16"/>
+
+                        <Setter Target="usernameTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="newUsernameTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="passwordTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="confirmPasswordTextBox.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="newPasswordTextBox.(FrameworkElement.Width)" Value="100"/>
+
+
+
 
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
@@ -79,51 +89,49 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
 
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
 
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Right"  Text="Username:" VerticalAlignment="Center"/>
+                <TextBox x:Name="usernameTextBox"  Background="White"  Margin ="20,20,20,20" Text="" Grid.Column="1" IsReadOnly="True"/>
 
+                <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username"  Margin ="20,20,20,20"  Grid.Column="1" Grid.Row="1" Click="changeUsernameHyperlinkButton_Click" Height="36" Width="146" />
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="132*"></ColumnDefinition>
-            <ColumnDefinition Width="257*"></ColumnDefinition>
-            <ColumnDefinition Width="43*"></ColumnDefinition>
+                <TextBlock x:Name="newUsernameTextBlock"  Text="New Username:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" />
+                <TextBox x:Name="newUsernameTextBox"  Background="White" Text=""  Grid.Row="2" Grid.Column="1"  Margin ="20,20,20,20" />
 
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Height="25" Margin="10,29,0,0" Text="Username:" VerticalAlignment="Top" Width="114" TextAlignment="Right"/>
-        <TextBox x:Name="usernameTextBox"  Background="White"  Text="" Grid.Column="1" Margin="10,10,10,10" IsReadOnly="True"/>
+                <TextBox x:Name="passwordTextBox"  Background="White" Grid.Column="1" Grid.Row="3" IsReadOnly="True"  Margin ="20,20,20,20" />
+                <TextBlock x:Name="passwordTextBlock"  HorizontalAlignment="Right" VerticalAlignment="Center" Text="Password:"  Grid.Row="3"/>
 
-        <HyperlinkButton Name="changeUsernameHyperlinkButton" Content="Change Username" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="1" Click="changeUsernameHyperlinkButton_Click" />
+                <HyperlinkButton x:Name="changePasswordHyperlinkButton"  Margin ="20,20,20,20" Content="Change Password" Grid.Column="1"  Grid.Row="4" Click="changePasswordHyperlinkButton_Click" Height="36" Width="140"/>
 
-        <TextBlock x:Name="newUsernameTextBlock"  Text="New Username:" Margin="21,22,8,10" Grid.Row="2"/>
-        <TextBox x:Name="newUsernameTextBox"  Background="White" Text="" Margin="10,10,10,10" Grid.Row="2" Grid.Column="1"/>
+                <TextBlock x:Name="newPasswordTextBlock" Text="New Password:"  HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.Row="5" />
+                <TextBox x:Name="newPasswordTextBox"  Background="White" Text="" Grid.Column="1"  Grid.Row="5"  Margin ="20,20,20,20" />
 
-        <TextBox x:Name="passwordTextBox"  Background="White" Grid.Column="1" Margin="10,10,10,10" Grid.Row="3" IsReadOnly="True"/>
-        <TextBlock x:Name="passwordTextBlock" Text="Password:" Margin="56,29,9,10" Grid.Row="3" />
+                <TextBlock x:Name="confirmPasswordTextBlock" Text="Confirm Password:" HorizontalAlignment="Right"  VerticalAlignment="Center" Grid.Row="6" />
+                <TextBox x:Name="confirmPasswordTextBox" Background="White"   Text="" Grid.Column="1" Grid.Row="6"  Margin ="20,20,20,20" />
 
-        <HyperlinkButton x:Name="changePasswordHyperlinkButton" Content="Change Password" Grid.Column="1" Margin="10,0,0,0" Grid.Row="4" Click="changePasswordHyperlinkButton_Click"/>
+                <Button x:Name="confirmButton" Content="Confirm Changes"   Margin ="20,20,20,20"  Grid.Column="1" Grid.Row="8" Background="Tan" Click="confirmButton_Click"    />
+                <Button x:Name="cancelButton" Content="Cancel"  Grid.Row="8"  Margin ="20,20,20,20"  Grid.Column="1" Background="Tan" VerticalAlignment="Top" HorizontalAlignment="Right" Click="cancelButton_Click" />
+                <TextBox x:Name="errorTextBox" Grid.Column="1"   Margin ="20,20,20,20"  TextWrapping="Wrap"  Background="Red" Grid.Row="7" Text="" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"   />
+            </Grid>
+        </ScrollViewer>
 
-        <TextBlock x:Name="newPasswordTextBlock" Text="New Password:" Margin="29,17,0,10" Grid.Row="5" />
-        <TextBox x:Name="newPasswordTextBox"  Background="White" Text="" Grid.Column="1" Margin="10,10,10,10" Grid.Row="5"/>
-
-        <TextBlock x:Name="confirmPasswordTextBlock" Text="Confirm Password:" Margin="9,29,0,10" Grid.Row="6" />
-        <TextBox x:Name="confirmPasswordTextBox" Background="White" Margin="10,10,10,10"  Text="" Grid.Column="1" Grid.Row="6"/>
-
-        <Button x:Name="confirmButton" Content="Confirm Changes" Margin="10,10,10,10" Grid.Column="1" Grid.Row="8" Background="Tan" Click="confirmButton_Click"    />
-        <Button x:Name="cancelButton" Content="Cancel" Margin="10,10,10,10" Grid.Row="9" Grid.Column="1" Background="Tan" VerticalAlignment="Top" Click="cancelButton_Click"/>
-        <TextBox x:Name="errorTextBox" Grid.Column="1"  TextWrapping="Wrap"  Background="Red" Height="135" Margin="10,10,10,10" Grid.Row="7" Text="" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"   />
-
-
-    </Grid>
 </Page>

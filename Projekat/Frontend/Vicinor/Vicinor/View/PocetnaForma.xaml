@@ -7,8 +7,8 @@
     xmlns:View="using:Vicinor.View"
     x:Class="Vicinor.Forme.PocetnaForma"
     mc:Ignorable="d">
-
-    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+    <!--ScrollViewer VerticalScrollBarVisibility="Auto"-->
+        <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -53,9 +53,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
 
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -65,11 +64,12 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"  Source="ms-appx:///Assets/vicinor-logo.png"/>
 
-        <HyperlinkButton x:Name="registerHyperlinkButton" Content="or Register" HorizontalAlignment="Right"  Grid.Column="1" Grid.Row="6" Click="registerHyperlinkButton_Click"/>
-        <HyperlinkButton x:Name="continueHyperlinkButton" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="8" FontStretch="Expanded" Margin="0,10.5,0,0" RenderTransformOrigin="1.99,1.363" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Top" Width="119" d:LayoutOverrides="VerticalAlignment"/>
-        <TextBlock x:Name="errorTextBlock" Grid.Column="1" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+        <HyperlinkButton x:Name="registerHyperlinkButton" Content="or Register" Margin="0,0,20,0" HorizontalAlignment="Right"  Grid.Column="1" Grid.Row="6" Click="registerHyperlinkButton_Click"/>
+        <HyperlinkButton x:Name="continueHyperlinkButton"  Margin="20,0,0,20" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="8" FontStretch="Expanded" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Top" Width="119" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock x:Name="errorTextBlock" Grid.Column="1"  Margin="20,0,0,0" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
 
         <View:loginUserControl x:Name="loginUC" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5"/>
 
     </Grid>
+    <!--/ScrollViewer-->
 </Page>

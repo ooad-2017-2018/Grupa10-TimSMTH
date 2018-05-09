@@ -20,7 +20,7 @@ namespace Vicinor.ViewModel
         Boolean adminDaNe=false;
         public async Task<Boolean> loginAdmin(String username, String pw)
         {
-              Task t = Task.Run(() => getDataAdmin(username,pw));
+            Task t = Task.Run(() => getDataAdmin(username,pw));
             t.Wait();
             if (username == usernameG && passwordG == pw && adminDaNe) return true;
             return false;
@@ -90,7 +90,7 @@ namespace Vicinor.ViewModel
         }
 
         public async Task<Boolean> getDataAdmin(String usernme, String pw)
-        {
+        { 
 
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
 

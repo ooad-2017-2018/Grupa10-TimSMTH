@@ -7,8 +7,9 @@
     xmlns:View="using:Vicinor.View"
     x:Class="Vicinor.Forme.AdminStartPage"
     mc:Ignorable="d" MinHeight="700" MinWidth="650">
-
-    <Grid Background="AntiqueWhite">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="AntiqueWhite">
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -71,12 +72,10 @@
             <Frame x:Name="myFrame"/>
 
         </SplitView>
-        
-       
-           
+
         <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="0,20,20,20" HorizontalAlignment="Center"  Grid.Row="1"   VerticalAlignment="Top"/>
-            
-      
-       
+
+    </Grid>
+    </ScrollViewer>
     </Grid>
 </Page>
