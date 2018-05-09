@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Vicinor.ViewModel;
-using Vicinor.Model;
+using Vicinor.View;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -22,11 +22,13 @@ namespace Vicinor.UserControls
 {
     public sealed partial class banUserUserControl : UserControl
     {
-        AdminUserOverviewViewModel auov;
+        AdminUserOverviewViewModel auovm;
+        AdminUserOverview auo;
+        
     
         public banUserUserControl()
         {
-            auov = new AdminUserOverviewViewModel();
+            auovm = new AdminUserOverviewViewModel();
             this.InitializeComponent();
             Initiale();
         }
@@ -34,7 +36,7 @@ namespace Vicinor.UserControls
 
         public async void Initiale()
         {
-            bool i = await auov.Initial();
+            auo.Initiale();
         
         }
 
@@ -45,12 +47,17 @@ namespace Vicinor.UserControls
             {
                 a = usernameAusoSuggestBox.Text.ToString();
             }
-            bool banovan = await auov.banujUsera(a);
+            bool banovan = await auovm.banujUsera(a);
             if (banovan)
             {
-                var dialog = new MessageDialog("Uspješno banovan korisnik!");
+                var dialog = new MessageDialog("User successfully banned!");
                 await dialog.ShowAsync();
             }
+            else {
+                var dialog = new MessageDialog("User is already banned or does not exist!");
+                await dialog.ShowAsync();
+            }
+
             Initiale();
         }
 
@@ -61,10 +68,15 @@ namespace Vicinor.UserControls
             {
                 a = usernameAusoSuggestBox.Text.ToString();
             }
-            bool unbanovan = await auov.unbanujUsera(a);
+            bool unbanovan = await auovm.unbanujUsera(a);
             if (unbanovan)
             {
                 var dialog = new MessageDialog("Uspješno unbanovan korisnik!");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                var dialog = new MessageDialog("User is already banned or does not exist!");
                 await dialog.ShowAsync();
             }
             Initiale();
