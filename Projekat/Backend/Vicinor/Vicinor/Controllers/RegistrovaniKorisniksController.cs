@@ -106,7 +106,7 @@ namespace Vicinor.Controllers
         }
 
         // POST: RegistrovaniKorisniks/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, System.Web.Http.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -115,6 +115,23 @@ namespace Vicinor.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        // PUT: RegistrovaniKorisniks/BanUser/3
+        [HttpPut]
+        public void BanUser(int id)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Banned = true;
+            db.SaveChanges();
+        }
+
+        // PUT: RegistrovaniKorisniks/UnbanUser/3
+        [HttpPut]
+        public void UnbanUser(int id)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Banned = false;
+            db.SaveChanges();
+        }
+
 
         protected override void Dispose(bool disposing)
         {
@@ -136,7 +153,7 @@ namespace Vicinor.Controllers
             }
             return Json(registrovaniKorisnik, JsonRequestBehavior.AllowGet);
         }
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public JsonResult GetAll()
         {
             List<RegistrovaniKorisnik> registrovaniKorisnici = db.Korisnik.OfType<RegistrovaniKorisnik>().ToList();

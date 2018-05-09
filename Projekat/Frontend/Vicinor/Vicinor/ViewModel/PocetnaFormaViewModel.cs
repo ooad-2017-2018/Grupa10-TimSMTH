@@ -82,6 +82,7 @@ namespace Vicinor.ViewModel
             }
 
             if(korisnik != null){
+                int a = korisnik.KorisnikId;
                 usernameG = korisnik.Username;
                 passwordG = korisnik.Password;
             }
