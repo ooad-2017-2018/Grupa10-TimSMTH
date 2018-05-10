@@ -126,8 +126,8 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
-        [HttpGet]
 
+        [HttpGet]
         public JsonResult  GetAccount(string username, string password)
         {
             Administrator registrovaniKorisnik = db.Korisnik.OfType<Administrator>().SingleOrDefault(s => s.Username == username && s.Password == password);
@@ -138,5 +138,22 @@ namespace Vicinor.Controllers
             }
             return Json(registrovaniKorisnik, JsonRequestBehavior.AllowGet);
         }
+
+        // PUT: Administrators/changeUsername/3
+        [HttpPut]
+        public void changeUsername(int id, String username)
+        {
+            db.Korisnik.OfType<Administrator>().SingleOrDefault(s => s.KorisnikId == id).Username = username ;
+            db.SaveChanges();
+        }
+
+        // PUT: Administrators/changePassword/3
+        [HttpPut]
+        public void changePassword(int id, String password)
+        {
+            db.Korisnik.OfType<Administrator>().SingleOrDefault(s => s.KorisnikId == id).Password = password;
+            db.SaveChanges();
+        }
+
     }
 }

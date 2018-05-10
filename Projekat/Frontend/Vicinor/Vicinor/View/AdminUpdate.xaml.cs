@@ -19,7 +19,7 @@ namespace Vicinor.Forme
     {
         AdminUpdateViewModel auvm;
         Administrator admin;
-        String newUsername, newPassword, confirmPassword;
+        String newUsername="", newPassword="", confirmPassword="";
         String u, p;
         int id=0;
         Boolean changeUsername = false, changePassword = false;
@@ -35,17 +35,18 @@ namespace Vicinor.Forme
             confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
             confirmPasswordTextBox.Visibility = Visibility.Collapsed;
             errorTextBox.Visibility = Visibility.Collapsed;
-            u = PocetnaFormaViewModel.getUsernameG();
-            p = PocetnaFormaViewModel.getPasswordG();
-            if (u!= null)
-            usernameTextBox.Text = u;
-            if (p != null)
-            passwordTextBox.Text = p;
+            
             Initiale();
         }
 
         public async void Initiale()
         {
+            u = PocetnaFormaViewModel.getUsernameG();
+            p = PocetnaFormaViewModel.getPasswordG();
+            if (u != null)
+                usernameTextBox.Text = u;
+            if (p != null)
+                passwordTextBox.Text = p;
             bool i = await auvm.Initial(u,p);
             admin = auvm.dajAdmina();
             if (admin != null)
@@ -112,6 +113,8 @@ namespace Vicinor.Forme
                     var dialog = new MessageDialog("Username changed successfully!");
                     await dialog.ShowAsync();
                 }
+
+                PocetnaFormaViewModel.setUsernameG(newUsername);
                 Initiale();
 
             }
@@ -146,6 +149,7 @@ namespace Vicinor.Forme
                     var dialog = new MessageDialog("Password changed successfully!");
                     await dialog.ShowAsync();
                 }
+                PocetnaFormaViewModel.setPasswordG(newPassword);
                 Initiale();
             }
 
@@ -174,6 +178,8 @@ namespace Vicinor.Forme
             newPasswordTextBox.Visibility = Visibility.Collapsed;
             confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
             confirmPasswordTextBox.Visibility = Visibility.Collapsed;
+            errorTextBox.Text = "";
+            errorTextBox.Visibility = Visibility.Collapsed;
             changePassword = false;
             changeUsername = false;
         }

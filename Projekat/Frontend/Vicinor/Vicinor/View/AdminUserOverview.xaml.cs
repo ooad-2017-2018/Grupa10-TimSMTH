@@ -7,11 +7,6 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Vicinor.ViewModel;
 using Vicinor.Model;
 using Windows.UI.Popups;
@@ -31,9 +26,11 @@ namespace Vicinor.Forme
             listaKor = new List<RegistrovaniKorisnik>();
             auov = new AdminUserOverviewViewModel();
             this.InitializeComponent();
+           
             Initiale();
         }
 
+ 
         public async void Initiale()
         {
             bool i = await auov.Initial();
@@ -47,7 +44,7 @@ namespace Vicinor.Forme
                 }
             }
         }
-
+        
         private async void showProfileButton_Click(object sender, RoutedEventArgs e)
         {
             String a = null;
@@ -74,7 +71,7 @@ namespace Vicinor.Forme
                 await dialog.ShowAsync();
             }
         }
-        /*
+        
         private async void banButton_Click(object sender, RoutedEventArgs e)
         {
             String a = "";
@@ -107,27 +104,11 @@ namespace Vicinor.Forme
             Initiale();
 
         }
-        */
-        /*
-         private async void nekoDugme_Click(object sender, RoutedEventArgs e)
-        {
-            String a = "";
-            if (usernameAusoSuggestBox.Text != null) {
-                a = usernameAusoSuggestBox.Text.ToString();
-            }
-            bool banovan = await auov.unbanujUsera(a);
-            if (banovan)
-            {
-                var dialog = new MessageDialog("Uspješno unbanovan korisnik!");
-                await dialog.ShowAsync();
-            }
-            Initiale();
-        }
+       
+      
          
          
-         
-         
-         */
+     
 
     }
 }

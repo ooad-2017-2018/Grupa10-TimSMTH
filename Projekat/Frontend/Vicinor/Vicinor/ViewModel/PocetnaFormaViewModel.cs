@@ -17,6 +17,9 @@ namespace Vicinor.ViewModel
         public static String getUsernameG() { return usernameG; }
         public static String getPasswordG() { return passwordG; }
 
+        public static void setUsernameG(String u) { usernameG = u; }
+        public static void setPasswordG(String p) { passwordG = p; }
+
         Boolean adminDaNe=false;
         public async Task<Boolean> loginAdmin(String username, String pw)
         {

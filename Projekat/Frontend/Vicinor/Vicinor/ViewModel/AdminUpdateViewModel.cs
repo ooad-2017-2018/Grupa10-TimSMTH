@@ -97,7 +97,7 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id);
+            Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id + "?Username="+name);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -122,7 +122,7 @@ namespace Vicinor.ViewModel
 
         }
 
-        public async Task<Boolean> changePassword(int id, String name)
+        public async Task<Boolean> changePassword(int id, String password)
         {
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
             //Add a user-agent header to the GET request. 
@@ -142,7 +142,7 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/changePassword/" + id);
+            Uri requestUri = new Uri("http://localhost:6796/Administrators/changePassword/" + id + "?Password=" + password);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -167,13 +167,6 @@ namespace Vicinor.ViewModel
             return true;
 
         }
-
-
-
-
-
-
-
 
 
         //Validacija

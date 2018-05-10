@@ -14,8 +14,6 @@
                 <VisualState x:Name="Phone">
                     <VisualState.Setters>
                         <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="16"/>
-                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="16"/>
-                        <Setter Target="showProfileButton.(Control.FontSize)" Value="16"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger/>
@@ -24,8 +22,6 @@
                 <VisualState x:Name="Tablet">
                     <VisualState.Setters>
                         <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="18"/>
-                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="18"/>
-                        <Setter Target="showProfileButton.(Control.FontSize)" Value="18"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="600"/>
@@ -34,8 +30,6 @@
                 <VisualState x:Name="Desktop">
                     <VisualState.Setters>
                         <Setter Target="listaKorisnikaTextBlock.(TextBlock.FontSize)" Value="18"/>
-                        <Setter Target="showTextBlock.(TextBlock.FontSize)" Value="20"/>
-                        <Setter Target="showProfileButton.(Control.FontSize)" Value="18"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -51,8 +45,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -61,28 +53,26 @@
 
         </Grid.ColumnDefinitions>
 
-        <!--  <TextBlock x:Name="banTextBlock" HorizontalAlignment="Left" Height="44" Margin="14,22,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Ban users" VerticalAlignment="Top" Width="154" FontWeight="Bold" />
+        <TextBlock x:Name="banTextBlock" HorizontalAlignment="Left" Height="44" Margin="14,22,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Ban users" VerticalAlignment="Top" Width="154" FontWeight="Bold" />
         <TextBlock x:Name="banUserTextBlock" HorizontalAlignment="Right" Grid.Row="4" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" />
         <Button x:Name="banButton" Background="Tan" Content="Ban User" Grid.Column="1" HorizontalAlignment="Left" Margin="20,20,20,20" Grid.Row="5" VerticalAlignment="Center" Click="banButton_Click" />
         <Button x:Name="unbanButton" Background="Tan" Content="Unban User" Grid.Column="1" HorizontalAlignment="Right" Margin="20,20,20,20" Grid.Row="5" VerticalAlignment="Center" Click="unbanButton_Click" />
--->
 
-        <Button x:Name="showProfileButton" Background="Tan" Content="Show User Profile" Grid.Column="1" HorizontalAlignment="Left" Margin="10,22,0,0" Grid.Row="2" VerticalAlignment="Top" Width="208" Click="showProfileButton_Click"/>
 
+       
         <TextBlock x:Name="showTextBlock" HorizontalAlignment="Left" Margin="14,20,0,0" Text="Search users" VerticalAlignment="Top" FontWeight="Bold"/>
 
+        <TextBlock x:Name="listaKorisnikaTextBlock" HorizontalAlignment="Right"  Margin="20,20,20,20"  Grid.Row="1"  Text="Users list:" VerticalAlignment="tOP" />
 
-        <ListView x:Name="usersListView" Grid.Column="1" HorizontalAlignment="Left" Height="177" Margin="20,20,20,20" Grid.Row="1" VerticalAlignment="Top" Width="208">
+        <ListView x:Name="usersListView" HorizontalAlignment="Left" Height="177" Grid.Column="1" Margin="20,20,20,20" Grid.Row="1" VerticalAlignment="Top" Width="208">
             <x:String>User 1</x:String>
             <x:String>User 2</x:String>
             <x:String>User 3</x:String>
             <x:String>User 4</x:String>
-
-
         </ListView>
-        <TextBlock x:Name="listaKorisnikaTextBlock" HorizontalAlignment="Right"  Grid.Row="1" Grid.Column="0" Text="Users list:" VerticalAlignment="Top" />
+        <Button x:Name="showProfileButton" Background="Tan" Content="Show User Profile" Grid.Column="1" HorizontalAlignment="Center" Margin="20,20,20,20" Grid.Row="2" VerticalAlignment="Top" Click="showProfileButton_Click"/>
 
-        <UserControls:banUserUserControl Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" />
-
+        <AutoSuggestBox x:Name="usernameAusoSuggestBox" Grid.Column="1"  Margin="20,20,20,20"  Background="White" Grid.Row="4" VerticalAlignment="Center" />
+       
     </Grid>
 </Page>

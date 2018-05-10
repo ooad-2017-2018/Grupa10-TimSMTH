@@ -103,6 +103,9 @@
     <Compile Include="UserControls\banUserUserControl.xaml.cs">
       <DependentUpon>banUserUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\procenatUserControl.xaml.cs">
+      <DependentUpon>procenatUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValidacijeAndMore.cs" />
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
@@ -176,6 +179,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="UserControls\banUserUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\procenatUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
