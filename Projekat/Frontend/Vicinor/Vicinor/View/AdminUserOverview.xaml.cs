@@ -81,7 +81,12 @@ namespace Vicinor.Forme
             bool banovan = await auov.banujUsera(a);
             if (banovan)
             {
-                var dialog = new MessageDialog("Uspješno banovan korisnik!");
+                var dialog = new MessageDialog("User succesfully banned!");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                var dialog = new MessageDialog("User is already banned!");
                 await dialog.ShowAsync();
             }
             Initiale();
@@ -95,10 +100,15 @@ namespace Vicinor.Forme
             {
                 a = usernameAusoSuggestBox.Text.ToString();
             }
-            bool banovan = await auov.unbanujUsera(a);
-            if (!banovan)
+            bool unbanovan = await auov.unbanujUsera(a);
+            if (unbanovan)
             {
-                var dialog = new MessageDialog("Uspješno unbanovan korisnik!");
+                var dialog = new MessageDialog("User successfully unbanned!");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                var dialog = new MessageDialog("User is already unbanned!");
                 await dialog.ShowAsync();
             }
             Initiale();
