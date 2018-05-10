@@ -65,10 +65,7 @@
         <TextBlock x:Name="listaKorisnikaTextBlock" HorizontalAlignment="Right"  Margin="20,20,20,20"  Grid.Row="1"  Text="Users list:" VerticalAlignment="tOP" />
 
         <ListView x:Name="usersListView" HorizontalAlignment="Left" Height="177" Grid.Column="1" Margin="20,20,20,20" Grid.Row="1" VerticalAlignment="Top" Width="208">
-            <x:String>User 1</x:String>
-            <x:String>User 2</x:String>
-            <x:String>User 3</x:String>
-            <x:String>User 4</x:String>
+            
         </ListView>
         <Button x:Name="showProfileButton" Background="Tan" Content="Show User Profile" Grid.Column="1" HorizontalAlignment="Center" Margin="20,20,20,20" Grid.Row="2" VerticalAlignment="Top" Click="showProfileButton_Click"/>
 

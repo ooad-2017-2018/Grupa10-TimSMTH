@@ -38,8 +38,8 @@ namespace Vicinor.View
             //LogIn korisnika
             //Otvaranje forme search for restaurants
             //SearchForRestaurants sfr = new SearchForRestaurants();
-            Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
-            Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
+            Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Password).Result;
+            Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Password).Result;
             errorTextBlock.Visibility = Visibility.Collapsed;
             errorTextBlock.Text = "";
             if (b1)

@@ -52,7 +52,7 @@ namespace Vicinor.Forme
             if(a == null)
             {
                 // implementacija greške
-                var dialog = new MessageDialog("Izaberite korisnika klikom na element liste!");
+                var dialog = new MessageDialog("Select a user by clicking on the list item!");
                 await dialog.ShowAsync();
             }
             else
@@ -61,11 +61,11 @@ namespace Vicinor.Forme
                 RegistrovaniKorisnik rk = listaKor.Find((x) => x.Username == a);
                 String prikaz = null;
 
-                prikaz = "Prikaz profila o korisniku: " + rk.Username
-                    + "\n\nId korisnika: " + rk.KorisnikId
-                    + "\nPuno ime i prezime: " + rk.FirstName + " " + rk.LastName
-                    + "\nBanovan/a: " + rk.Banned.ToString()
-                    + "\nMail: " + rk.Email;
+                prikaz = "Users profile: " + rk.Username
+                    + "\n\nUser id: " + rk.KorisnikId
+                    + "\nName and surname: " + rk.FirstName + " " + rk.LastName
+                    + "\nBanned/a: " + rk.Banned.ToString()
+                    + "\nE-mail: " + rk.Email;
 
                 var dialog = new MessageDialog(prikaz);
                 await dialog.ShowAsync();
@@ -86,7 +86,7 @@ namespace Vicinor.Forme
             }
             else
             {
-                var dialog = new MessageDialog("User is already banned!");
+                var dialog = new MessageDialog("User is already banned or doesn't exist!");
                 await dialog.ShowAsync();
             }
             Initiale();
@@ -108,7 +108,7 @@ namespace Vicinor.Forme
             }
             else
             {
-                var dialog = new MessageDialog("User is already unbanned!");
+                var dialog = new MessageDialog("User is already unbanned or doesn't exist!");
                 await dialog.ShowAsync();
             }
             Initiale();
