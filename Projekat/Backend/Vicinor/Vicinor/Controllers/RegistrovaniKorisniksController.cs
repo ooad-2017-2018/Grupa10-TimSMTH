@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Vicinor.Model;
 using Vicinor.Models;
 
+
 namespace Vicinor.Controllers
 {
     public class RegistrovaniKorisniksController : Controller

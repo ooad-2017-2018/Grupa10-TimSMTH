@@ -12,7 +12,11 @@
         <TextBox x:Name="radiusTextBox" HorizontalAlignment="Left" Margin="134,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <Button x:Name="startSearchButton" Content="Start Search" HorizontalAlignment="Left" Height="36" Margin="134,47,0,0" VerticalAlignment="Top" Width="192" Click="startSearchButton_Click"/>
         <TextBlock x:Name="recommendedTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,112,0,0" TextWrapping="Wrap" Text="Recommended:" VerticalAlignment="Top" Width="119" />
-        <Image x:Name="image" HorizontalAlignment="Left" Height="271" Margin="52,155,0,0" VerticalAlignment="Top" Width="318"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="339" Margin="52,139,0,0" VerticalAlignment="Top" Width="318" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform ScaleY="-1"/>
+            </Image.RenderTransform>
+        </Image>
         <TextBlock x:Name="opisTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="52,441,0,0" Height="168" Width="318" RenderTransformOrigin="0.479,0.395"/>
         <Button x:Name="sljedeciButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00F;" HorizontalAlignment="Left" Margin="335,614,0,0" VerticalAlignment="Top"/>
         <Button x:Name="prethodniButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00E;" HorizontalAlignment="Left" Margin="52,614,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.909,1.43"/>
@@ -20,6 +24,7 @@
         <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="107,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" />
         <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="updateButton_Click"/>
         <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="323,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="logOutButton_Click"/>
+        
 
     </Grid>
 </Page>

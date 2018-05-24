@@ -19,6 +19,7 @@ using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
 using Vicinor.View;
+using Windows.System;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -54,36 +55,38 @@ namespace Vicinor.Forme
         }
 
 
-       /* private void logInButton_Click(object sender, RoutedEventArgs e)
-        {
-            //LogIn korisnika
-            //Otvaranje forme search for restaurants
-            //SearchForRestaurants sfr = new SearchForRestaurants();
-            Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
-            Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
-            errorTextBlock.Visibility = Visibility.Collapsed;
-            errorTextBlock.Text = "";
-            if (b1)
-            {
-                Frame.Navigate(typeof(AdminStartPage));
-            }
-             else if (b2)
+        /* private void logInButton_Click(object sender, RoutedEventArgs e)
+         {
+             //LogIn korisnika
+             //Otvaranje forme search for restaurants
+             //SearchForRestaurants sfr = new SearchForRestaurants();
+             Boolean b1 = pvm.loginAdmin(textBox.Text, textBox1.Text).Result;
+             Boolean b2 = pvm.loginUser(textBox.Text, textBox1.Text).Result;
+             errorTextBlock.Visibility = Visibility.Collapsed;
+             errorTextBlock.Text = "";
+             if (b1)
              {
-                 Frame.Navigate(typeof(SearchRestaurants));
+                 Frame.Navigate(typeof(AdminStartPage));
              }
-            else
-            {
-                //textBox1.Text = "Again";
-                // prijava greske            
-                errorTextBlock.Visibility = Visibility.Visible;
-                errorTextBlock.Text = "Invalid username or password!";
-            }
-        }*/
+              else if (b2)
+              {
+                  Frame.Navigate(typeof(SearchRestaurants));
+              }
+             else
+             {
+                 //textBox1.Text = "Again";
+                 // prijava greske            
+                 errorTextBlock.Visibility = Visibility.Visible;
+                 errorTextBlock.Text = "Invalid username or password!";
+             }
+         }*/
 
-        private void registerHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private async void registerHyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             //Otvaranje forme za registraciju korisnika
-            this.Frame.Navigate(typeof(RegistracijaKorisnika));
+            //this.Frame.Navigate(typeof(RegistracijaKorisnika));
+            bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
+
         }
 
         private void continueHyperlinkButton_Click(object sender, RoutedEventArgs e)
