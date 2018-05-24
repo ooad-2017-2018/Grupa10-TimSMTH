@@ -13,6 +13,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using Vicinor.Model;
+using Vicinor.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +28,11 @@ namespace Vicinor.Forme
     /// </summary>
     public sealed partial class RegistracijaKorisnika : Page
     {
+        RegistracijaKorisnikaViewModel rkvm;
         public RegistracijaKorisnika()
         {
             this.InitializeComponent();
+            rkvm = new RegistracijaKorisnikaViewModel();
         }
 
         async void messageDialog(String s)
@@ -42,11 +49,14 @@ namespace Vicinor.Forme
             this.Frame.Navigate(typeof(PocetnaForma));
         }
 
-        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            //Otvaranje pocetne forme
-            messageDialog("Registration succesful");
-            this.Frame.Navigate(typeof(PocetnaForma));
+
+            Boolean b = await rkvm.Registruj(Password.Text, Username.Text, FirstName.Text, LastName.Text, Email.Text, false, DateOfBirth.Date.DateTime, null);
+            if (b) {
+                messageDialog("Registration succesful");
+                this.Frame.Navigate(typeof(PocetnaForma));
+            }
         }
     }
 }

@@ -26,8 +26,6 @@ namespace Vicinor.Model
             get { return user; }
             set { user = value; }
         }
-
-
         public String Comment
         {
             get

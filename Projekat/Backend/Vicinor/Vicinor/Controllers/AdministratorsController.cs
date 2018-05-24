@@ -48,19 +48,29 @@ namespace Vicinor.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KorisnikId,Password,Username")] Administrator administrator)
+        public void Create([Bind(Include = "Password,Username")] Administrator administrator)
         {
             if (ModelState.IsValid)
             {
                 db.Administrator.Add(administrator);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+             //   return RedirectToAction("Index");
             }
 
-            return View(administrator);
+           // return View(administrator);
         }
 
+        // PUT: Administrators/Add
+        [HttpPost]
+        public JsonResult Add(string Password, string Username)
+        {
+            Administrator administrator=(new Administrator());
+            administrator.Password = Password;
+            administrator.Username = Username;
+            db.Administrator.Add(administrator);
+            db.SaveChanges();
+            return Json(administrator, JsonRequestBehavior.AllowGet);
+        }
         // GET: Administrators/Edit/5
         public ActionResult Edit(int? id)
         {

@@ -13,6 +13,23 @@ namespace Vicinor.Model
         DateTime dateOfBirth;
         byte[] image;
         ICollection<Restoran> listOfRestaurants;
+        public RegistrovaniKorisnik()
+        {
+
+        }
+        public RegistrovaniKorisnik(string Password, string Username, string FirstName, string LastName, string Email, bool Banned, DateTime DateOfBirth, byte[] Image)
+        {
+            this.Password = Password;
+            this.Username = Username;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Email = Email;
+            this.Banned = Banned;
+            this.DateOfBirth = DateOfBirth;
+            this.Image = Image;
+
+        }
+
         [Required]
         public String FirstName
         {

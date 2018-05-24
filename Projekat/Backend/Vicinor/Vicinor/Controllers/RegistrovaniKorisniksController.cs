@@ -46,17 +46,11 @@ namespace Vicinor.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KorisnikId,Password,Username,FirstName,LastName,Email,Banned,DateOfBirth,Image")] RegistrovaniKorisnik registrovaniKorisnik)
+        public void Add(string Password, string Username, string FirstName, string LastName, string Email,Boolean Banned,DateTime DateOfBirth)
         {
-            if (ModelState.IsValid)
-            {
-                db.RegistrovaniKorisnik.Add(registrovaniKorisnik);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(registrovaniKorisnik);
+            RegistrovaniKorisnik registrovaniKorisnik = new RegistrovaniKorisnik(Password, Username, FirstName, LastName, Email, Banned,DateOfBirth, null);
+            db.RegistrovaniKorisnik.Add(registrovaniKorisnik);
+            db.SaveChanges();
         }
 
         // GET: RegistrovaniKorisniks/Edit/5

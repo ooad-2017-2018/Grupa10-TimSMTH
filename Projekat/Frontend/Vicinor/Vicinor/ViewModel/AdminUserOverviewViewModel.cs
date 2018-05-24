@@ -87,7 +87,7 @@ namespace Vicinor.ViewModel
             if (a != null)
             {
                 b = await banovanje(a.KorisnikId);
-
+            
             }
             return b;
         }

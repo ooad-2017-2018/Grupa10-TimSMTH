@@ -143,8 +143,6 @@ namespace Vicinor.ViewModel
             }
 
             Uri requestUri = new Uri("http://localhost:6796/Administrators/changePassword/" + id + "?Password=" + password);
-
-
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
