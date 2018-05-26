@@ -14,6 +14,8 @@ namespace Vicinor.ViewModel
     {
         static String usernameG = null, passwordG = null;
 
+        public static int KORISNIK_ID = -1;
+
         public static String getUsernameG() { return usernameG; }
         public static String getPasswordG() { return passwordG; }
 
@@ -88,6 +90,7 @@ namespace Vicinor.ViewModel
                 int a = korisnik.KorisnikId;
                 usernameG = korisnik.Username;
                 passwordG = korisnik.Password;
+                KORISNIK_ID = korisnik.KorisnikId;
             }
             return false;
         }

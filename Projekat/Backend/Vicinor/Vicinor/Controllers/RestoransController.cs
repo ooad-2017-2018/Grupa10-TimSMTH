@@ -124,5 +124,22 @@ namespace Vicinor.Controllers
             }
             base.Dispose(disposing);
         }
+
+        /*
+        [System.Web.Http.HttpGet]
+        public JsonResult GetAllById(int id)
+        {
+            
+
+
+            List<Restoran> listaRestorana = db.Restoran.OfType<Restoran>().All(s => s. == id).ToList();
+            if (listaRestorana == null)
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+            return Json(listaRestorana, JsonRequestBehavior.AllowGet);
+        }   */  
+
+
     }
 }
