@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Vicinor.ViewModel;
+using Vicinor.View;
+using Vicinor.Forme;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -44,12 +46,14 @@ namespace Vicinor.View
             errorTextBlock.Text = "";
             if (b1)
             {
-                onNavigateParentReadyAdminStartPage(this, null);
+                Frame rootFrame = Window.Current.Content as Frame;  
+                rootFrame.Navigate(typeof(AdminStartPage), null);
               
             }
             else if (b2)
             {
-                onNavigateParentReadyUserStartPage(this, null);
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(UserStartPage), null);
             }
             else
             {
