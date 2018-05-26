@@ -106,6 +106,9 @@
     <Compile Include="UserControls\procenatUserControl.xaml.cs">
       <DependentUpon>procenatUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\welcomeLogoUserControl.xaml.cs">
+      <DependentUpon>welcomeLogoUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValidacijeAndMore.cs" />
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
@@ -155,6 +158,9 @@
     <Compile Include="UserControls\wlcomeAdminLogoUserControl.xaml.cs">
       <DependentUpon>wlcomeAdminLogoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserStartPage.xaml.cs">
+      <DependentUpon>UserStartPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -184,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\procenatUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\welcomeLogoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,8 +253,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UserStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

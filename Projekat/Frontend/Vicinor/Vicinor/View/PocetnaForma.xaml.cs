@@ -31,6 +31,7 @@ namespace Vicinor.Forme
    
     public sealed partial class PocetnaForma : Page
     {
+        public static bool guestUser = false;
        // PocetnaFormaViewModel pvm;
         public PocetnaForma()
         {
@@ -46,6 +47,12 @@ namespace Vicinor.Forme
         {
             Frame.Navigate(typeof(SearchRestaurants));
             
+        }
+
+        private void LoginUC_onNavigateParentReadyUserStartPage(object source, EventArgs e)
+        {
+            Frame.Navigate(typeof(UserStartPage));
+
         }
 
         private void LoginUC_onNavigateParentReadyAdminStartPage(object source, EventArgs e)
@@ -92,7 +99,8 @@ namespace Vicinor.Forme
         private void continueHyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             //Otvaranje forme search for restaurants
-           this.Frame.Navigate(typeof(SearchRestaurants));
+            guestUser = true;
+           this.Frame.Navigate(typeof(UserStartPage));
         }
     }
 }

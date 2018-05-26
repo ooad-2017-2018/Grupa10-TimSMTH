@@ -22,7 +22,7 @@ namespace Vicinor.View
     {
         public delegate void MyEventHandler(object source, EventArgs e);
 
-        public event MyEventHandler onNavigateParentReadyAdminStartPage, onNavigateParentReadySearchForRestaurants;
+        public event MyEventHandler onNavigateParentReadyAdminStartPage, onNavigateParentReadySearchForRestaurants, onNavigateParentReadyUserStartPage;
 
         PocetnaFormaViewModel pvm;
         public loginUserControl()
@@ -49,7 +49,7 @@ namespace Vicinor.View
             }
             else if (b2)
             {
-                onNavigateParentReadySearchForRestaurants(this, null);
+                onNavigateParentReadyUserStartPage(this, null);
             }
             else
             {

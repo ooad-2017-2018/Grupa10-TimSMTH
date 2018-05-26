@@ -8,7 +8,7 @@
     x:Class="Vicinor.Forme.PocetnaForma"
     mc:Ignorable="d">
     <!--ScrollViewer VerticalScrollBarVisibility="Auto"-->
-        <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
@@ -65,7 +65,7 @@
         <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"  Source="ms-appx:///Assets/vicinor-logo.png"/>
 
         <HyperlinkButton x:Name="registerHyperlinkButton" Content="or Register" Margin="0,0,20,0" HorizontalAlignment="Right"  Grid.Column="1" Grid.Row="6" Click="registerHyperlinkButton_Click"/>
-        <HyperlinkButton x:Name="continueHyperlinkButton"  Margin="20,0,0,20" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="8" FontStretch="Expanded" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Top" Width="119" d:LayoutOverrides="VerticalAlignment"/>
+        <HyperlinkButton x:Name="continueHyperlinkButton"  Margin="20,0,0,20" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="7" FontStretch="Expanded" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Bottom" Width="119"/>
         <TextBlock x:Name="errorTextBlock" Grid.Column="1"  Margin="20,0,0,0" HorizontalAlignment="Left" Foreground="Red"  Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Visibility="Collapsed"/>
 
         <View:loginUserControl x:Name="loginUC" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5"/>

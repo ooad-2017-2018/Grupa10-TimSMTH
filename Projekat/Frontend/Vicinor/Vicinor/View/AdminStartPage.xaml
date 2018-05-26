@@ -7,75 +7,75 @@
     xmlns:View="using:Vicinor.View"
     x:Class="Vicinor.Forme.AdminStartPage"
     mc:Ignorable="d" MinHeight="700" MinWidth="650">
-    
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Background="AntiqueWhite">
+        <Grid Background="White">
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Phone">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger/>
-                    </VisualState.StateTriggers>
-                </VisualState>
-                <VisualState x:Name="Tablet">
-                    
-                   
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
-                        
-                    </VisualState.StateTriggers>
-                </VisualState>
-                <VisualState x:Name="Desktop">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800"/>
-                    </VisualState.StateTriggers>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            
-        </Grid.ColumnDefinitions>
-        <RelativePanel>
-            <Button x:Name="hamburgerButton" Background="LightBlue" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="hamburgerButton_Click"/>
-        </RelativePanel>
-        <SplitView x:Name="mySplitView" DisplayMode="CompactOverlay" OpenPaneLength="200" HorizontalAlignment="Left" CompactPaneLength="56" Grid.Row = "1">
-            <SplitView.Pane>
-                <ListBox x:Name="adminListBox" Background="LightBlue" SelectionChanged="adminListBox_SelectionChanged" SelectionMode="Single" >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="VisualStateGroup">
+                    <VisualState x:Name="Phone">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger/>
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                    <VisualState x:Name="Tablet">
 
-                    <ListBoxItem x:Name="uoListBoxItem" >
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE136;" FontSize="36"/>
-                            <TextBlock Text="User Overview" FontSize="16" Margin="20,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="sListBoxItem">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE14C;" FontSize="36"/>
-                            <TextBlock Text="Statistics" FontSize="16" Margin="20,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="upListBoxItem">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE13D;" FontSize="36"/>
-                            <TextBlock Text="Update Profile" FontSize="16" Margin="20,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
 
-                </ListBox>
-            </SplitView.Pane>
-            <Frame x:Name="myFrame"/>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="600"/>
 
-        </SplitView>
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                    <VisualState x:Name="Desktop">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="800"/>
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
 
-        <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="0,20,20,20" HorizontalAlignment="Center"  Grid.Row="1"   VerticalAlignment="Top"/>
+            </Grid.ColumnDefinitions>
+            <RelativePanel>
+                <Button x:Name="hamburgerButton" Background="LightBlue" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="hamburgerButton_Click"/>
+            </RelativePanel>
+            <SplitView x:Name="mySplitView" DisplayMode="CompactOverlay" OpenPaneLength="200" HorizontalAlignment="Left" CompactPaneLength="56" Grid.Row = "1">
+                <SplitView.Pane>
+                    <ListBox x:Name="adminListBox" Background="LightBlue" SelectionChanged="adminListBox_SelectionChanged" SelectionMode="Single" >
 
-    </Grid>
+                        <ListBoxItem x:Name="uoListBoxItem" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE136;" FontSize="36"/>
+                                <TextBlock Text="User Overview" FontSize="16" Margin="20,0,0,0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="sListBoxItem">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE14C;" FontSize="36"/>
+                                <TextBlock Text="Statistics" FontSize="16" Margin="20,0,0,0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="upListBoxItem">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE13D;" FontSize="36"/>
+                                <TextBlock Text="Update Profile" FontSize="16" Margin="20,0,0,0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                    </ListBox>
+                </SplitView.Pane>
+                <Frame x:Name="myFrame"/>
+
+            </SplitView>
+
+            <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="267,10,266,0" HorizontalAlignment="Center"  Grid.Row="1"   VerticalAlignment="Top" Height="1024" Width="967"/>
+
+        </Grid>
     </ScrollViewer>
 
 </Page>

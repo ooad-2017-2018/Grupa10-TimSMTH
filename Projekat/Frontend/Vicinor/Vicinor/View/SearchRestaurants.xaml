@@ -20,11 +20,11 @@
         <TextBlock x:Name="opisTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="52,441,0,0" Height="168" Width="318" RenderTransformOrigin="0.479,0.395"/>
         <Button x:Name="sljedeciButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00F;" HorizontalAlignment="Left" Margin="335,614,0,0" VerticalAlignment="Top"/>
         <Button x:Name="prethodniButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00E;" HorizontalAlignment="Left" Margin="52,614,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.909,1.43"/>
-        <Button x:Name="favListButton" Content="Fav list" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="43" Width="108" Click="favListButton_Click"/>
+        <!--<Button x:Name="favListButton" Content="Fav list" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="43" Width="108" Click="favListButton_Click"/>
         <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="107,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" />
         <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="updateButton_Click"/>
         <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="323,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="logOutButton_Click"/>
-        
+        -->
 
     </Grid>
 </Page>
