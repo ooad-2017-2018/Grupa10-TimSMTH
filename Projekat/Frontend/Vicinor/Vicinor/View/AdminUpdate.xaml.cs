@@ -23,6 +23,7 @@ namespace Vicinor.Forme
         String u, p;
         int id=0;
         Boolean changeUsername = false, changePassword = false;
+
         public AdminUpdate()
         {
             auvm = new AdminUpdateViewModel();
@@ -96,13 +97,7 @@ namespace Vicinor.Forme
                     return;
                 }
 
-                if (!auvm.validateUsernameContent(newUsername))
-                {
-                    errorTextBox.Visibility = Visibility.Visible;
-                    errorTextBox.Text = "Password must contain atleast one number and one upper case letter! Only numbers, letters and '_' are allowed.";
-                    return;
-                }
-
+               
                 usernameTextBox.Text = newUsernameTextBox.Text.ToString();
 
                 //Unos u bazu
@@ -127,6 +122,13 @@ namespace Vicinor.Forme
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "Password must contain atleast 6 characters!";
+                    return;
+                }
+
+                if (!auvm.validatePasswordContent(newPassword))
+                {
+                    errorTextBox.Visibility = Visibility.Visible;
+                    errorTextBox.Text = "Password must contain atleast one number and one UpperCase letter! Password can only contain letters, numbers and '_'. ";
                     return;
                 }
 

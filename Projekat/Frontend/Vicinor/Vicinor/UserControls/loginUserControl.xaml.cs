@@ -49,6 +49,7 @@ namespace Vicinor.View
             }
             else if (b2)
             {
+                //onNavigateParentReadySearchForRestaurants(this, null);
                 onNavigateParentReadyUserStartPage(this, null);
             }
             else

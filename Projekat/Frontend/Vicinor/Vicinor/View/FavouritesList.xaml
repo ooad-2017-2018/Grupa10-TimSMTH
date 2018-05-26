@@ -15,12 +15,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Favourite Resorants" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <ListView x:Name="listView1" Grid.Row="1" ItemsSource="{x:Bind }">
-
-
-
-
-        </ListView>
+        
         <Button Name ="returnButton" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="184,19.2,184,0" Height="32" Click="returnButton_Click" >Return</Button>
     </Grid>
 </Page>
