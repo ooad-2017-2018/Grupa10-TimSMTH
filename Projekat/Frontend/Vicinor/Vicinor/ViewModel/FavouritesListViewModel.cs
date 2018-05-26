@@ -16,15 +16,15 @@ namespace Vicinor.ViewModel
             listaDobavljenih = new List<Restoran>();
         }
 
-        public async Task<List<Restoran>> dobaviRestorane(int id)
+       /* public async Task<List<Restoran>> dobaviRestorane(int id)
         {
-            Task t = Task.Run(() => getDataUser(id));
-            t.Wait();
+           Task t = Task.Run(() => getDataUser(id));
+           t.Wait();
 
             return listaDobavljenih;
         }
 
-
+        
         public async Task<Boolean> getDataUser(int id)
         {
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
@@ -45,7 +45,7 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + usernme + "&Password=" + pw);
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + username + "&Password=" + pw);
 
             //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=Masha&Password=sifraHaris");
 
@@ -57,13 +57,13 @@ namespace Vicinor.ViewModel
             try
             {
                 //Send the GET request
-                httpResponse = await httpClient.GetAsync(requestUri);
+               // httpResponse = await httpClient.GetAsync(requestUri);
 
                 httpResponse.EnsureSuccessStatusCode();
                 httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
                 string json = httpResponseBody;
-                korisnik = JsonConvert.DeserializeObject<RegistrovaniKorisnik>(json);
+                //korisnik = JsonConvert.DeserializeObject<RegistrovaniKorisnik>(json);
             }
             catch (Exception ex)
             {
@@ -73,12 +73,12 @@ namespace Vicinor.ViewModel
             if (korisnik != null)
             {
                 int a = korisnik.KorisnikId;
-                usernameG = korisnik.Username;
-                passwordG = korisnik.Password;
-                KORISNIK_ID = korisnik.KorisnikId;
+               // usernameG = korisnik.Username;
+                //passwordG = korisnik.Password;
+               // KORISNIK_ID = korisnik.KorisnikId;
             }
             return false;
-        }
+        }*/
 
     }
 }

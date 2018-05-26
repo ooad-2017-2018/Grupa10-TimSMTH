@@ -37,7 +37,7 @@ namespace Vicinor.Forme
         {
             //pvm = new PocetnaFormaViewModel();
             this.InitializeComponent();
-            
+            guestUser = false;
             loginUC.onNavigateParentReadyAdminStartPage += LoginUC_onNavigateParentReadyAdminStartPage;
             loginUC.onNavigateParentReadySearchForRestaurants += LoginUC_onNavigateParentReadySearchForRestaurants;
             loginUC.onNavigateParentReadyUserStartPage += LoginUC_onNavigateParentReadyUserStartPage; ;
@@ -93,7 +93,7 @@ namespace Vicinor.Forme
         private async void registerHyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             //Otvaranje forme za registraciju korisnika
-            //this.Frame.Navigate(typeof(RegistracijaKorisnika));
+            this.Frame.Navigate(typeof(RegistracijaKorisnika));
             bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 
         }

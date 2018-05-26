@@ -16,6 +16,7 @@ namespace Vicinor.ViewModel
         static RegistrovaniKorisnik regUser= new RegistrovaniKorisnik();
 
         public static RegistrovaniKorisnik getRegUser() { return regUser; }
+        public static void setRegUser(RegistrovaniKorisnik r) { regUser = r; }
 
         public static int KORISNIK_ID = -1;
 
@@ -110,18 +111,15 @@ namespace Vicinor.ViewModel
             }
             return true;
 
-<<<<<<< HEAD
-          
-         
-=======
+            /*
             if(korisnik != null){
                 int a = korisnik.KorisnikId;
                 usernameG = korisnik.Username;
                 passwordG = korisnik.Password;
                 KORISNIK_ID = korisnik.KorisnikId;
             }
-            return false;
->>>>>>> 523dc42b3b9781c51708f62186de87191583f319
+            return false;*/
+
         }
 
         public async Task<Boolean> getDataAdmin(String usernme, String pw)

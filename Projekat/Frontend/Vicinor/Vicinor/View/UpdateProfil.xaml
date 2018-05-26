@@ -111,7 +111,7 @@
         <TextBlock x:Name="textBlock8" HorizontalAlignment="Right" Margin="20,0,20,0" Text="Email: " Grid.Row="10" Grid.Column="0" TextAlignment="Center" FontSize="15" VerticalAlignment="Center"></TextBlock>
         <TextBox Name="Email" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" ></TextBox>
 
-        <Image Name="Picture" Grid.Column="1"  Grid.Row="9" Stretch="Fill" ></Image>
+        <Image Name="Picture" Grid.Column="1"  Grid.Row="9" Stretch="Fill" HorizontalAlignment="Center" Height="150" Width="150"></Image>
 
         <TextBlock x:Name="textBlock7"  Text="Picture: " HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="9" Grid.Column="0" TextAlignment="Center"></TextBlock>
 

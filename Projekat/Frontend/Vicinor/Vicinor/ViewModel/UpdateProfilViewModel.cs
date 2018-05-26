@@ -164,6 +164,139 @@ namespace Vicinor.ViewModel
 
         }
 
+        public async Task<Boolean> changeEmail(int id, String email)
+        {
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            //Add a user-agent header to the GET request. 
+            var headers = httpClient.DefaultRequestHeaders;
+
+            //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
+            //especially if the header value is coming from user input.
+            string header = "ie";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            header = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeEmail/" + id + "?Email=" + email);
+            //Send the PUT request asynchronously and retrieve the response as a string.
+            Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
+
+            string httpResponseBody = "";
+            try
+            {
+
+                httpResponse = await httpClient.PutAsync(requestUri, null);
+
+                httpResponse.EnsureSuccessStatusCode();
+                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+
+                string json = httpResponseBody;
+
+            }
+            catch (Exception ex)
+            {
+                httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
+            }
+            return true;
+
+        }
+
+        public async Task<Boolean> changeFirstName(int id, String fName)
+        {
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            //Add a user-agent header to the GET request. 
+            var headers = httpClient.DefaultRequestHeaders;
+
+            //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
+            //especially if the header value is coming from user input.
+            string header = "ie";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            header = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeFirstName/" + id + "?FirstName=" + fName);
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=Masha&Password=sifraHaris");
+            //Send the PUT request asynchronously and retrieve the response as a string.
+            Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
+
+            string httpResponseBody = "";
+            try
+            {
+
+                httpResponse = await httpClient.PutAsync(requestUri, null);
+
+                httpResponse.EnsureSuccessStatusCode();
+                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+
+                string json = httpResponseBody;
+
+            }
+            catch (Exception ex)
+            {
+                httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
+            }
+            return true;
+
+        }
+
+        public async Task<Boolean> changeLastName(int id, String lName)
+        {
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            //Add a user-agent header to the GET request. 
+            var headers = httpClient.DefaultRequestHeaders;
+
+            //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
+            //especially if the header value is coming from user input.
+            string header = "ie";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            header = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+            if (!headers.UserAgent.TryParseAdd(header))
+            {
+                throw new Exception("Invalid header value: " + header);
+            }
+
+            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeLastName/" + id + "?LastName=" + lName);
+            //Send the PUT request asynchronously and retrieve the response as a string.
+            Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
+
+            string httpResponseBody = "";
+            try
+            {
+
+                httpResponse = await httpClient.PutAsync(requestUri, null);
+
+                httpResponse.EnsureSuccessStatusCode();
+                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+
+                string json = httpResponseBody;
+
+            }
+            catch (Exception ex)
+            {
+                httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
+            }
+            return true;
+
+        }
+
 
 
     }

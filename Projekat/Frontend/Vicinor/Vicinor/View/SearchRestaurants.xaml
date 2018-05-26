@@ -10,7 +10,14 @@
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <TextBlock x:Name="inputRadiusTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" TextWrapping="Wrap" Text="Input Radius:" VerticalAlignment="Top" Width="119" />
         <TextBox x:Name="radiusTextBox" HorizontalAlignment="Left" Margin="134,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-        <Button x:Name="startSearchButton" Content="Start Search" HorizontalAlignment="Left" Height="36" Margin="134,47,0,0" VerticalAlignment="Top" Width="192" Click="startSearchButton_Click"/>
+        <Button x:Name="startSearchButton" Content="Start Search" HorizontalAlignment="Left" Height="36" Margin="134,47,0,0" VerticalAlignment="Top" Width="192" Click="startSearchButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <TextBlock x:Name="recommendedTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,112,0,0" TextWrapping="Wrap" Text="Recommended:" VerticalAlignment="Top" Width="119" />
         <Image x:Name="image" HorizontalAlignment="Left" Height="339" Margin="52,139,0,0" VerticalAlignment="Top" Width="318" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>

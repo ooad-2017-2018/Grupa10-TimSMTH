@@ -7,6 +7,7 @@ using Vicinor.Model;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Pickers;
 using Windows.Storage;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,7 +23,7 @@ namespace Vicinor.Forme
         String newUsername = "", newPassword = "", newFirstName = "", newLastName = "", newEmail = "";
         String u, p;
         int id = 0;
-        Boolean showPassword = false;
+        Boolean showPassword = false, changePassword = false;
 
         private void showPasswordButton_Click(object sender, RoutedEventArgs e)
         {
@@ -41,8 +42,20 @@ namespace Vicinor.Forme
 
         private void changePasswordButton_Click(object sender, RoutedEventArgs e)
         {
-            NewPassword.Visibility = Visibility.Visible;
-            textBlock5.Visibility = Visibility.Visible;
+            changePassword = !changePassword;
+            if (changePassword)
+            {
+                NewPassword.Visibility = Visibility.Visible;
+                textBlock5.Visibility = Visibility.Visible;
+                changePasswordButton.Content = "Cancle change";
+            }
+            else
+            {
+                NewPassword.Visibility = Visibility.Collapsed;
+                textBlock5.Visibility = Visibility.Collapsed;
+                changePasswordButton.Content = "Change password";
+            }
+          
          
         }
 
@@ -55,7 +68,14 @@ namespace Vicinor.Forme
             f.FileTypeFilter.Add(".jpg");
             f.FileTypeFilter.Add(".png");
             f.FileTypeFilter.Add(".jpeg");
-           // StorageFile sf = await f.PickSingleFileAsync;
+            StorageFile sf = await f.PickSingleFileAsync();
+            if (sf != null)
+            {
+                IRandomAccessStream fs = await sf.OpenAsync(FileAccessMode.Read);
+                BitmapImage bm = new BitmapImage();
+                bm.SetSource(fs);
+                Picture.Source = bm;
+            }
 
         }
 
@@ -86,10 +106,10 @@ namespace Vicinor.Forme
             regUser = upvm.dajKorisnika();
             if (regUser != null) {
                 id = regUser.KorisnikId;
-                firstName.Text = regUser.FirstName;
-                lastName.Text = regUser.LastName;
-                Email.Text = regUser.Email;
-                DateTextBox.Text = regUser.DateOfBirth.Day.ToString() + "/" + regUser.DateOfBirth.Month.ToString() + "/" + regUser.DateOfBirth.Year.ToString();
+                if (regUser.FirstName!= null)   firstName.Text = regUser.FirstName;
+                if (regUser.LastName != null)  lastName.Text = regUser.LastName;
+                if (regUser.Email != null)  Email.Text = regUser.Email;
+                if (regUser.DateOfBirth != null)  DateTextBox.Text = regUser.DateOfBirth.Day.ToString() + "/" + regUser.DateOfBirth.Month.ToString() + "/" + regUser.DateOfBirth.Year.ToString();
             }
             Picture.Source = new BitmapImage(new Uri("ms-appx:///Assets/vicinor-logo.png"));
 
@@ -118,6 +138,7 @@ namespace Vicinor.Forme
                 if (rez.Item1)
                 {
                     //Vrsimo upis novih podataka u bazu 
+                    if (await upvm.changeFirstName(id, newFirstName)) regUser.FirstName=newFirstName;
                 }
             }
             if (newLastName != regUser.LastName)
@@ -127,6 +148,7 @@ namespace Vicinor.Forme
                 if (rez.Item1)
                 {
                     //Vrsimo upis novih podataka u bazu 
+                    if (await upvm.changeLastName(id, newFirstName)) regUser.LastName = newLastName;
                 }
             }
             if (newPassword != regUser.Password)
@@ -141,7 +163,8 @@ namespace Vicinor.Forme
                     bool izmjenjen = await upvm.changePassword(id, newPassword);
                     if (izmjenjen)
                     {
-                        PocetnaFormaViewModel.setPasswordG(newPassword);
+                       // PocetnaFormaViewModel.setPasswordG(newPassword);
+                       // regUser.Password = newPassword;
                     }
                     
                 }
@@ -166,6 +189,8 @@ namespace Vicinor.Forme
                 if (rez.Item1)
                 {
                     //Vrsimo upis novih podataka u bazu 
+                    if (await upvm.changeEmail(id, newEmail)) regUser.Email = newEmail;
+                    
                 }
 
             }
@@ -179,9 +204,11 @@ namespace Vicinor.Forme
                     poruka += "New username is valid.\n";
                     //Vrsimo upis novih podataka u bazu 
                     bool izmjenjen = await upvm.changeUsername(id, newUsername);
+                
                     if (izmjenjen)
                     {
                         PocetnaFormaViewModel.setUsernameG(newUsername);
+                        regUser.Username= newUsername;
                     }
 
                 }
@@ -201,8 +228,10 @@ namespace Vicinor.Forme
 
            
             messageDialog(poruka);
-            //Refresh form!
+            //Refresh form
 
+        
+        
 
             //this.Frame.Navigate(typeof(SearchRestaurants));
         }
