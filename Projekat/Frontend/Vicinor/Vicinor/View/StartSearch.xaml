@@ -17,7 +17,14 @@
         -->
         <Image x:Name="restaurantImage" HorizontalAlignment="Left" Height="425" VerticalAlignment="Top" Width="412" Margin="10,35,0,0"/>
         <TextBlock x:Name="aboutRestaurantTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="About restaurant" VerticalAlignment="Top" Margin="0,309,0,0" Height="257" Width="431"/>
-        <Button x:Name="star1Button" FontFamily ="Segoe MDL2 Assets" Content="&#xE734;" HorizontalAlignment="Left" Margin="10,571,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="star1Button" FontFamily ="Segoe MDL2 Assets" Content="&#xE734;" HorizontalAlignment="Left" Margin="10,571,0,0" VerticalAlignment="Top">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
 
     </Grid>

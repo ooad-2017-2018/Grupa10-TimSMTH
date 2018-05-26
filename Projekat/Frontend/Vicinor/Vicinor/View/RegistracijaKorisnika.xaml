@@ -26,8 +26,9 @@
                         <Setter Target="textBlock5.(TextBlock.FontSize)" Value="12"/>
                         <Setter Target="Email.(Control.FontSize)" Value="12"/>
                         <Setter Target="textBlock7.(TextBlock.FontSize)" Value="12"/>
-                        <Setter Target="AddImageButton.(Control.FontSize)" Value="14"/>
-                        <Setter Target="RegisterButton.(Control.FontSize)" Value="14"/>
+                        <Setter Target="textBlock6.(TextBlock.FontSize)" Value="12"/>
+                        <Setter Target="AddImageButton.(Control.FontSize)" Value="12"/>
+                        <Setter Target="RegisterButton.(Control.FontSize)" Value="12"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="200"/>
@@ -96,10 +97,10 @@
         <TextBlock x:Name="textBlock4"  Text="Password: " Grid.Row="4" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
         <TextBox Name="ConfPassword" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" ></TextBox>
-        <TextBlock x:Name="textBlock5"  Text="Confirm password: " Grid.Row="5" Grid.Column="0" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="textBlock5"  Text="Confirm password: " Grid.Row="5" Grid.Column="0" TextAlignment="Center" Grid.ColumnSpan="2" Height="72" Margin="0,0.5,856.5,0" Grid.RowSpan="2" VerticalAlignment="Top"></TextBlock>
 
         <DatePicker x:Name="DateOfBirth" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" ></DatePicker>
-        <TextBlock x:Name="textBlock6"  Text="Date of Birth: " Grid.Row="6" Grid.Column="0" TextAlignment="Center" FontSize="15"></TextBlock>
+        <TextBlock x:Name="textBlock6"  Text="Date of Birth: " Grid.Row="6" Grid.Column="0" TextAlignment="Center" FontSize="15" Grid.ColumnSpan="2" Height="72" Margin="0,0,856.5,71" Grid.RowSpan="2" VerticalAlignment="Bottom"></TextBlock>
         <TextBox Name="Email" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" ></TextBox>
         <TextBlock x:Name="textBlock11"  Text="Email: " Grid.Row="7" Grid.Column="0" TextAlignment="Center"></TextBlock>
 

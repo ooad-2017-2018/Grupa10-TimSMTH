@@ -52,8 +52,13 @@ namespace Vicinor.View
             }
             else if (b2)
             {
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(UserStartPage), null);
+
+                //onNavigateParentReadySearchForRestaurants(this, null);
+                onNavigateParentReadyUserStartPage(this, null);
+
+                //Frame rootFrame = Window.Current.Content as Frame;
+                //rootFrame.Navigate(typeof(UserStartPage), null);
+
             }
             else
             {

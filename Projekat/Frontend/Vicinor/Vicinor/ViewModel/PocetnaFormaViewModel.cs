@@ -13,6 +13,10 @@ namespace Vicinor.ViewModel
     public class PocetnaFormaViewModel 
     {
         static String usernameG = null, passwordG = null;
+        static RegistrovaniKorisnik regUser= new RegistrovaniKorisnik();
+
+        public static RegistrovaniKorisnik getRegUser() { return regUser; }
+        public static void setRegUser(RegistrovaniKorisnik r) { regUser = r; }
 
         public static int KORISNIK_ID = -1;
 
@@ -22,7 +26,9 @@ namespace Vicinor.ViewModel
         public static void setUsernameG(String u) { usernameG = u; }
         public static void setPasswordG(String p) { passwordG = p; }
 
-        Boolean adminDaNe=false;
+        Boolean adminDaNe=false, regUserDaNe = false;
+
+
         public async Task<Boolean> loginAdmin(String username, String pw)
         {
             Task t = Task.Run(() => getDataAdmin(username,pw));
@@ -80,19 +86,40 @@ namespace Vicinor.ViewModel
 
                 string json = httpResponseBody;
                 korisnik = JsonConvert.DeserializeObject<RegistrovaniKorisnik>(json);
+
+                if (korisnik != null)
+                {
+                    int a = korisnik.KorisnikId;
+                    usernameG = korisnik.Username;
+                    passwordG = korisnik.Password;
+                    regUserDaNe = true;
+                    regUser = korisnik;
+                    return true;
+                }
+                else if (json == "")
+                {
+                    regUserDaNe = false;
+                    usernameG = "";
+                    passwordG = "";
+                    return false;
+                
+                }
             }
             catch (Exception ex)
             {
                 httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
             }
+            return true;
 
+            /*
             if(korisnik != null){
                 int a = korisnik.KorisnikId;
                 usernameG = korisnik.Username;
                 passwordG = korisnik.Password;
                 KORISNIK_ID = korisnik.KorisnikId;
             }
-            return false;
+            return false;*/
+
         }
 
         public async Task<Boolean> getDataAdmin(String usernme, String pw)

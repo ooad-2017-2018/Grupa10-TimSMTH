@@ -109,6 +109,7 @@
     <Compile Include="UserControls\welcomeLogoUserControl.xaml.cs">
       <DependentUpon>welcomeLogoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValidacijaUser.cs" />
     <Compile Include="ValidacijeAndMore.cs" />
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="ViewModel\FavouritesListViewModel.cs" />
     <Compile Include="ViewModel\PocetnaFormaViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaKorisnikaViewModel.cs" />
+    <Compile Include="ViewModel\UpdateProfilViewModel.cs" />
     <Compile Include="View\AdminStartPage.xaml.cs">
       <DependentUpon>AdminStartPage.xaml</DependentUpon>
     </Compile>

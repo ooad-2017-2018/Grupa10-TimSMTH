@@ -127,6 +127,44 @@ namespace Vicinor.Controllers
             db.SaveChanges();
         }
 
+        // PUT: RegistrovaniKorisniks/changeUsername/3
+        [HttpPut]
+        public void changeUsername(int id, String username)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Username = username;
+            db.SaveChanges();
+        }
+
+        // PUT: RegistrovaniKorisniks/changePassword/3
+        [HttpPut]
+        public void changePassword(int id, String password)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Password = password;
+            db.SaveChanges();
+        }
+
+        [HttpPut]
+        public void changeEmail(int id, String email)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Email = email;
+            db.SaveChanges();
+        }
+
+        [HttpPut]
+        public void changeFirstName(int id, String fName)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).FirstName = fName;
+            db.SaveChanges();
+        }
+
+        [HttpPut]
+        public void changeLastName(int id, String lName)
+        {
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).LastName = lName;
+            db.SaveChanges();
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {
@@ -158,6 +196,8 @@ namespace Vicinor.Controllers
             }
             return Json(registrovaniKorisnici, JsonRequestBehavior.AllowGet);
         }
+
+
 
     }
 }
