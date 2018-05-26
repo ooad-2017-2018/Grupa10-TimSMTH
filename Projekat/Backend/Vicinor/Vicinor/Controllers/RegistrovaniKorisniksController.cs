@@ -42,7 +42,20 @@ namespace Vicinor.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "KorisnikId,Password,Username,FirstName,LastName,Email,Banned,DateOfBirth,Image")] RegistrovaniKorisnik registrovaniKorisnik)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Korisnik.Add(registrovaniKorisnik);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
+            return View(registrovaniKorisnik);
+        }
+        
         // POST: RegistrovaniKorisniks/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -78,6 +91,8 @@ namespace Vicinor.Controllers
         {
             if (ModelState.IsValid)
             {
+                var lista = new List<Restoran>();
+                
                 db.Entry(registrovaniKorisnik).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -195,6 +210,17 @@ namespace Vicinor.Controllers
                 return Json(0, JsonRequestBehavior.AllowGet);
             }
             return Json(registrovaniKorisnici, JsonRequestBehavior.AllowGet);
+        }
+        [System.Web.Http.HttpGet]
+        public JsonResult GetFavList(int id)
+        {
+           RegistrovaniKorisnik registrovaniKorisnici = db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id);
+
+            if (registrovaniKorisnici == null)
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+            return Json(registrovaniKorisnici.ListOfRestaurants, JsonRequestBehavior.AllowGet);
         }
 
 

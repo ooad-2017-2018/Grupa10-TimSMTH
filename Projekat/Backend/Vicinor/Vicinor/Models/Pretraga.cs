@@ -13,7 +13,10 @@ namespace Vicinor.Model
         DateTime timeOfSearch;
         Restoran chosenRestaurant;
         private int pretragaId;
+        public Pretraga()
+        {
 
+        }
         public int PretragaId
         {
             get { return pretragaId; }

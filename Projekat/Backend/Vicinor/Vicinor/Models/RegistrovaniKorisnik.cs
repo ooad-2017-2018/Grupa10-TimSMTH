@@ -14,7 +14,7 @@ namespace Vicinor.Model
         DateTime dateOfBirth;
         public RegistrovaniKorisnik()
         {
-
+          
         }
         byte[] image;
         public RegistrovaniKorisnik(string Password,string Username,string FirstName,  string LastName, string Email, bool Banned, DateTime DateOfBirth, byte[] Image)
@@ -27,7 +27,8 @@ namespace Vicinor.Model
             this.Banned = Banned;
             this.DateOfBirth = DateOfBirth;
             this.Image=Image;
-
+            listOfRestaurants = new List<Restoran>();
+        
         }
         ICollection<Restoran> listOfRestaurants;
         [Required]

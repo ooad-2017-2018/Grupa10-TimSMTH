@@ -15,7 +15,16 @@ namespace Vicinor.Model
         byte[] image;
         Lokacija location;
         private ICollection<Recenzija> listRezension;
+        public Restoran(string _name, string _description, string _phoneNumber)
+        {
+            name = _name;
+            description = _description;
+            phoneNumber = _phoneNumber;
+        }
+        public Restoran()
+        {
 
+        }
         public virtual ICollection<Recenzija> ListRezension
         {
             get { return listRezension; }

@@ -8,7 +8,10 @@ namespace Vicinor.Model
     public class Recenzija
     {
         private int recenzijaId;
+        public Recenzija()
+        {
 
+        }
         public int RecenzijaId
         {
             get { return recenzijaId; }
