@@ -54,5 +54,5 @@ A: Ne.
 
 - Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: Prilikom samog prijavljivanja korisnika, znamo sigurno da imamo 3 opcije prilikom registracije koje su: registrovani korisnik, neregistrovani korisnik, guest. Na osnovu datog tipa klase tj. korisnika možemo realizovati 'set-up' nakon registracije, svaki tip korisnika ima drugačiji prikaz, samim tim možemo i drugačije podatke dobiti pomoću api request-a prema našoj bazi. Na osnovu ovoga imamo bolju enkapsulaciju, uz malo polimorfizma. Dodavanje novog tipa user-a pogotovo nije na odmet
+A: Prilikom samog prijavljivanja korisnika, znamo sigurno da imamo 3 opcije prilikom registracije koje su: registrovani korisnik, neregistrovani korisnik, guest. Na osnovu datog tipa klase tj. korisnika možemo realizovati 'set-up' nakon registracije, svaki tip korisnika ima drugačiji prikaz, samim tim možemo i drugačije podatke dobiti pomoću api request-a prema našoj bazi. Na osnovu ovoga imamo bolju enkapsulaciju, uz malo polimorfizma. Dodavanje novog tipa user-a pogotovo nije na odmet..
 
