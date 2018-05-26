@@ -16,6 +16,7 @@ namespace Vicinor.ViewModel
             listaDobavljenih = new List<Restoran>();
         }
 
+        /*
         public async Task<List<Restoran>> dobaviRestorane(int id)
         {
             Task t = Task.Run(() => getDataUser(id));
@@ -79,6 +80,6 @@ namespace Vicinor.ViewModel
             }
             return false;
         }
-
+        */
     }
 }
