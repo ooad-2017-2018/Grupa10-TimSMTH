@@ -108,7 +108,7 @@
 
         <TextBlock x:Name="textBlock7"  Text="Picture: " Grid.Row="8" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-        <Button Name="AddImageButton" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Stretch">Add Image</Button>
+        <Button Name="AddImageButton" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Stretch" Click="UploadButton_Click">Add Image</Button>
         <Button Name="RegisterButton" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="RegisterButton_Click" >Register</Button>
         <Button Name="CancelButton" Grid.Column="1"  Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="CancelButton_Click" >Cancel</Button>
     </Grid>

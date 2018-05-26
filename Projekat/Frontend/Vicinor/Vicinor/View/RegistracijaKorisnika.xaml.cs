@@ -18,6 +18,9 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Vicinor.Model;
 using Vicinor.ViewModel;
+using Windows.Storage;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -57,6 +60,44 @@ namespace Vicinor.Forme
                 messageDialog("Registration succesful");
                 this.Frame.Navigate(typeof(PocetnaForma));
             }
+        }
+        private async void UploadButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+            StorageFile file1 = await picker.PickSingleFileAsync();
+            byte[] buffer;
+            //Convert to byte[]
+            using (var inputStream = await file1.OpenSequentialReadAsync())
+            {
+                var readStream = inputStream.AsStreamForRead();
+                buffer = new byte[readStream.Length];
+                await readStream.ReadAsync(buffer, 0, buffer.Length);
+            }
+            //Od Convert ahhah 
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(buffer);
+                    await writer.StoreAsync();
+                }
+                BitmapImage image = new BitmapImage();
+                await image.SetSourceAsync(stream);
+                Picture.Source = image;
+
+            }
+
+        }
+
+        private void AddImageButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
