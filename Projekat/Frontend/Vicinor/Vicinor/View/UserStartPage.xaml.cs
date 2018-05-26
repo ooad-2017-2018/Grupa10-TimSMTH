@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Vicinor.Forme;
+using Vicinor.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +24,11 @@ namespace Vicinor.View
     /// </summary>
     public sealed partial class UserStartPage : Page
     {
+        int id_korisnika;  
         public UserStartPage()
         {
             this.InitializeComponent();
+            id_korisnika = PocetnaFormaViewModel.KORISNIK_ID;
         }
 
         private void userListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

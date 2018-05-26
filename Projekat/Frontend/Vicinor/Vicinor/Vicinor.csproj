@@ -114,6 +114,7 @@
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
     <Compile Include="ViewModel\AdminUserOverviewViewModel.cs" />
+    <Compile Include="ViewModel\FavouritesListViewModel.cs" />
     <Compile Include="ViewModel\PocetnaFormaViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\UpdateProfilViewModel.cs" />
@@ -259,9 +260,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

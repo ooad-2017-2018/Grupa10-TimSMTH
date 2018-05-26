@@ -17,6 +17,8 @@ namespace Vicinor.ViewModel
 
         public static RegistrovaniKorisnik getRegUser() { return regUser; }
 
+        public static int KORISNIK_ID = -1;
+
         public static String getUsernameG() { return usernameG; }
         public static String getPasswordG() { return passwordG; }
 
@@ -108,8 +110,18 @@ namespace Vicinor.ViewModel
             }
             return true;
 
+<<<<<<< HEAD
           
          
+=======
+            if(korisnik != null){
+                int a = korisnik.KorisnikId;
+                usernameG = korisnik.Username;
+                passwordG = korisnik.Password;
+                KORISNIK_ID = korisnik.KorisnikId;
+            }
+            return false;
+>>>>>>> 523dc42b3b9781c51708f62186de87191583f319
         }
 
         public async Task<Boolean> getDataAdmin(String usernme, String pw)
