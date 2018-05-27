@@ -122,7 +122,7 @@ namespace Vicinor.Forme
                     await writer.StoreAsync();
                 }
                 BitmapImage image = new BitmapImage();
-                await image.SetSourceAsync(stream);
+               // await image.SetSourceAsync(stream);
                 Picture.Source = image;
 
             }

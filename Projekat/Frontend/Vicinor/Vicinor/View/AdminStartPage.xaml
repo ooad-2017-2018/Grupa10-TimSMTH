@@ -73,7 +73,7 @@
 
             </SplitView>
 
-            <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="267,10,266,0" HorizontalAlignment="Center"  Grid.Row="1"   VerticalAlignment="Top" Height="1024" Width="967"/>
+            <View:wlcomeAdminLogoUserControl x:Name ="userControlAdmin" Margin="230,0,0,0" HorizontalAlignment="Center"  Grid.Row="1"  VerticalAlignment="Top"/>
 
         </Grid>
     </ScrollViewer>
