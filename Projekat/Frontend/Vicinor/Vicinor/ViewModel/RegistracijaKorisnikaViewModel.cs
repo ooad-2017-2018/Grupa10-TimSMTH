@@ -31,8 +31,9 @@ namespace Vicinor.ViewModel
             {
                 throw new Exception("Invalid header value: " + header);
             }
+            string stri = Convert.ToBase64String(Image);
             korisnik = new RegistrovaniKorisnik(Password, Username, FirstName, LastName, Email, Banned, DateOfBirth, null);
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/Add" + "?Password=" +korisnik.Password+ "&Username=" +korisnik.Username+ "&FirstName="+korisnik.FirstName + "&LastName="+korisnik.LastName + "&Email="+korisnik.Email + "&Banned=" + Banned+ "&DateOfBirth=" + korisnik.DateOfBirth);
+            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/Add" + "?Password=" +korisnik.Password+ "&Username=" +korisnik.Username+ "&FirstName="+korisnik.FirstName + "&LastName="+korisnik.LastName + "&Email="+korisnik.Email + "&Banned=" + Banned+ "&DateOfBirth=" + korisnik.DateOfBirth+"&Image="+ stri);
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
             string httpResponseBody = "";
             try

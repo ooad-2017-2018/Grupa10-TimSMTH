@@ -111,7 +111,22 @@ namespace Vicinor.Forme
                 if (regUser.Email != null)  Email.Text = regUser.Email;
                 if (regUser.DateOfBirth != null)  DateTextBox.Text = regUser.DateOfBirth.Day.ToString() + "/" + regUser.DateOfBirth.Month.ToString() + "/" + regUser.DateOfBirth.Year.ToString();
             }
-            Picture.Source = new BitmapImage(new Uri("ms-appx:///Assets/vicinor-logo.png"));
+
+            byte[] buffer = regUser.Image;
+     
+                 using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(buffer);
+                    await writer.StoreAsync();
+                }
+                BitmapImage image = new BitmapImage();
+                await image.SetSourceAsync(stream);
+                Picture.Source = image;
+
+            }
+     //       Picture.Source = new BitmapImage(new Uri("ms-appx:///Assets/vicinor-logo.png"));
 
 
         }

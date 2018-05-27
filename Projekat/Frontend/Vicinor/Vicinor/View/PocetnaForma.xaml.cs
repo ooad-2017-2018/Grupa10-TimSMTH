@@ -94,7 +94,7 @@ namespace Vicinor.Forme
         {
             //Otvaranje forme za registraciju korisnika
             this.Frame.Navigate(typeof(RegistracijaKorisnika));
-            bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
+      //      bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 
         }
 

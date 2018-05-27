@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Vicinor.Model;
@@ -60,11 +61,18 @@ namespace Vicinor.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public void Add(string Password, string Username, string FirstName, string LastName, string Email,Boolean Banned,DateTime DateOfBirth)
+        public void Add(string Password, string Username, string FirstName, string LastName, string Email,Boolean Banned,DateTime DateOfBirth,string Image)
         {
-            RegistrovaniKorisnik registrovaniKorisnik = new RegistrovaniKorisnik(Password, Username, FirstName, LastName, Email, Banned,DateOfBirth, null);
+            RegistrovaniKorisnik registrovaniKorisnik = new RegistrovaniKorisnik(Password, Username, FirstName, LastName, Email, Banned,DateOfBirth, EncodeBase64(Image));
             db.RegistrovaniKorisnik.Add(registrovaniKorisnik);
             db.SaveChanges();
+        }
+        public byte[] EncodeBase64(string data)
+        {
+            string s = data.Trim().Replace(" ", "+");
+            if (s.Length % 4 > 0)
+                s = s.PadRight(s.Length + 4 - s.Length % 4, '=');
+            return (Convert.FromBase64String(s));
         }
 
         // GET: RegistrovaniKorisniks/Edit/5

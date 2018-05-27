@@ -31,6 +31,8 @@ namespace Vicinor.Forme
     /// </summary>
     public sealed partial class RegistracijaKorisnika : Page
     {
+        byte[] buffer;
+
         RegistracijaKorisnikaViewModel rkvm;
         public RegistracijaKorisnika()
         {
@@ -55,7 +57,7 @@ namespace Vicinor.Forme
         private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
 
-            Boolean b = await rkvm.Registruj(Password.Text, Username.Text, FirstName.Text, LastName.Text, Email.Text, false, DateOfBirth.Date.DateTime, null);
+            Boolean b = await rkvm.Registruj(Password.Text, Username.Text, FirstName.Text, LastName.Text, Email.Text, false, DateOfBirth.Date.DateTime,buffer);
             if (b) {
                 messageDialog("Registration succesful");
                 this.Frame.Navigate(typeof(PocetnaForma));
@@ -71,7 +73,6 @@ namespace Vicinor.Forme
             picker.FileTypeFilter.Add(".jpeg");
             picker.FileTypeFilter.Add(".png");
             StorageFile file1 = await picker.PickSingleFileAsync();
-            byte[] buffer;
             //Convert to byte[]
             using (var inputStream = await file1.OpenSequentialReadAsync())
             {
