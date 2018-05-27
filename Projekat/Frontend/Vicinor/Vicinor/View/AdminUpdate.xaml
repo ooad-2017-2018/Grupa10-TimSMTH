@@ -128,9 +128,23 @@
                 <TextBlock x:Name="confirmPasswordTextBlock" Text="Confirm Password:" HorizontalAlignment="Right"  VerticalAlignment="Center" Grid.Row="6" />
                 <TextBox x:Name="confirmPasswordTextBox" Background="White"   Text="" Grid.Column="1" Grid.Row="6"  Margin ="20,20,20,20" />
 
-                <Button x:Name="confirmButton" Content="Confirm Changes"   Margin ="20,20,20,20"  Grid.Column="1" Grid.Row="8" Background="Tan" Click="confirmButton_Click"    />
-                <Button x:Name="cancelButton" Content="Cancel"  Grid.Row="8"  Margin ="20,20,20,20"  Grid.Column="1" Background="Tan" VerticalAlignment="Top" HorizontalAlignment="Right" Click="cancelButton_Click" />
-                <TextBox x:Name="errorTextBox" Grid.Column="1"   Margin ="20,20,20,20"  TextWrapping="Wrap"  Background="Red" Grid.Row="7" Text="" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"   />
+            <Button x:Name="confirmButton" Content="Confirm Changes"   Margin ="20,20,20,20"  Grid.Column="1" Grid.Row="8" Click="confirmButton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3D8EBB"/>
+                        <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="cancelButton" Content="Cancel"  Grid.Row="8"  Margin ="20,20,20,20"  Grid.Column="1"  VerticalAlignment="Top" HorizontalAlignment="Right" Click="cancelButton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3D8EBB"/>
+                        <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+                <TextBox x:Name="errorTextBox" Grid.Column="1"   Margin ="20,20,20,20"  TextWrapping="Wrap"  Background="Gray" Grid.Row="7" Text="" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"   />
             </Grid>
         </ScrollViewer>
 

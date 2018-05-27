@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" MinHeight="300" MinWidth="200">
 
-    <Grid Background="AntiqueWhite" Margin="10, 0, 0, 10" MinHeight="500" >
+    <Grid Background="White" Margin="10, 0, 0, 10" MinHeight="500" >
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">

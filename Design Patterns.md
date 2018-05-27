@@ -56,3 +56,46 @@ A: Ne.
 
 A: Prilikom samog prijavljivanja korisnika, znamo sigurno da imamo 3 opcije prilikom registracije koje su: registrovani korisnik, neregistrovani korisnik, guest. Na osnovu datog tipa klase tj. korisnika možemo realizovati 'set-up' nakon registracije, svaki tip korisnika ima drugačiji prikaz, samim tim možemo i drugačije podatke dobiti pomoću api request-a prema našoj bazi. Na osnovu ovoga imamo bolju enkapsulaciju, uz malo polimorfizma. Dodavanje novog tipa user-a pogotovo nije na odmet..
 
+## 4. Prototype - Kreacijski pattern
+
+- Q: Kada koristimo? 
+
+A: Kada je potrebno da kreiramo nove objekte klonirajući jednu od postojećih prototip instanci (postojeći objekat). Ako je trošak kreiranja novog objekta velik i kreiranje objekta je resursno zahtjevno tada se vrši kloniranje već postojećeg objekata. Tj. možemo imati shallow i deep copy (zavisno od naše implementacije).
+Prototype pattern je često koristan i prilikom višestrukog korištenja podataka iz baze: Npr.
+Potrebno je uraditi analizu prodaje na skupu podataka iz baze. Potrebno je kopirati podatke iz
+baze podataka, enkapsulirati ih u objekat i nad njima raditi analizu. Ako je potrebno uraditi i
+druge analize nad istim skupom podataka nije dobra ideja ponovo pristupati bazi podataka,
+čitati podatke i kreirati objekat za njihovo smještanje. Ako se koristi Prototype pattern tada se
+objekat koji se koristi za analizu prodaje klonira i koristi za drugu analizu.
+
+- Q: Kako koristimo?
+
+A: Potrebno je da napravimo interface klasu i nju implementirati na sve tipove prototipa tj. klase koje želimo da imaju mogućnost kopiranja. Također potrebno je implementirati metodu koja vraća tip Interface-a tog istog. Prilikom korištenja metode clone uvijek ćemo pozivati super klasu tj. njenu metodu (Da bi omogućili kloniranje podataka moramo specificirati interface-u da može se klonirati, npr. da extenda klasu Cloneable).
+
+- Q: Iskorišteno u projektu?
+
+A: Ne.
+
+- Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: Ukoliko želimo unutar administracije (in the future) dodati novi tip statistike koji ćemo raditi nad registrovanim korisnicima, možemo baš tu iskoristiti prototype pattern. Prvim api pozivom ka bazi dobijemo sve registrovane korisnike, zatim ih kloniramo za tu neku novu upotrebu.
+
+## 5. Chain of Responsibility- - Pattern ponašanja
+
+- Q: Kada koristimo? 
+
+A: Chain of Responsibility pattern se koristi kada imamo ograničen skup algoritama specifičnih za neku namjenu, a pri tom želimo to bez dodatnog pisanja koda tj. promjenom jednog parametra unutar nekog Handlera mi specificiramo koji algoritam će se izvršiti. Odnosno kako tok pretrage izvršavanja ide, traži se responsible klasa koja će uraditi neki algoritam koji smo mi specificirali.
+
+- Q: Kako koristimo?
+
+A: Moramo specicificirati Handler klasu pomoću koje ćemo rasporediti koji će se algoritam izvršavati za određeni izbor, interface 'Chain' koji će imati 2 metode npr. izvrsiAlgoritam() i postaviNaredniChain(). Svaka klasa koja definira neki algoritam mora imati instancu tog interface-a i mora implementirati taj sami interface, na taj način pravimo chain za određeni izbor.  
+
+- Q: Iskorišteno u projektu?
+
+A: Ne.
+
+- Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: Ukoliko želimo unutar administracije izabrati neki tip statistike pri čemu ćemo svaki put koristiti različit algoritam, možemo ovo iskoristiti. Na ovaj način možemo uvijek dodavati nove algoritme, a promjena unutar glavnog poziva algoritma bi bila samo u nazivu algoritma koji mi hoćemo (npr)..
+
+

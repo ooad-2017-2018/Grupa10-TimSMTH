@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     
-    <Grid x:Name="grid" MinHeight="400" MinWidth="200" Background="AntiqueWhite">
+    <Grid x:Name="grid" MinHeight="400" MinWidth="200" Background="White">
         
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -108,8 +108,26 @@
 
         <TextBlock x:Name="textBlock7"  Text="Picture: " Grid.Row="8" Grid.Column="0" TextAlignment="Center"></TextBlock>
 
-        <Button Name="AddImageButton" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Stretch" Click="UploadButton_Click">Add Image</Button>
-        <Button Name="RegisterButton" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="RegisterButton_Click" >Register</Button>
-        <Button Name="CancelButton" Grid.Column="1"  Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="CancelButton_Click" >Cancel</Button>
+        <Button Name="AddImageButton" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Stretch" Click="UploadButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background> Add Image</Button>
+        <Button Name="RegisterButton" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="RegisterButton_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background> Register</Button>
+        <Button Name="CancelButton" Grid.Column="1"  Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="CancelButton_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background> Cancel</Button>
     </Grid>
 </Page>

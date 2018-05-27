@@ -37,11 +37,13 @@ namespace Vicinor.ViewModel
         }
         public double GetPrecentageOfRegistered()
         {
-            return ((double)GetNumberOfRegisteredUsers()/GetAllUsers() ) * 100;
+            //return Math.Round((double)(GetNumberOfRegisteredUsers() / GetAllUsers()) *100,2);
+            return Math.Round(((double)GetNumberOfRegisteredUsers() / GetAllUsers()) * 100,2);
         }
         public double GetPrecentageOfUnregistered()
         {
-            return ((double)GetNumberOfUnregisteredUsers() / GetAllUsers()) * 100;
+            return Math.Round(((double) GetNumberOfUnregisteredUsers() / GetAllUsers()) *100,2);
+      
 
         }
         public int GetAllUsers()
