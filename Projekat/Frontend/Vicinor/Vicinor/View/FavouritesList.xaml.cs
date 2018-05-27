@@ -24,24 +24,22 @@ namespace Vicinor.Forme
     /// </summary>
     public sealed partial class FavouritesList : Page
     {
+        private List<Restoran> dRestorani;
+
         int korisnik_id;
+        FavouritesListViewModel flvm;
         public FavouritesList()
         {
             this.InitializeComponent();
             korisnik_id = PocetnaFormaViewModel.KORISNIK_ID;
+            flvm = new FavouritesListViewModel();
+            Data_Loaded();
         }
 
-        private void returnButton_Click(object sender, RoutedEventArgs e)
+        private async void Data_Loaded()
         {
-            this.Frame.Navigate(typeof(SearchRestaurants));
+             dRestorani = await flvm.dobaviRestorane(korisnik_id);
         }
 
-        private void Data_Loaded(object sender, RoutedEventArgs e)
-        {
-            var listView = (ListView)sender;
-           // listView.ItemsSource = obsinfo;
-
-           // listView
-        }
     }
 }

@@ -62,7 +62,7 @@
             <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
-        <Image x:Name="image" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"  Source="ms-appx:///Assets/vicinor-logo.png"/>
+        <Image x:Name="image" Height="150" Width="150" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"  Source="ms-appx:///Assets/vicinor-logo.png"/>
 
         <HyperlinkButton x:Name="registerHyperlinkButton" Content="or Register" Margin="0,0,20,0" HorizontalAlignment="Right"  Grid.Column="1" Grid.Row="6" Click="registerHyperlinkButton_Click"/>
         <HyperlinkButton x:Name="continueHyperlinkButton"  Margin="20,0,0,20" Content="Continue as guest" HorizontalAlignment="Left"  Grid.Row="7" FontStretch="Expanded" Grid.Column="1" Click="continueHyperlinkButton_Click" VerticalAlignment="Bottom" Width="119"/>

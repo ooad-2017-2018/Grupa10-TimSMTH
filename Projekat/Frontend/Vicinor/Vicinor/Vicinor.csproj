@@ -172,6 +172,7 @@
     <None Include="Vicinor_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\1.png" />
     <Content Include="Assets\admin_logo.png" />
     <Content Include="Assets\vicinor-logo.png" />
     <Content Include="Properties\Default.rd.xml" />

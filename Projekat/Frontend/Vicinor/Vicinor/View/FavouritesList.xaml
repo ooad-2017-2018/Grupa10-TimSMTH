@@ -5,6 +5,7 @@
     xmlns:local="using:Vicinor.Model"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Vicinor.Model"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -14,25 +15,20 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Favourite Resorants" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <ListView x:Name="lista1" Loaded="Data_Loaded" Margin="0,10,0,789.5" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:Name="DoubleLineDataTemplate" x:DataType="local:Restoran">
-                    <StackPanel Orientation="Horizontal" Height="64" AutomationProperties.Name="{x:Bind Description}">
-                        <Ellipse Height="48" Width="48" VerticalAlignment="Center">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="vicinor-logo.png"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="12,0,0,0">
-                            <TextBlock Text="{x:Bind Name}"  Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
-                            <TextBlock Text="{x:Bind PhoneNumber}" Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
-                        </StackPanel>
+        <GridView ItemsSource="{x:Bind dRestorani}" Margin="0,0,0,10" Grid.Row="1" Grid.RowSpan="2">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:Restoran">
+                    <StackPanel HorizontalAlignment="Center" Width="250" Height="250">
+                        <Image Height="150" Width="150" Source="ms-appx:///Assets/vicinor-logo.png"/>
+                        <TextBlock FontSize="16" Text="{x:Bind Name}" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="10" Text="{x:Bind PhoneNumber}" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </GridView.ItemTemplate>
+        </GridView>
 
-        <Button Name ="returnButton" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="184,19.2,184,0" Height="32" Click="returnButton_Click" >Return</Button>
+        <TextBlock Text="Favourite Resorants" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+
     </Grid>
 </Page>

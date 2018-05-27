@@ -94,6 +94,7 @@ namespace Vicinor.ViewModel
                     passwordG = korisnik.Password;
                     regUserDaNe = true;
                     regUser = korisnik;
+                    KORISNIK_ID = korisnik.KorisnikId;          // samra ne diraj
                     return true;
                 }
                 else if (json == "")

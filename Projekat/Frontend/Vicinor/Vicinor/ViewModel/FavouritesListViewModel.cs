@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +12,15 @@ namespace Vicinor.ViewModel
     {
         List<Restoran> listaDobavljenih = null;
 
-        FavouritesListViewModel()
+        public FavouritesListViewModel()
         {
-            listaDobavljenih = new List<Restoran>();
         }
 
-        /*
         public async Task<List<Restoran>> dobaviRestorane(int id)
-=======
-       /* public async Task<List<Restoran>> dobaviRestorane(int id)
->>>>>>> 451911afd9a593537b1f3789f8db3edf29b964ef
         {
-           Task t = Task.Run(() => getDataUser(id));
+            listaDobavljenih = new List<Restoran>();
+
+           Task t = Task.Run(async () => await getDataUser(id));
            t.Wait();
 
             return listaDobavljenih;
@@ -51,40 +49,30 @@ namespace Vicinor.ViewModel
 
             //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + username + "&Password=" + pw);
 
-            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=Masha&Password=sifraHaris");
+            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetFavList/" + id.ToString());
 
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
-            RegistrovaniKorisnik korisnik = null;
             string httpResponseBody = "";
             try
             {
                 //Send the GET request
-               // httpResponse = await httpClient.GetAsync(requestUri);
+                httpResponse = await httpClient.GetAsync(requestUri);
 
                 httpResponse.EnsureSuccessStatusCode();
                 httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
                 string json = httpResponseBody;
-                //korisnik = JsonConvert.DeserializeObject<RegistrovaniKorisnik>(json);
+                listaDobavljenih = (List<Restoran>) JsonConvert.DeserializeObject<ICollection<Restoran>>(json);
             }
             catch (Exception ex)
             {
                 httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
             }
-
-            if (korisnik != null)
-            {
-                int a = korisnik.KorisnikId;
-               // usernameG = korisnik.Username;
-                //passwordG = korisnik.Password;
-               // KORISNIK_ID = korisnik.KorisnikId;
-            }
+            if (listaDobavljenih != null) return true;
             return false;
-<<<<<<< HEAD
         }
-        */
-
+      
     }
 }
