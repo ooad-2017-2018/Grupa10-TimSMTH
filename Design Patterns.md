@@ -118,7 +118,40 @@ A: •	Ovaj patern bi se mogao iskoristiti kod prikaza statistike. AdminStatisti
 
 ## 7. Decorator patern
 
+-Q: Kada koristimo?
+
+A: Osnovna namjena Decorator paterna je da omogući dinamičko dodavanje novih elemenata i funkcionalnosti postojećim objektima. 
+Decorator patern se koristi i kada postojeće klase komponenti nisu podesne za podklase, npr. nisu raspoložive ili bi rezultiralo u mnogo podklasa. Objekat pri tome nezna da je urađena dekoracija što je veoma korisno za iskoristljivost i ponovnu upotrebu komponenti softverskog sistema. Može se koristi i za implementaciju različitih kompresija videa, simultano prevođenje, i sl. 
+
+-Q: Kako koristimo?
+
+A: Decorator patern se ne oslanja na čisto nasljeđivanje prilikom dodavanja novih atributa i ponašanja.
+Decorator patern nasljeđuje originalnu klasu i sadrži instancu originalne klase. Postojeći objekti se ne
+mijenjaju već se kreiraju novi. To se postiže sa Decorator klasom koja uključuje dva tipa relacija sa
+IComponent interfejsom: Decorator realizira IComponent interfejs (isprekidanim strelicama ili
+nasljeđivanjem), Decorator je povezan kompozicijom sa IComponent interfejsom. To znači da
+Decorator instancira jedan ili više IComponent objekata i 'decorate' objekte – uključuje nove operacije
+i override postojeće.
+
+-Q: Iskorišteno u projektu?
+
+A: Jeste. Decorator patern koristimo da pruzimo dodatne funkcionalnost izvedenoj klasi a da se pri tome ne vidi razlika od bazne klase. Mi u nasoj implementaciji imamo Registrovanog i Neregistrovanog korisnika, oba objekta pretrazuju restorane ali samo registrovani korisnik ima dodatnu mogucnost za dodavanje omiljenih restorana.
+
+
 ## 8. Factory Method
 
+-Q: Kada koristimo?
 
+A: Uloga Factory Method paterna je da omogući kreiranje objekata na način da podklase odluče koju klasu instancirati. Različite podklase mogu na različite načine implementirati interfejs. Factory Method često se primjenjuje jer dopušta projektu da blisko slijedi SOLID principe. Konkretno, principe međusobne segregacije i inverzije ovisnosti.
 
+-Q: Kako koristimo?
+
+A: Factory Method instancira odgovarajuću podklasu(izvedenu klasu) preko posebne metode na osnovu informacije od strane klijenta ili na osnovu tekućeg stanja.
+
+-Q: Iskorišteno u projektu?
+
+A: Ne
+
+-Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: •	Ne vidim nigdje efektivan nacin gdje bi se mogao ovaj patern iskoristiti.
