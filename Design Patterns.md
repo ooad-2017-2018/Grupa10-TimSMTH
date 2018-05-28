@@ -18,7 +18,7 @@ A: Ne.
 
 - Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: Ovo je zgodno uvijek imati implementirano ukoliko imamo rad sa više vrsta kolekcija. Pošto u našoj implementaciji imamo samo listu nije od nekog značaja. Iskorišteno bi u nekoj posebnoj klasi koja bi imala realizovan taj interface i imala recimo metodu koja će nešto sa elementima svih kolekcija..
+A: Ukoliko imamo rad sa više vrsta kolekcija implementacija ovog paterna je veoma korisna. Pošto u našoj implementaciji imamo samo listu nije od nekog značaja. Iskorišteno bi u nekoj posebnoj klasi koja bi imala realizovan taj interface i imala recimo metodu koja će nešto sa elementima svih kolekcija..
 
 ## 2. Singleton - Kreacijski pattern
 
@@ -97,5 +97,28 @@ A: Ne.
 - Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
 A: Ukoliko želimo unutar administracije izabrati neki tip statistike pri čemu ćemo svaki put koristiti različit algoritam, možemo ovo iskoristiti. Na ovaj način možemo uvijek dodavati nove algoritme, a promjena unutar glavnog poziva algoritma bi bila samo u nazivu algoritma koji mi hoćemo (npr)..
+
+## 6. Adapter patern
+
+-Q: Kada koristimo?
+
+A: Patern možemo koristiti da omogućimo širu upotrebu već postojećih klasa kada nam je potreban drugačiji interfejs već postojeće klase, a ne želimo mijenjati postojeću klasu. Novokreirana adapter klasa služi kao posrednik između  originalne klase i  željenog interfejsa. 
+
+-Q: Kako koristimo?
+
+A: Potrebno je napraviti novi interfejs Itarget (zahtjevani interfejs) kojeg implementira klasa Adapter koja prilagođava stari interfejs. Klasa Adaptee definira već postojeći interfejs kojeg prilagođavamo. U klasi ITarget definišemo metode koje treba izmijeniti. Klasa adapter implementira te metode na odgovarajući način s ciljem da se postigne zahtjevani interfejs.
+
+-Q: Iskorišteno u projektu?
+
+A: Ne
+
+-Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: •	Ovaj patern bi se mogao iskoristiti kod prikaza statistike. AdminStatistikaViewModel definiše metode koje vraćaju statistiku o korisnicima (procenat registrovanih i neregistrovanih korisnika) u vidu decimalnog broja sa preciznosti od dva decimalna mjesta. Ako bi htjeli promijeniti ispis željenih podataka možemo definisati novi interfejes IadminStatistka sa metodama procenatReg() i procenatNereg() koje ćemo implementirsti u Adapteru na način koji nama odgovara.
+
+## 7. Decorator patern
+
+## 8. Factory Method
+
 
 
