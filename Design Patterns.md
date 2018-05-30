@@ -80,7 +80,7 @@ A: Ne.
 
 A: Ukoliko želimo unutar administracije (in the future) dodati novi tip statistike koji ćemo raditi nad registrovanim korisnicima, možemo baš tu iskoristiti prototype pattern. Prvim api pozivom ka bazi dobijemo sve registrovane korisnike, zatim ih kloniramo za tu neku novu upotrebu.
 
-## 5. Chain of Responsibility- - Pattern ponašanja
+## 5. Chain of Responsibility - Pattern ponašanja
 
 - Q: Kada koristimo? 
 
