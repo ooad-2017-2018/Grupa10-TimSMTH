@@ -98,11 +98,11 @@ A: Ne.
 
 A: Ukoliko želimo unutar administracije izabrati neki tip statistike pri čemu ćemo svaki put koristiti različit algoritam, možemo ovo iskoristiti. Na ovaj način možemo uvijek dodavati nove algoritme, a promjena unutar glavnog poziva algoritma bi bila samo u nazivu algoritma koji mi hoćemo (npr)..
 
-## 6. Adapter patern - Strukturalni patern
+## 6. Adapter pattern - Strukturalni pattern
 
 -Q: Kada koristimo?
 
-A: Patern možemo koristiti da omogućimo širu upotrebu već postojećih klasa kada nam je potreban drugačiji interfejs već postojeće klase, a ne želimo mijenjati postojeću klasu. Novokreirana adapter klasa služi kao posrednik između  originalne klase i  željenog interfejsa. 
+A: Pattern možemo koristiti da omogućimo širu upotrebu već postojećih klasa kada nam je potreban drugačiji interfejs već postojeće klase, a ne želimo mijenjati postojeću klasu. Novokreirana adapter klasa služi kao posrednik između  originalne klase i  željenog interfejsa. 
 
 -Q: Kako koristimo?
 
@@ -114,19 +114,19 @@ A: Ne
 
 -Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: 	Ovaj patern bi se mogao iskoristiti kod prikaza statistike. AdminStatistikaViewModel definiše metode koje vraćaju statistiku o korisnicima (procenat registrovanih i neregistrovanih korisnika) u vidu decimalnog broja sa preciznosti od dva decimalna mjesta. Ako bi htjeli promijeniti ispis željenih podataka možemo definisati novi interfejes IadminStatistka sa metodama procenatReg() i procenatNereg() koje ćemo implementirsti u Adapteru na način koji nama odgovara.
+A: 	Ovaj pattern bi se mogao iskoristiti kod prikaza statistike. AdminStatistikaViewModel definiše metode koje vraćaju statistiku o korisnicima (procenat registrovanih i neregistrovanih korisnika) u vidu decimalnog broja sa preciznosti od dva decimalna mjesta. Ako bi htjeli promijeniti ispis željenih podataka možemo definisati novi interfejes IadminStatistka sa metodama procenatReg() i procenatNereg() koje ćemo implementirsti u Adapteru na način koji nama odgovara.
 
-## 7. Decorator patern - Strukturalni patern
+## 7. Decorator pattern - Strukturalni pattern
 
 -Q: Kada koristimo?
 
-A: Osnovna namjena Decorator paterna je da omogući dinamičko dodavanje novih elemenata i funkcionalnosti postojećim objektima. 
-Decorator patern se koristi i kada postojeće klase komponenti nisu podesne za podklase, npr. nisu raspoložive ili bi rezultiralo u mnogo podklasa. Objekat pri tome nezna da je urađena dekoracija što je veoma korisno za iskoristljivost i ponovnu upotrebu komponenti softverskog sistema. Može se koristi i za implementaciju različitih kompresija videa, simultano prevođenje, i sl. 
+A: Osnovna namjena Decorator patterna je da omogući dinamičko dodavanje novih elemenata i funkcionalnosti postojećim objektima. 
+Decorator pattern se koristi i kada postojeće klase komponenti nisu podesne za podklase, npr. nisu raspoložive ili bi rezultiralo u mnogo podklasa. Objekat pri tome nezna da je urađena dekoracija što je veoma korisno za iskoristljivost i ponovnu upotrebu komponenti softverskog sistema. Može se koristi i za implementaciju različitih kompresija videa, simultano prevođenje, i sl. 
 
 -Q: Kako koristimo?
 
-A: Decorator patern se ne oslanja na čisto nasljeđivanje prilikom dodavanja novih atributa i ponašanja.
-Decorator patern nasljeđuje originalnu klasu i sadrži instancu originalne klase. Postojeći objekti se ne
+A: Decorator pattern se ne oslanja na čisto nasljeđivanje prilikom dodavanja novih atributa i ponašanja.
+Decorator pattern nasljeđuje originalnu klasu i sadrži instancu originalne klase. Postojeći objekti se ne
 mijenjaju već se kreiraju novi. To se postiže sa Decorator klasom koja uključuje dva tipa relacija sa
 IComponent interfejsom: Decorator realizira IComponent interfejs (isprekidanim strelicama ili
 nasljeđivanjem), Decorator je povezan kompozicijom sa IComponent interfejsom. To znači da
@@ -135,14 +135,14 @@ i override postojeće.
 
 -Q: Iskorišteno u projektu?
 
-A: Jeste. Decorator patern koristimo da pruzimo dodatne funkcionalnost izvedenoj klasi a da se pri tome ne vidi razlika od bazne klase. Mi u nasoj implementaciji imamo Registrovanog i Neregistrovanog korisnika, oba objekta pretrazuju restorane ali samo registrovani korisnik ima dodatnu mogucnost za dodavanje omiljenih restorana.
+A: Jeste. Decorator pattern koristimo da pruzimo dodatne funkcionalnost izvedenoj klasi a da se pri tome ne vidi razlika od bazne klase. Mi u nasoj implementaciji imamo Registrovanog i Neregistrovanog korisnika, oba objekta pretrazuju restorane ali samo registrovani korisnik ima dodatnu mogucnost za dodavanje omiljenih restorana.
 
 
-## 8. Factory Method - Kreacijski patern
+## 8. Factory Method - Kreacijski pattern
 
 -Q: Kada koristimo?
 
-A: Uloga Factory Method paterna je da omogući kreiranje objekata na način da podklase odluče koju klasu instancirati. Različite podklase mogu na različite načine implementirati interfejs. Factory Method često se primjenjuje jer dopušta projektu da blisko slijedi SOLID principe. Konkretno, principe međusobne segregacije i inverzije ovisnosti.
+A: Uloga Factory Method patterna je da omogući kreiranje objekata na način da podklase odluče koju klasu instancirati. Različite podklase mogu na različite načine implementirati interfejs. Factory Method često se primjenjuje jer dopušta projektu da blisko slijedi SOLID principe. Konkretno, principe međusobne segregacije i inverzije ovisnosti.
 
 -Q: Kako koristimo?
 
@@ -154,13 +154,13 @@ A: Ne
 
 -Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: Ne vidim nigdje efektivan nacin gdje bi se mogao ovaj patern iskoristiti.
+A: Ne vidimo nigdje efektivan nacin gdje bi se mogao ovaj pattern iskoristiti.
 
-## 9. State patern - Paterni ponašanja
+## 9. State pattern - Patterni ponašanja
 
 -Q: Kada koristimo?
 
-A: State patern je dinamička verzija Strategy paterna gdje objekat mijenja način ponašanja na osnovu trenutnog stanja.
+A: State pattern je dinamička verzija Strategy patterna gdje objekat mijenja način ponašanja na osnovu trenutnog stanja.
 
 -Q: Kako koristimo?
 
@@ -172,5 +172,5 @@ A: Ne
 
 -Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: 
+A: Ne vidimo nigdje efektivan nacin gdje bi se mogao ovaj pattern iskoristiti.
 
