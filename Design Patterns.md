@@ -154,7 +154,7 @@ A: Ne
 
 -Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: Ne vidimo nigdje efektivan nacin gdje bi se mogao ovaj pattern iskoristiti.
+A: Ne vidimo nigdje efektivan nacin gdje bi se ovaj pattern mogao iskoristiti.
 
 ## 9. State pattern - Patterni ponašanja
 
@@ -172,5 +172,23 @@ A: Ne
 
 -Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
 
-A: Ne vidimo nigdje efektivan nacin gdje bi se mogao ovaj pattern iskoristiti.
+A: Ne vidimo nigdje efektivan način gdje bi se ovaj pattern mogao iskoristiti.
+
+## 10. Observer pattern - Patterni ponašanja
+
+-Q: Kada koristimo?
+
+A: Observer patern koristimo kada je potrebno uspostaviti relaciju između objekata tako da kada jedan objekat promijeni stanje, drugi zainteresirani objekti dobijaju obavijest o promjeni.
+
+-Q: Kako koristimo?
+
+A: Uvodimo nove klase Subject klasu i Observer klasu. Instanca klase Subject mijenja svoje stanje i obavještava Observer klase koje predstavljaju konkretne klase koje obezbjeđuju konkretnu implementaciju za IObserver interfejs(sadrži samo jednu metodu - Update koja se poziva nakon promjene stanja neke Subject instance). Subject klasa sadrži privatni događaj Notify(Event mehanizam za pozivanje Update metode za sve posmatrače).
+
+-Q: Iskorišteno u projektu?
+
+A: Ne
+
+-Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: Ne vidimo nigdje efektivan način gdje bi se ovaj pattern  mogao iskoristiti.
 
