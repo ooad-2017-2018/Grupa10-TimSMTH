@@ -16,9 +16,9 @@ namespace Vicinor.Model
             set { lokacijaId = value; }
         }
 
-        private int x, y;
+        private double x, y;
         [Required]
-        public int X
+        public double X
         {
             get
             {
@@ -31,7 +31,7 @@ namespace Vicinor.Model
             }
         }
 
-        public int Y
+        public double Y
         {
             get
             {

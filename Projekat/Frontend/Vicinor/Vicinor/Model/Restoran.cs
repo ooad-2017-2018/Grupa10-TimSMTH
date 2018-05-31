@@ -12,6 +12,9 @@ namespace Vicinor.Model
     {
         string name, description, phoneNumber;
         byte[] image;
+
+        string slikaURL;
+
         Lokacija location;
         private ICollection<Recenzija> listRezension;
 
@@ -95,13 +98,26 @@ namespace Vicinor.Model
                 location = value;
             }
         }
-        /*
-        public System.Drawing.Image GetBitmap()
+
+        public string SlikaURL
         {
-            using (var stream = new MemoryStream(Image))
+            get
             {
-                return System.Drawing.Image.FromStream(stream);
+                return slikaURL;
             }
-        }   */
+
+            set
+            {
+                slikaURL = value;
+            }
+        }
+        /*
+public System.Drawing.Image GetBitmap()
+{
+   using (var stream = new MemoryStream(Image))
+   {
+       return System.Drawing.Image.FromStream(stream);
+   }
+}   */
     }
 }
