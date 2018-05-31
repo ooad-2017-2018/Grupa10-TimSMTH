@@ -135,7 +135,11 @@ i override postojeće.
 
 -Q: Iskorišteno u projektu?
 
-A: Jeste. Decorator pattern koristimo da pruzimo dodatne funkcionalnost izvedenoj klasi a da se pri tome ne vidi razlika od bazne klase. Mi u nasoj implementaciji imamo Registrovanog i Neregistrovanog korisnika, oba objekta pretrazuju restorane ali samo registrovani korisnik ima dodatnu mogucnost za dodavanje omiljenih restorana.
+A: Nije.
+
+-Q: Ako nije, gdje bi bilo dobro mjesto za njihovu upotrebu i zašto?
+
+A: Decorator pattern koristimo da pruzimo dodatne funkcionalnost izvedenoj klasi a da se pri tome ne vidi razlika od bazne klase. Mi u nasoj implementaciji imamo Registrovanog i Neregistrovanog korisnika, oba objekta pretrazuju restorane ali samo registrovani korisnik ima dodatnu mogucnost za dodavanje omiljenih restorana.
 
 
 ## 8. Factory Method - Kreacijski pattern
