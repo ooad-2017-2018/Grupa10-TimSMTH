@@ -8,9 +8,9 @@ namespace Vicinor.Model
     public class Lokacija
     {
 
-        private int lokacijaId;
+        private double lokacijaId;
         [ScaffoldColumn(false)]
-        public int LokacijaId
+        public double LokacijaId
         {
             get { return lokacijaId; }
             set { lokacijaId = value; }

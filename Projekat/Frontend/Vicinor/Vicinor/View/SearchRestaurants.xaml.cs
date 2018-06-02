@@ -31,20 +31,19 @@ namespace Vicinor.Forme
         public Geolocator geolocator = null;
         Geoposition position;
 
-        private List<Restoran> listaDobavljenih = null;
+        public static List<Restoran> listaDobavljenih = null;
 
         public SearchRestaurants()
         {
             this.InitializeComponent();
             listaDobavljenih = new List<Restoran>();
             Initial();
-           
         }
         public async void Initial()
         {
-            bool b = await getLocationByGeolocatorAsync();
-            if(b)
-            radiusTextBox.Text = "Lat="+position.Coordinate.Point.Position.Latitude.ToString()+"Long:"+ position.Coordinate.Point.Position.Longitude.ToString();
+           bool b = await getLocationByGeolocatorAsync();
+           // if(b)
+           // radiusTextBox.Text = "Lat="+position.Coordinate.Point.Position.Latitude.ToString()+"Long:"+ position.Coordinate.Point.Position.Longitude.ToString();
         }
 
         private CancellationTokenSource _geolocationCancelationTokenSource = null;
@@ -102,8 +101,10 @@ namespace Vicinor.Forme
         {
             //Otvaranje forme za pretragu, dobivanje rezultata sa api-ja
             // liste Restorana
+            listaDobavljenih = new List<Restoran>();
+            bool b = await getLocationByGeolocatorAsync();
 
-            if(radiusTextBox.Text == "")
+            if (radiusTextBox.Text == "")
             {
                 radiusTextBox.Text = "UNESITE RADIUS U BROJEVIMA";
                 return;
@@ -124,10 +125,12 @@ namespace Vicinor.Forme
                 LANGITUDINALA = position.Coordinate.Point.Position.Latitude.ToString();
             }
 
-            HttpResponseMessage response = await client.GetAsync(new Uri("https://maps.googleapis.com/maps/api/place/search/json?types=restaurant" 
-                + "&location=" + LONGITUDINALA + "%2C" + LANGITUDINALA + "&radius=" + radiusTextBox.Text.ToString() 
-                + "&sensor=false&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s"));
+            //HttpResponseMessage response = await client.GetAsync(new Uri("https://maps.googleapis.com/maps/api/place/search/json?types=restaurant" 
+            //    + "&location=" + LONGITUDINALA + "%2C" + LANGITUDINALA + "&radius=" + radiusTextBox.Text.ToString() 
+            //    + "&sensor=false&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s"));
 
+            HttpResponseMessage response = await client.GetAsync(new Uri("https://maps.googleapis.com/maps/api/place/search/json?types=restaurant&"+
+                "location="+LANGITUDINALA +"%2C"+LONGITUDINALA+"&radius="+radiusTextBox.Text.ToString()+"&sensor=false&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s"));
             var jsonString = await response.Content.ReadAsStringAsync();
 
             JsonObject root = JsonValue.Parse(jsonString).GetObject();
@@ -141,18 +144,42 @@ namespace Vicinor.Forme
                 Restoran novi = new Restoran();
 
                 string name_ime_restorana = restoran.GetNamedString("name");
-                string place_id_kao_deskripcija = restoran.GetNamedString("place_id");
-                string adresa_kao_phone_number = restoran.GetNamedString("vicinity");
+                string place_id_kao_deskripcija = restoran.GetNamedString("vicinity");
+                string adresa_kao_phone_number;
+                try
+                {
+                     adresa_kao_phone_number = restoran.GetNamedValue("rating").ToString();
 
+                }
+                catch (Exception k)
+                {
+                    adresa_kao_phone_number = "";
+                }
+                string place_id = null;
                 novi.Name = name_ime_restorana;
 
-                novi.PhoneNumber = adresa_kao_phone_number;
+                //novi.PhoneNumber = adresa_kao_phone_number;
 
                 novi.RestoranId = (int) i;
 
                 novi.Description = place_id_kao_deskripcija;
 
-                JsonArray objekatPhotosM = null; 
+                JsonArray objekatPhotosM = null;
+                try
+                {
+                    place_id = restoran.GetNamedString("place_id");
+                }
+                catch (Exception)
+                {
+                
+                }
+
+                if (place_id != null)
+                {
+                    //Postaviti phone number
+                    //                    https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJS51qkj_KWEcRLePQI32zgn0&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s
+                    //link
+                }
 
                 try
                 {
@@ -174,7 +201,7 @@ namespace Vicinor.Forme
                     novi.SlikaURL = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" +
                         slikaReferenca + "&sensor=false&maxheight=" + MAX_HEIGHT.ToString() +
                         "&maxwidth=" + MAX_WIDTH.ToString() + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s";
-
+                    novi.Slika = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri(novi.SlikaURL, UriKind.Absolute));
                 }
                 else novi.SlikaURL = "";
 

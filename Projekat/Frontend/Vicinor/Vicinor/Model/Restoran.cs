@@ -5,18 +5,33 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Vicinor.Model
 {
     public class Restoran
     {
-        string name, description, phoneNumber;
+        string name, description;
         byte[] image;
 
         string slikaURL;
+        private string phoneNumber;
+
+        public string PhoneNumber
+        {
+            get { return  phoneNumber; }
+            set {  phoneNumber = value; }
+        }
 
         Lokacija location;
         private ICollection<Recenzija> listRezension;
+        private BitmapImage slika;
+
+        public BitmapImage Slika
+        {
+            get { return slika; }
+            set { slika = value; }
+        }
 
         public virtual ICollection<Recenzija> ListRezension
         {
@@ -60,19 +75,7 @@ namespace Vicinor.Model
             }
         }
 
-        public System.String PhoneNumber
-        {
-            get
-            {
-                return phoneNumber;
-            }
-
-            set
-            {
-                phoneNumber = value;
-            }
-        }
-
+        
         public byte[] Image
         {
             get
