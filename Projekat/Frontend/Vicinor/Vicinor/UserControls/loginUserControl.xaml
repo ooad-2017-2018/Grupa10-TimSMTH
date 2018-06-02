@@ -45,6 +45,7 @@
                         <Setter Target="usernameTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="passwordTextBlock.(TextBlock.FontSize)" Value="18"/>
                         <Setter Target="textBox.(TextBox.FontSize)" Value="18"/>
+                 
                         <Setter Target="textBox1.(TextBox.FontSize)" Value="18"/>
                         <Setter Target="logInButton.(Control.FontSize)" Value="18"/>
                         <Setter Target="errorTextBlock.(TextBlock.FontSize)" Value="18"/>

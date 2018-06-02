@@ -8,6 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,84,0">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone"/>
+                <VisualState x:Name="Desktop"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="13*"></RowDefinition>

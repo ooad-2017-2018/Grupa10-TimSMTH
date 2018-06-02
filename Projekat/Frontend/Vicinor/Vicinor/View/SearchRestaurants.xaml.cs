@@ -30,7 +30,9 @@ namespace Vicinor.Forme
     public sealed partial class SearchRestaurants : Page
     {
         public Geolocator geolocator = null;
-        Geoposition position;
+        public static Geoposition position;
+
+        public static Lokacija novaLokacija = new Lokacija();
 
         public static List<Restoran> listaDobavljenih = null;
         public List<Restoran> listaRecommended = null;
@@ -234,8 +236,7 @@ namespace Vicinor.Forme
                     double longitude = lokacijav2.GetNamedNumber("lng");    // x
 
                     double latitude = lokacijav2.GetNamedNumber("lat");     // y
-
-                    Lokacija novaLokacija = new Lokacija();
+                    
 
                     novaLokacija.X = longitude;
 

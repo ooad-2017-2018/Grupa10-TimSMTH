@@ -38,6 +38,9 @@
                     </VisualState.StateTriggers>
                 </VisualState>
                 <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="loginUC.(FrameworkElement.Width)" Value="500"/>
+                    </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
                     </VisualState.StateTriggers>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Vicinor.Model;
+using Vicinor.View;
 using Vicinor.ViewModel;
 
 using Windows.Foundation;
@@ -17,6 +18,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+
 
 
 
@@ -92,7 +94,7 @@ namespace Vicinor.Forme
 
         private void routeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(PrikazOdabranogRestorana));
         }
 
         private void phoneCallButton_Click(object sender, RoutedEventArgs e)

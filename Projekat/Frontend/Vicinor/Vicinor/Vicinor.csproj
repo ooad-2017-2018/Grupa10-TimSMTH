@@ -117,6 +117,7 @@
     <Compile Include="ViewModel\AdminUserOverviewViewModel.cs" />
     <Compile Include="ViewModel\FavouritesListViewModel.cs" />
     <Compile Include="ViewModel\PocetnaFormaViewModel.cs" />
+    <Compile Include="ViewModel\PrikazOdabranogViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\StartSearchViewModel.cs" />
     <Compile Include="ViewModel\UpdateProfilViewModel.cs" />
@@ -237,8 +238,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PrikazOdabranogRestorana.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RegistracijaKorisnika.xaml">
       <SubType>Designer</SubType>
