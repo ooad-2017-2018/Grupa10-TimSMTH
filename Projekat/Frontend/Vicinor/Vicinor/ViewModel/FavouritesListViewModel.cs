@@ -22,7 +22,6 @@ namespace Vicinor.ViewModel
 
            Task t = Task.Run(async () => await getDataUser(id));
            t.Wait();
-
             return listaDobavljenih;
         }
 

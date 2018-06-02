@@ -213,10 +213,11 @@ namespace Vicinor.Forme
 
                     double MAX_WIDTH = objekatPhotos.GetNamedNumber("width");
 
-                    novi.SlikaURL = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" +
+                    novi.SlikaURL = objekatPhotos.GetNamedString("photo_reference"); 
+
+                    novi.Slika = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri("https://maps.googleapis.com/maps/api/place/photo?photoreference=" +
                         slikaReferenca + "&sensor=false&maxheight=" + MAX_HEIGHT.ToString() +
-                        "&maxwidth=" + MAX_WIDTH.ToString() + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s";
-                    novi.Slika = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri(novi.SlikaURL, UriKind.Absolute));
+                        "&maxwidth=" + MAX_WIDTH.ToString() + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s", UriKind.Absolute));
                 }
                 else novi.SlikaURL = "";
 
