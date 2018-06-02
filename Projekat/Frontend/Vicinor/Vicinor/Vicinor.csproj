@@ -91,6 +91,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\Library.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\KorisnikUSistemu.cs" />

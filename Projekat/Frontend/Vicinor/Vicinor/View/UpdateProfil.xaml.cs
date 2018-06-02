@@ -171,30 +171,28 @@ namespace Vicinor.Forme
                 Tuple<bool, String> rez1 = ValidacijaUser.validatePasswordLength(newPassword);
                 Tuple<bool, String> rez2 = ValidacijaUser.validatePasswordContent(newPassword);
                 //Validacija
-                if (rez1.Item1==true && rez2.Item1==true)
+
+                if (!rez1.Item1)
                 {
+                    poruka += rez1.Item2 + "\n";
+
+                }
+                else if (!rez2.Item1)
+                {
+                    poruka += rez2.Item2 + "\n";
+                }
+                else {                 
                     poruka += "New password is valid.\n";
                     //Vrsimo upis u bazu
                     bool izmjenjen = await upvm.changePassword(id, newPassword);
                     if (izmjenjen)
                     {
-                       // PocetnaFormaViewModel.setPasswordG(newPassword);
-                       // regUser.Password = newPassword;
+                        PocetnaFormaViewModel.setPasswordG(newPassword);
+                        regUser.Password = newPassword;
                     }
-                    
                 }
-                else
-                {
-                    if (!rez1.Item1)
-                    {
-                        poruka += rez1.Item2 + "\n";
 
-                    }
-                    if (!rez2.Item1)
-                    {
-                        poruka += rez2.Item2 + "\n";
-                    }
-                }
+                
 
             }
             if (newEmail != regUser.Email)

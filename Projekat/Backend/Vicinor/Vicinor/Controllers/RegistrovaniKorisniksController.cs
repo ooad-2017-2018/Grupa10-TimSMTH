@@ -162,8 +162,12 @@ namespace Vicinor.Controllers
         [HttpPut]
         public void changePassword(int id, String password)
         {
-            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Password = password;
-            db.SaveChanges();
+            if (password.Length > 0)
+            {
+                db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).Password = password;
+                db.SaveChanges();
+            }
+           
         }
 
         [HttpPut]

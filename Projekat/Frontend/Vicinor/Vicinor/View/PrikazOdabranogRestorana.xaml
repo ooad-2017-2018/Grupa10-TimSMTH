@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Foundation="using:Windows.Foundation"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     x:Class="Vicinor.MainPage"
     mc:Ignorable="d">
 
@@ -18,54 +19,7 @@
                 </VisualState>
                 <VisualState x:Name="Tablet">
                     <VisualState.Setters>
-                        <Setter Target="grid.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>0,0,-457,132</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="image.(FrameworkElement.Width)" Value="NaN"/>
-                        <Setter Target="image.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
-                        <Setter Target="image.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>33.057,91.37,22.051,0</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>30,0,0,10</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button1.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>243,0,0,10</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button_Copy1.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>456,0,0,10</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button3.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>669,0,0,10</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button1.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button3.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button3.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="button3.(FrameworkElement.Width)" Value="160"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.Width)" Value="205"/>
-                        <Setter Target="button1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="button1.(FrameworkElement.Width)" Value="202"/>
-                        <Setter Target="button.(FrameworkElement.Width)" Value="205"/>
-                        <Setter Target="image.(FrameworkElement.Height)" Value="430.636"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.Height)" Value="70"/>
-                        <Setter Target="button3.(FrameworkElement.Height)" Value="70"/>
-                        <Setter Target="image.(UIElement.RenderTransform).(CompositeTransform.Rotation)" Value="0.075"/>
-                        <Setter Target="image.(UIElement.UseLayoutRounding)" Value="False"/>
+                       
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -73,61 +27,7 @@
                 </VisualState>
                 <VisualState x:Name="Desktop">
                     <VisualState.Setters>
-                        <Setter Target="grid.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>0,0,-963,-59</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="image.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>14,81,10,0</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="image.(FrameworkElement.VerticalAlignment)" Value="Top"/>
-                        <Setter Target="image.(FrameworkElement.Height)" Value="480"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>674,0,0,135</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button3.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>1042,0,0,135</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button.(FrameworkElement.Width)" Value="373"/>
-                        <Setter Target="button1.(FrameworkElement.Width)" Value="271"/>
-                        <Setter Target="button1.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>395,0,0,135</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button3.(FrameworkElement.Width)" Value="295"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.Width)" Value="360"/>
-                        <Setter Target="button1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="image.(FrameworkElement.Width)" Value="NaN"/>
-                        <Setter Target="image.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
-                        <Setter Target="button1.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button_Copy1.(FrameworkElement.Height)" Value="77"/>
-                        <Setter Target="button.(FrameworkElement.Margin)">
-                            <Setter.Value>
-                                <Thickness>14,0,0,135</Thickness>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button3.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="button3.(FrameworkElement.Height)" Value="76"/>
-                        <Setter Target="button3.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
-                        <Setter Target="button3.(UIElement.RenderTransformOrigin)">
-                            <Setter.Value>
-                                <Foundation:Point>-0.705,2.842</Foundation:Point>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Target="button_Copy1.(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Value="1"/>
-                        <Setter Target="button1.(FrameworkElement.Height)" Value="77"/>
-                        <Setter Target="button.(FrameworkElement.Height)" Value="77"/>
+                      
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1000"/>
@@ -135,20 +35,31 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Button x:Name="button" Content="Fav list" HorizontalAlignment="Left" Margin="2,777,0,0" VerticalAlignment="Center" Height="70" Width="137" Click="button_Click" d:LayoutOverrides="VerticalAlignment, TopMargin, BottomMargin"/>
-        <Button x:Name="button1" Content="Search" HorizontalAlignment="Left" Margin="146,777,0,0" VerticalAlignment="Center" Height="70" Width="135" Click="button1_Click" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, TopMargin, BottomMargin"/>
-        <Button x:Name="button_Copy1" Content="Update" HorizontalAlignment="Left" Margin="287,777,0,0" VerticalAlignment="Center" Height="70" Width="137" Click="button_Copy1_Click" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopMargin, BottomMargin">
-            <Button.RenderTransform>
-                <CompositeTransform/>
-            </Button.RenderTransform>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Maps:MapControl Name="myMap" Grid.Row="1" Grid.Column="1"/>
+
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,23,0,0" Grid.Row="0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Upute:" VerticalAlignment="Top" Height="53" Width="320" FontSize="30"/>
+        <Button x:Name="returnButton" Content="Close" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="returnButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
         </Button>
-        <Button x:Name="button3" Content="Log out" HorizontalAlignment="Left" Margin="430,777,0,0" VerticalAlignment="Center" Height="70" Width="137"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="656" Margin="14,81,0,0" VerticalAlignment="Top" Width="543" RenderTransformOrigin="0.487,0.352" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" d:LayoutRounding="Auto">
-            <Image.RenderTransform>
-                <CompositeTransform/>
-            </Image.RenderTransform>
-        </Image>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,23,0,0" TextWrapping="Wrap" Text="Naziv restorana" VerticalAlignment="Top" Height="53" Width="320" FontSize="30"/>
+        <TextBox x:Name="tbOutputText" Grid.Column="2" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="x" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

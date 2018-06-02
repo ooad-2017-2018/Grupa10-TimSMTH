@@ -12,6 +12,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="13*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="10,10,10,0" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="FlipView_SelectionChanged" Background="White">
@@ -32,21 +33,22 @@
                                 </LinearGradientBrush>
                             </Button.Background>
                         </Button>
-                        <Button x:Name="routeButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE724;"   VerticalAlignment="Top" Height="39" Width="44" RenderTransformOrigin="3.867,0.674" Margin="421,-39,0,0" Click="star1Button_Click"  >
-                            <Button.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#FF3D8EBB"/>
-                                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
-                                </LinearGradientBrush>
-                            </Button.Background>
-                        </Button>
+ 
                     </StackPanel>
                 </DataTemplate>
             </FlipView.ItemTemplate>
         </FlipView>
 
         <TextBlock Text="Pick your favourite..." Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-
+        <Button x:Name="routeButton"  Grid.Row="2" Content="Show route" VerticalAlignment="Center" HorizontalAlignment="Center" Click="routeButton_Click"  >
+            <!-- FontFamily ="Segoe MDL2 Assets" Content="&#xE724;" -->
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 

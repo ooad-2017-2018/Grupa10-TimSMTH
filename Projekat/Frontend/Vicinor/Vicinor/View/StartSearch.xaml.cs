@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Vicinor.Model;
 using Vicinor.ViewModel;
+
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -38,7 +39,7 @@ namespace Vicinor.Forme
 
         }
 
-        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        /*private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
             
             this.Frame.Navigate(typeof(PocetnaForma));
@@ -60,7 +61,7 @@ namespace Vicinor.Forme
         {
             //Otvaranje forme za registraciju korisnika
             this.Frame.Navigate(typeof(FavouritesList));
-        }
+        }*/
 
         private void flip_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -77,6 +78,11 @@ namespace Vicinor.Forme
             Restoran r = dRestorani[flip.SelectedIndex];
             ssvm.AddToFavourite(r);
 
+        }
+
+        private void routeButton_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(PrikazOdabranogRestorana));
         }
     }
 }

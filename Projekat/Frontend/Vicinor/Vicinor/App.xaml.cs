@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Vicinor.Forme;
+using Vicinor.View;
 
 namespace Vicinor
 {
@@ -74,7 +75,7 @@ namespace Vicinor
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     rootFrame.Navigate(typeof(PocetnaForma), e.Arguments);
-                    //rootFrame.Navigate(typeof(AdminStartPage), e.Arguments);
+                    //rootFrame.Navigate(typeof(PrikazOdabranogRestorana), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
