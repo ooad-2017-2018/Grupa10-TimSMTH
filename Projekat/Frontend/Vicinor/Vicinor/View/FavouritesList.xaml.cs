@@ -30,15 +30,32 @@ namespace Vicinor.Forme
         FavouritesListViewModel flvm;
         public FavouritesList()
         {
-            this.InitializeComponent();
             korisnik_id = PocetnaFormaViewModel.KORISNIK_ID;
             flvm = new FavouritesListViewModel();
             Data_Loaded();
+            this.InitializeComponent();
+
         }
 
         private async void Data_Loaded()
         {
              dRestorani = await flvm.dobaviRestorane(korisnik_id);
+            for(int i=0; i<dRestorani.Count;i++)
+            {
+                double MAX_HEIGHT = 300;
+
+                double MAX_WIDTH = 250;
+                string slikaReferenca = dRestorani[i].PhoneNumber;
+                try
+                {
+                    dRestorani[i].SlikaURL = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" +
+                             slikaReferenca + "&sensor=false&maxheight=" + MAX_HEIGHT.ToString() +
+                             "&maxwidth=" + MAX_WIDTH.ToString() + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s";
+                    dRestorani[i].Slika = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri(dRestorani[i].SlikaURL, UriKind.Absolute));
+                }
+                catch (Exception e) { }
+            }
+
         }
 
     }

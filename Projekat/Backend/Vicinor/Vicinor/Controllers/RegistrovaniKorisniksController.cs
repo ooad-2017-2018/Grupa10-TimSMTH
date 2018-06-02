@@ -234,6 +234,18 @@ namespace Vicinor.Controllers
             }
             return Json(registrovaniKorisnici.ListOfRestaurants, JsonRequestBehavior.AllowGet);
         }
+        [HttpPut]
+        public void AddRestoraunt(int id,string name,string description,string phone)
+        {
+            Restoran r = new Restoran();
+            r.Name = name;
+            r.Description = description;
+            r.PhoneNumber = phone;
+            db.Korisnik.OfType<RegistrovaniKorisnik>().SingleOrDefault(s => s.KorisnikId == id).ListOfRestaurants.Add(r);
+          
+            db.SaveChanges();
+        }
+
 
 
 

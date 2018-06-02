@@ -19,9 +19,9 @@
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="local:Restoran">
                     <StackPanel HorizontalAlignment="Center" Width="250" Height="250">
-                        <Image Height="150" Width="150" Source="ms-appx:///Assets/vicinor-logo.png"/>
+                        <Image Height="150" Width="150" Source="{x:Bind Slika}"/>
                         <TextBlock FontSize="16" Text="{x:Bind Name}" HorizontalAlignment="Center"/>
-                        <TextBlock FontSize="10" Text="{x:Bind PhoneNumber}" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="10" Text="{x:Bind Description}" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
