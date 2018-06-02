@@ -59,7 +59,7 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 * Mogućnost pregleda restorana u vidu liste
 * Mogućnost izbora restorana
 * Mogućnost dobijanja uputa do odabranog restorana
-* Mogućnost dobijanja broja za poziv restorana/objekta
+* Mogućnost dobijanja broja za poziv restorana/objekta, prilikom izbora restorana
 * Mogućnost izbora iz skupa restorana preporučenih od strane aplikacije
 
 #### Registrovani korisnik:
