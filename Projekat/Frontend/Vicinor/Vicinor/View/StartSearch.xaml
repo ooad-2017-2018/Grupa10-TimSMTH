@@ -14,7 +14,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="10,10,10,0" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="FlipView_SelectionChanged" Background="White">
+        <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="20,49,0,28" Grid.RowSpan="3" SelectionChanged="FlipView_SelectionChanged" Background="White">
             <FlipView.ItemTemplate>
                 <DataTemplate x:DataType="local:Restoran">
                     <StackPanel HorizontalAlignment="Center" Width="1355" Margin="96,85,49,18">
@@ -24,18 +24,26 @@
                         <TextBlock FontSize="30" Text="{x:Bind Name}" HorizontalAlignment="Center" />
                         <TextBlock FontSize="20" Text="{x:Bind Description}" HorizontalAlignment="Center"/>
                         <TextBlock FontSize="15" Text="{x:Bind PhoneNumber}" HorizontalAlignment="Center"/>
-                        <Button x:Name="star1Button" FontFamily ="Segoe MDL2 Assets" Content="&#xE734;"   VerticalAlignment="Top" Height="39" Width="44" RenderTransformOrigin="3.867,0.674" Margin="372,0,0,0" Click="star1Button_Click"  >
+                        <Button x:Name="star1Button" FontFamily ="Segoe MDL2 Assets" Content="&#xE734;"   VerticalAlignment="Top" Height="55" Width="80" RenderTransformOrigin="3.867,0.674" Margin="520,0,0,0" Click="star1Button_Click"  >
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#FF3D8EBB"/>
+                                    <GradientStop Color="AntiqueWhite"/>
                                     <GradientStop Color="#FF67D6F7" Offset="0.867"/>
                                 </LinearGradientBrush>
                             </Button.Background>
                         </Button>
-                        <Button x:Name="routeButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE724;"   VerticalAlignment="Top" Height="39" Width="44" RenderTransformOrigin="3.867,0.674" Margin="421,-39,0,0" Click="star1Button_Click"  >
+                        <Button x:Name="routeButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE724;"   VerticalAlignment="Top" Height="55" Width="80" RenderTransformOrigin="3.867,0.674" Margin="650,-55,0,0" Click="routeButton_Click"  >
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#FF3D8EBB"/>
+                                    <GradientStop Color="AntiqueWhite"/>
+                                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="phoneCallButton"  FontFamily ="Segoe MDL2 Assets" Content="&#xE778;"   VerticalAlignment="Top" Height="55" Width="80" RenderTransformOrigin="3.867,0.674" Margin="780,-55,0,0" Click="phoneCallButton_Click"  >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="AntiqueWhite"/>
                                     <GradientStop Color="#FF67D6F7" Offset="0.867"/>
                                 </LinearGradientBrush>
                             </Button.Background>

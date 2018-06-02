@@ -158,7 +158,7 @@ namespace Vicinor.Forme
                 string place_id = null;
                 novi.Name = name_ime_restorana;
 
-                //novi.PhoneNumber = adresa_kao_phone_number;
+               novi.PhoneNumber = "+38733225 883";
 
                 novi.RestoranId = (int) i;
 
@@ -180,6 +180,8 @@ namespace Vicinor.Forme
                     //                    https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJS51qkj_KWEcRLePQI32zgn0&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s
                     //link
                 }
+
+
 
                 try
                 {

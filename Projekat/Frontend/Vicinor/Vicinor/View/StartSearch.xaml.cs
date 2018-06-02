@@ -7,6 +7,7 @@ using Vicinor.Model;
 using Vicinor.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,6 +16,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+
+
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -77,6 +81,21 @@ namespace Vicinor.Forme
             Restoran r = dRestorani[flip.SelectedIndex];
             ssvm.AddToFavourite(r);
 
+        }
+        async void messageDialog(String s)
+        {
+            var dialog = new MessageDialog(s);
+            await dialog.ShowAsync();
+        }
+
+        private void routeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void phoneCallButton_Click(object sender, RoutedEventArgs e)
+        {
+            messageDialog("Restoran " + dRestorani[flip.SelectedIndex].Name + " pozivate na broj: " + dRestorani[flip.SelectedIndex].PhoneNumber);
         }
     }
 }
