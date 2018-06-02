@@ -2,7 +2,8 @@
     x:Class="Vicinor.Forme.SearchRestaurants"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Vicinor.Forme"
+        xmlns:local="using:Vicinor.Model"
+
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -19,19 +20,21 @@
             </Button.Background>
         </Button>
         <TextBlock x:Name="recommendedTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,112,0,0" TextWrapping="Wrap" Text="Recommended:" VerticalAlignment="Top" Width="119" />
-        <Image x:Name="image" HorizontalAlignment="Left" Height="339" Margin="52,139,0,0" VerticalAlignment="Top" Width="318" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <CompositeTransform ScaleY="-1"/>
-            </Image.RenderTransform>
-        </Image>
-        <TextBlock x:Name="opisTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="52,441,0,0" Height="168" Width="318" RenderTransformOrigin="0.479,0.395"/>
-        <Button x:Name="sljedeciButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00F;" HorizontalAlignment="Left" Margin="335,614,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="prethodniButton" FontFamily ="Segoe MDL2 Assets" Content="&#xE00E;" HorizontalAlignment="Left" Margin="52,614,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.909,1.43"/>
-        <!--<Button x:Name="favListButton" Content="Fav list" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="43" Width="108" Click="favListButton_Click"/>
-        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="107,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" />
-        <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="updateButton_Click"/>
-        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="323,0,0,0" VerticalAlignment="Bottom" Height="43" Width="108" Click="logOutButton_Click"/>
-        -->
+        <FlipView ItemsSource="{x:Bind listaRecommended}" x:Name="flip" Margin="129,144,186,28" SelectionChanged="FlipView_SelectionChanged" Background="White">
+            <FlipView.ItemTemplate>
+                <DataTemplate x:DataType="local:Restoran">
+                    <StackPanel HorizontalAlignment="Center" Width="1355" Margin="96,85,49,18">
+                        <Image Height="358" Source="{x:Bind Slika}" Margin="142,0,132,0" RenderTransformOrigin="0.5,0.5">
+
+                        </Image>
+                        <TextBlock FontSize="30" Text="{x:Bind Name}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="20" Text="{x:Bind Description}" HorizontalAlignment="Center"/>
+                        <TextBlock FontSize="15" Text="{x:Bind PhoneNumber}" HorizontalAlignment="Center"/>
+                    
+                    </StackPanel>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
 
     </Grid>
 </Page>

@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Windows.Data.Json;
 using Vicinor.Model;
+using Vicinor.View;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -32,18 +33,30 @@ namespace Vicinor.Forme
         Geoposition position;
 
         public static List<Restoran> listaDobavljenih = null;
+        public List<Restoran> listaRecommended = null;
 
         public SearchRestaurants()
         {
-            this.InitializeComponent();
             listaDobavljenih = new List<Restoran>();
-            Initial();
+            listaRecommended = new List<Restoran>();
+            // Initial();
+            listaRecommended = UserStartPage.listaRecommended;
+            this.InitializeComponent();
+
+        }
+        private void flip_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
         public async void Initial()
         {
-           bool b = await getLocationByGeolocatorAsync();
-           // if(b)
-           // radiusTextBox.Text = "Lat="+position.Coordinate.Point.Position.Latitude.ToString()+"Long:"+ position.Coordinate.Point.Position.Longitude.ToString();
+           bool a = await getLocationByGeolocatorAsync();
+            
         }
 
         private CancellationTokenSource _geolocationCancelationTokenSource = null;
