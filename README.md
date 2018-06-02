@@ -45,8 +45,8 @@ Kada korisnik pokrene pretragu mora dobiti određene restorane unutar tog radiju
 #### Proces recenzije restorana
 Korisinik (mislimo na registrovanog korisnika jer on jedini ima ovu mogućnost) će moći davati recenzije i rating-e za određene restorane. 
 
-#### Poziv restorana
-Korisnik ima mogućnost poziva svakog restorana (obični telefonski poziv) iz liste preporučenih. Jednostavni klik na tu opciju mu to i omogućava.
+#### Prikaz broja za poziv restorana
+Korisnik ima mogućnost da dobije broj svakog restorana (koji se dobije pomoću api-a) iz liste restorana. Jednostavni klik na tu opciju mu to i omogućava.
 
 #### Generisanje preporučenih restorana
 Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) koji su po nekom algoritmu generisani (npr. top tier restorani, restorani sa najboljom ocjenom, najviše posjećeni restorani pomoću naše aplikacije itd).
@@ -59,7 +59,7 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 * Mogućnost pregleda restorana u vidu liste
 * Mogućnost izbora restorana
 * Mogućnost dobijanja uputa do odabranog restorana
-* Mogućnost poziva restorana/objekta
+* Mogućnost dobijanja broja za poziv restorana/objekta, prilikom izbora restorana
 * Mogućnost izbora iz skupa restorana preporučenih od strane aplikacije
 
 #### Registrovani korisnik:
