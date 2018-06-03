@@ -20,9 +20,6 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
-
-
-
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Vicinor.Forme
@@ -34,6 +31,7 @@ namespace Vicinor.Forme
     {
         public List<Restoran> dRestorani;
         StartSearchViewModel ssvm;
+        public static double rating = 0;
         public StartSearch1()
         {
             this.InitializeComponent();
@@ -81,6 +79,7 @@ namespace Vicinor.Forme
 
         private void star1Button_Click(object sender, RoutedEventArgs e)
         {
+       
             Restoran r = dRestorani[flip.SelectedIndex];
             ssvm.AddToFavourite(r);
 
@@ -101,6 +100,15 @@ namespace Vicinor.Forme
         {
             messageDialog("Restoran " + dRestorani[flip.SelectedIndex].Name + " pozivate na broj: " + dRestorani[flip.SelectedIndex].PhoneNumber);
 
+        }
+
+        private void commentsHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Recenzija r = dRestorani[flip.SelectedIndex].ListRezension.OfType<Recenzija>().First();
+            if (r != null)
+                rating = r.StarRating;
+            else rating = 0;
+            this.Frame.Navigate(typeof(Comments));
         }
     }
 }

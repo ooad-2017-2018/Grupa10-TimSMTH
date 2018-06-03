@@ -26,7 +26,7 @@
         <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="20,49,0,28" Grid.RowSpan="3" SelectionChanged="FlipView_SelectionChanged" Background="White">
             <FlipView.ItemTemplate>
                 <DataTemplate x:DataType="local:Restoran">
-                    <StackPanel HorizontalAlignment="Center" Width="1355" Margin="96,85,49,18">
+                    <StackPanel HorizontalAlignment="Center" Name="sp" Width="1355" Margin="96,85,49,18">
                         <Image Height="358" Source="{x:Bind Slika}" Margin="142,0,132,0" RenderTransformOrigin="0.5,0.5">
 
                         </Image>
@@ -57,6 +57,7 @@
                                 </LinearGradientBrush>
                             </Button.Background>
                         </Button>
+                        <HyperlinkButton Name ="commentsHyperlinkButton" Content="View ratings and comments" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="commentsHyperlinkButton_Click"/>
                     </StackPanel>
                 </DataTemplate>
             </FlipView.ItemTemplate>

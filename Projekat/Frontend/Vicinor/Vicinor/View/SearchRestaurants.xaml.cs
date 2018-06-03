@@ -157,18 +157,21 @@ namespace Vicinor.Forme
                 JsonObject restoran = REzultati.GetObjectAt(i);
 
                 Restoran novi = new Restoran();
+                Recenzija r = new Recenzija();
 
                 string name_ime_restorana = restoran.GetNamedString("name");
                 string place_id_kao_deskripcija = restoran.GetNamedString("vicinity");
-                string adresa_kao_phone_number;
+                double rating;
                 try
                 {
-                     adresa_kao_phone_number = restoran.GetNamedValue("rating").ToString();
+                     rating = restoran.GetNamedNumber("rating");
+                    r.StarRating = (Int32) rating;
+                    novi.ListRezension.Add(r);
 
                 }
                 catch (Exception k)
                 {
-                    adresa_kao_phone_number = "";
+                     rating = -1;
                 }
                 string place_id = null;
                 novi.Name = name_ime_restorana;

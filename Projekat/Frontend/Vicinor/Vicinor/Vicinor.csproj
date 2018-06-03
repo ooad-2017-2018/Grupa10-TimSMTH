@@ -107,6 +107,9 @@
     <Compile Include="UserControls\procenatUserControl.xaml.cs">
       <DependentUpon>procenatUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RatingCont.xaml.cs">
+      <DependentUpon>RatingCont.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\welcomeLogoUserControl.xaml.cs">
       <DependentUpon>welcomeLogoUserControl.xaml</DependentUpon>
     </Compile>
@@ -133,11 +136,11 @@
     <Compile Include="View\AdminUserOverview.xaml.cs">
       <DependentUpon>AdminUserOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Comments.xaml.cs">
+      <DependentUpon>Comments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FavouritesList.xaml.cs">
       <DependentUpon>FavouritesList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Komentari.xaml.cs">
-      <DependentUpon>Komentari.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\loginUserControl.xaml.cs">
       <DependentUpon>loginUserControl.xaml</DependentUpon>
@@ -201,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\RatingCont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\welcomeLogoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -221,11 +228,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FavouritesList.xaml">
+    <Page Include="View\Comments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Komentari.xaml">
+    <Page Include="View\FavouritesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
