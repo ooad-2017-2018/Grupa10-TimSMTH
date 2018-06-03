@@ -16,7 +16,10 @@ namespace Vicinor.Model
 
         string slikaURL;
         private string phoneNumber;
-
+        public Restoran()
+        {
+            listRezension = new List<Recenzija>();
+        }
         public string PhoneNumber
         {
             get { return  phoneNumber; }
