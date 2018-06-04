@@ -118,6 +118,7 @@
     <Compile Include="ViewModel\AdminStatistikaViewModel.cs" />
     <Compile Include="ViewModel\AdminUpdateViewModel.cs" />
     <Compile Include="ViewModel\AdminUserOverviewViewModel.cs" />
+    <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="ViewModel\FavouritesListViewModel.cs" />
     <Compile Include="ViewModel\PocetnaFormaViewModel.cs" />
     <Compile Include="ViewModel\PrikazOdabranogViewModel.cs" />

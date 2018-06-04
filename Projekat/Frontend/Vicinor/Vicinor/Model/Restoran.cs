@@ -16,6 +16,9 @@ namespace Vicinor.Model
 
         string slikaURL;
         private string phoneNumber;
+
+        private string place_id;
+
         public Restoran()
         {
             listRezension = new List<Recenzija>();
@@ -117,13 +120,26 @@ namespace Vicinor.Model
                 slikaURL = value;
             }
         }
+
+        public string Place_id
+        {
+            get
+            {
+                return place_id;
+            }
+
+            set
+            {
+                place_id = value;
+            }
+        }
         /*
 public System.Drawing.Image GetBitmap()
 {
-   using (var stream = new MemoryStream(Image))
-   {
-       return System.Drawing.Image.FromStream(stream);
-   }
+using (var stream = new MemoryStream(Image))
+{
+return System.Drawing.Image.FromStream(stream);
+}
 }   */
     }
 }

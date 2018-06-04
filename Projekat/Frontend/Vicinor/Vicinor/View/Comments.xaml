@@ -42,18 +42,22 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="586*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="41*"/>
 
 
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="commentsTextBlock" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="40" Margin="42,39,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top" Width="107"/>
+        <TextBlock x:Name="commentsTextBlock" HorizontalAlignment="Left" Height="40" Margin="180,39
+                   ,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top" Width="107" RenderTransformOrigin="2.636,0.475"/>
+
+        <ListView x:Name="komenatriListView" HorizontalAlignment="Left" Height="679" Margin="180,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="982">
+        </ListView>
 
 
 
-        <UserControls:RatingCont x:Name="Rating" Grid.Column="1" HorizontalAlignment="Right" Margin="0,20,20,0" VerticalAlignment="Top"/>
-        
+        <UserControls:RatingCont x:Name="Rating" Grid.Column="1" HorizontalAlignment="Right" Margin="0,20,20,0" VerticalAlignment="Top" Height="40" Width="195"/>
+
     </Grid>
 </Page>

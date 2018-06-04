@@ -29,9 +29,10 @@ namespace Vicinor.Forme
     /// </summary>
     public sealed partial class StartSearch1 : Page
     {
-        public List<Restoran> dRestorani;
+        public static List<Restoran> dRestorani;
         StartSearchViewModel ssvm;
         public static double rating = 0;
+        public static int idRestoranaKliknuto = 0;
         public StartSearch1()
         {
             this.InitializeComponent();
@@ -108,6 +109,8 @@ namespace Vicinor.Forme
             if (r != null)
                 rating = r.StarRating;
             else rating = 0;
+            idRestoranaKliknuto = flip.SelectedIndex;
+
             this.Frame.Navigate(typeof(Comments));
         }
     }

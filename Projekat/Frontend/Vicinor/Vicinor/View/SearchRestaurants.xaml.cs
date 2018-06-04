@@ -111,6 +111,7 @@ namespace Vicinor.Forme
             }
         }
 
+        public static string PLACE_ID = "";
 
         private async void startSearchButton_Click(object sender, RoutedEventArgs e)
         {
@@ -176,11 +177,13 @@ namespace Vicinor.Forme
                 string place_id = null;
                 novi.Name = name_ime_restorana;
 
-               novi.PhoneNumber = "+38733225 883";
+                // novi.PhoneNumber = "+38733225 883";
 
                 novi.RestoranId = (int) i;
 
                 novi.Description = place_id_kao_deskripcija;
+
+                novi.Place_id = restoran.GetNamedString("place_id");
 
                 JsonArray objekatPhotosM = null;
                 try
@@ -194,9 +197,19 @@ namespace Vicinor.Forme
 
                 if (place_id != null)
                 {
-                    //Postaviti phone number
-                    //                    https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJS51qkj_KWEcRLePQI32zgn0&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s
-                    //link
+
+                    HttpResponseMessage response2 = await client.GetAsync(new Uri("https://maps.googleapis.com/maps/api/place/details/json?placeid=" +
+                    novi.Place_id + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s"));
+                    var jsonString2 = await response2.Content.ReadAsStringAsync();
+
+                    JsonObject root2 = JsonValue.Parse(jsonString2).GetObject();
+
+                    JsonObject podaci = root2.GetNamedObject("result");
+
+                    String phonenumber = podaci.GetNamedString("international_phone_number");
+
+                    novi.PhoneNumber = phonenumber;
+
                 }
 
 

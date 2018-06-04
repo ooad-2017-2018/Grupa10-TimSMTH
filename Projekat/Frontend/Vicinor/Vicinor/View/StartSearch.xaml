@@ -14,9 +14,9 @@
                 <VisualState x:Name="Desktop"/>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
-        
-        
+
+
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="13*"></RowDefinition>
@@ -63,7 +63,7 @@
             </FlipView.ItemTemplate>
         </FlipView>
 
-        <TextBlock Text="Pick your favourite..." Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Pick your favourite..." Grid.Row="0" HorizontalAlignment="Center" Margin="650,10,633,0" Height="20" VerticalAlignment="Top"/>
 
 
     </Grid>
