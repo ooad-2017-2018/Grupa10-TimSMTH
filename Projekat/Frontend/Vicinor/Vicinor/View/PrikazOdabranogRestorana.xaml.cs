@@ -37,13 +37,13 @@ namespace Vicinor.View
         private async void ucitajMapu()
         {
             await getLocationByGeolocatorAsync();
-            // Lat1 = startPosition.Coordinate.Point.Position.Latitude;
-            //  Long1 = startPosition.Coordinate.Point.Position.Longitude;
-            Lat1 = SearchRestaurants.position.Coordinate.Point.Position.Latitude;
-            Long1 = SearchRestaurants.position.Coordinate.Point.Position.Longitude;
+            Lat1 = startPosition.Coordinate.Point.Position.Latitude;
+            Long1 = startPosition.Coordinate.Point.Position.Longitude;
+            //Lat1 = SearchRestaurants.position.Coordinate.Point.Position.Latitude;
+            //Long1 = SearchRestaurants.position.Coordinate.Point.Position.Longitude;
 
-            Long2 = SearchRestaurants.novaLokacija.X;
-            Lat2 = SearchRestaurants.novaLokacija.Y;
+            Long2 = SearchRestaurants.novaLokacija.Item2;
+            Lat2 = SearchRestaurants.novaLokacija.Item1;
 
             BasicGeoposition startLocation = new BasicGeoposition() { Latitude = Lat1, Longitude = Long1 };
             BasicGeoposition endLocation = new BasicGeoposition() { Latitude = Lat2, Longitude = Long2 };

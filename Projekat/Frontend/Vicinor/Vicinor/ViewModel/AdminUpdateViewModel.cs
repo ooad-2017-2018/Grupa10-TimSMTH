@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Net.Http;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Vicinor.Model;
 using Newtonsoft.Json;
-using Vicinor.Forme;
+
+
 
 namespace Vicinor.ViewModel
 {
@@ -20,7 +17,7 @@ namespace Vicinor.ViewModel
 
         public async Task<Boolean> Initial(String u, String p)
         {
-            Boolean j = await getData(u,p);
+            Boolean j = await getData(u, p);
             return j;
 
         }
@@ -52,7 +49,7 @@ namespace Vicinor.ViewModel
             }
 
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/GetAccount?Username="+u+"&Password="+p);
+            Uri requestUri = new Uri("http://localhost:6796/Administrators/GetAccount?Username=" + u + "&Password=" + p);
 
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
@@ -98,7 +95,7 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id + "?Username="+name);
+            Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id + "?Username=" + name);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -114,7 +111,7 @@ namespace Vicinor.ViewModel
                 httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
                 string json = httpResponseBody;
-             }
+            }
             catch (Exception ex)
             {
                 httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
@@ -157,7 +154,7 @@ namespace Vicinor.ViewModel
                 httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
                 string json = httpResponseBody;
-          
+
             }
             catch (Exception ex)
             {
@@ -165,46 +162,6 @@ namespace Vicinor.ViewModel
             }
             return true;
 
-        }
-
-
-        //Validacija
-
-        public bool validateUsernameLength(String username)
-        {
-            if (username.Length < 6) return false;
-            return true;
-            
-        }
-
-        public bool validateUsernameContent(String username)
-        {
-            if (!username.All(c => Char.IsLetterOrDigit(c) || c == '_')) return false;
-            if (username.Any(char.IsUpper)) return false; //ne smije biti ni jedno veliko slovo
-            if (!username.Any(char.IsNumber)) return false;     
-            return true;
-
-        }
-
-        public bool validatePasswordLength(String password)
-        {
-            if (password.Length < 6) return false;
-            return true;
-        }
-
-        public bool validatePasswordContent(String password)
-        {
-            if (!password.All(c => Char.IsLetterOrDigit(c) || c == '_')) return false;
-            if (!password.Any(char.IsUpper)) return false;
-            if (!password.Any(char.IsNumber)) return false;
-            return true;
-
-        }
-
-        public bool validatePasswordConfirmPassword(String password, String confirm)
-        {
-            if (String.Compare(password, confirm)==0) return true;
-            return false;
         }
     }
 }

@@ -8,10 +8,18 @@ using Vicinor.Model;
 
 namespace Vicinor.ViewModel
 {
+    //Interfejs - zahtjevani novi standard (zaokruživanje na jednu decimalu)
+    interface IAdminStatistika
+    {
+        double newGetPrecentageOfRegistered();
+        double newGetPrecentageOfUnregistered();
+    }
+
+    //Klasa Adaptee sa implementiranim postojećim interfejsom 
     public class AdminStatistikaViewModel
     {
-        List<RegistrovaniKorisnik> allRegisteredUsers=null;
-        List<NeregistrovaniKorisnik> allUnregisteredUsers=null;
+        List<RegistrovaniKorisnik> allRegisteredUsers = null;
+        List<NeregistrovaniKorisnik> allUnregisteredUsers = null;
 
 
         public AdminStatistikaViewModel()
@@ -30,7 +38,7 @@ namespace Vicinor.ViewModel
         public int GetNumberOfUnregisteredUsers()
         {
             return allUnregisteredUsers.Count;
-               }
+        }
         public int GetNumberOfRegisteredUsers()
         {
             return allRegisteredUsers.Count;
@@ -38,17 +46,17 @@ namespace Vicinor.ViewModel
         public double GetPrecentageOfRegistered()
         {
             //return Math.Round((double)(GetNumberOfRegisteredUsers() / GetAllUsers()) *100,2);
-            return Math.Round(((double)GetNumberOfRegisteredUsers() / GetAllUsers()) * 100,2);
+            return Math.Round(((double)GetNumberOfRegisteredUsers() / GetAllUsers()) * 100, 2);
         }
         public double GetPrecentageOfUnregistered()
         {
-            return Math.Round(((double) GetNumberOfUnregisteredUsers() / GetAllUsers()) *100,2);
-      
+            return Math.Round(((double)GetNumberOfUnregisteredUsers() / GetAllUsers()) * 100, 2);
+
 
         }
         public int GetAllUsers()
         {
-           return allUnregisteredUsers.Count+allRegisteredUsers.Count;
+            return allUnregisteredUsers.Count + allRegisteredUsers.Count;
         }
         public int GetNumberOfBannedUsers()
         {
@@ -140,7 +148,7 @@ namespace Vicinor.ViewModel
                 string json = httpResponseBody;
 
                 allUnregisteredUsers = JsonConvert.DeserializeObject<List<NeregistrovaniKorisnik>>(json);
-                
+
             }
             catch (Exception ex)
             {
@@ -150,4 +158,22 @@ namespace Vicinor.ViewModel
         }
 
     }
+
+    //Klasa Adapter - implementira novi način prikaza podataka
+    class Adapter : AdminStatistikaViewModel, IAdminStatistika
+    {
+        public double newGetPrecentageOfRegistered()
+        {
+            //return Math.Round((double)(GetNumberOfRegisteredUsers() / GetAllUsers()) *100,2);
+            return Math.Round(((double)GetNumberOfRegisteredUsers() / GetAllUsers()) * 100, 1);
+        }
+        public double newGetPrecentageOfUnregistered()
+        {
+            return Math.Round(((double)GetNumberOfUnregisteredUsers() / GetAllUsers()) * 100, 1);
+
+
+        }
+    }
+
+
 }

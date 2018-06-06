@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
 using System.Threading;
 using System.Threading.Tasks;
@@ -32,7 +22,7 @@ namespace Vicinor.Forme
         public Geolocator geolocator = null;
         public static Geoposition position;
 
-        public static Lokacija novaLokacija = new Lokacija();
+        public static Tuple<double, double> novaLokacija = new Tuple<double, double>(0, 0);
 
         public static List<Restoran> listaDobavljenih = null;
         public List<Restoran> listaRecommended = null;
@@ -258,11 +248,8 @@ namespace Vicinor.Forme
                     double longitude = lokacijav2.GetNamedNumber("lng");    // x
 
                     double latitude = lokacijav2.GetNamedNumber("lat");     // y
-                    
 
-                    novaLokacija.X = longitude;
-
-                    novaLokacija.Y = latitude;
+                    novaLokacija = new Tuple<double, double>(latitude, longitude);
 
                     novi.Location = novaLokacija;
                 }

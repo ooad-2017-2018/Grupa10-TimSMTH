@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Popups;
@@ -19,15 +16,15 @@ namespace Vicinor.Forme
     {
         AdminUpdateViewModel auvm;
         Administrator admin;
-        String newUsername="", newPassword="", confirmPassword="";
+        String newUsername = "", newPassword = "", confirmPassword = "";
         String u, p;
-        int id=0;
+        int id = 0;
         Boolean changeUsername = false, changePassword = false;
 
         public AdminUpdate()
         {
             auvm = new AdminUpdateViewModel();
-            admin = new Model.Administrator();        
+            admin = new Model.Administrator();
             this.InitializeComponent();
             newUsernameTextBox.Visibility = Visibility.Collapsed;
             newUsernameTextBlock.Visibility = Visibility.Collapsed;
@@ -36,7 +33,7 @@ namespace Vicinor.Forme
             confirmPasswordTextBlock.Visibility = Visibility.Collapsed;
             confirmPasswordTextBox.Visibility = Visibility.Collapsed;
             errorTextBox.Visibility = Visibility.Collapsed;
-            
+
             Initiale();
         }
 
@@ -48,10 +45,10 @@ namespace Vicinor.Forme
                 usernameTextBox.Text = u;
             if (p != null)
                 passwordTextBox.Text = p;
-            bool i = await auvm.Initial(u,p);
+            bool i = await auvm.Initial(u, p);
             admin = auvm.dajAdmina();
             if (admin != null)
-            id = admin.KorisnikId;
+                id = admin.KorisnikId;
         }
 
         private void changeUsernameHyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -84,24 +81,24 @@ namespace Vicinor.Forme
             //Validiraj username
             if (changeUsername)
             {
-                if (!auvm.validateUsernameLength(newUsername))
+                if (!ValidacijaUser.validateUsernameLength(newUsername).Item1)
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "Username must contain atleast 6 characters!";
                     return;
                 }
-                if (!auvm.validateUsernameContent(newUsername))
+                if (!ValidacijaUser.validateUsernameContent(newUsername).Item1)
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "Username must contain atleast one number! Username can contain only lower case letters, numbers and '_'. ";
                     return;
                 }
 
-               
+
                 usernameTextBox.Text = newUsernameTextBox.Text.ToString();
 
                 //Unos u bazu
-            
+
                 bool izmjenjen = await auvm.changeUsername(id, newUsername);
                 if (izmjenjen)
                 {
@@ -118,14 +115,14 @@ namespace Vicinor.Forme
             //Validacija passworda
             if (changePassword)
             {
-                if (!auvm.validatePasswordLength(newPassword))
+                if (!ValidacijaUser.validatePasswordLength(newPassword).Item1)
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "Password must contain atleast 6 characters!";
                     return;
                 }
 
-                if (!auvm.validatePasswordContent(newPassword))
+                if (!ValidacijaUser.validatePasswordContent(newPassword).Item1)
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "Password must contain atleast one number and one UpperCase letter! Password can only contain letters, numbers and '_'. ";
@@ -133,7 +130,7 @@ namespace Vicinor.Forme
                 }
 
 
-                if (!auvm.validatePasswordConfirmPassword(newPassword, confirmPassword))
+                if (!ValidacijaUser.validatePasswordConfirmPassword(newPassword, confirmPassword).Item1)
                 {
                     errorTextBox.Visibility = Visibility.Visible;
                     errorTextBox.Text = "New password is not equal to Confirm password!";
@@ -156,7 +153,7 @@ namespace Vicinor.Forme
             }
 
             //Sve uredu, uspješan unos
-            errorTextBox.Visibility = Visibility.Collapsed;         
+            errorTextBox.Visibility = Visibility.Collapsed;
             newUsernameTextBox.Visibility = Visibility.Collapsed;
             newUsernameTextBlock.Visibility = Visibility.Collapsed;
             newPasswordTextBlock.Visibility = Visibility.Collapsed;

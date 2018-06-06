@@ -1,10 +1,5 @@
 ﻿using System;
-//using System.Drawing;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Vicinor.Model
@@ -25,11 +20,11 @@ namespace Vicinor.Model
         }
         public string PhoneNumber
         {
-            get { return  phoneNumber; }
-            set {  phoneNumber = value; }
+            get { return phoneNumber; }
+            set { phoneNumber = value; }
         }
 
-        Lokacija location;
+        Tuple<double, double> location;
         private ICollection<Recenzija> listRezension;
         private BitmapImage slika;
 
@@ -81,7 +76,7 @@ namespace Vicinor.Model
             }
         }
 
-        
+
         public byte[] Image
         {
             get
@@ -94,8 +89,8 @@ namespace Vicinor.Model
                 image = value;
             }
         }
-        
-        public virtual Lokacija Location
+
+        public virtual Tuple<double, double> Location
         {
             get
             {
@@ -133,13 +128,6 @@ namespace Vicinor.Model
                 place_id = value;
             }
         }
-        /*
-public System.Drawing.Image GetBitmap()
-{
-using (var stream = new MemoryStream(Image))
-{
-return System.Drawing.Image.FromStream(stream);
-}
-}   */
+
     }
 }

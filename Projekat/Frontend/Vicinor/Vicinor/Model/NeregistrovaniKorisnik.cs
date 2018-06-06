@@ -8,9 +8,9 @@ namespace Vicinor.Model
 {
     public class NeregistrovaniKorisnik: Korisnik
     {
-        Lokacija location;
+        Tuple<double, double> location;
 
-        public virtual Lokacija Location
+        public virtual Tuple<double, double> Location
         {
             get
             {

@@ -204,11 +204,11 @@ namespace Vicinor.View
 
                     double latitude = lokacijav2.GetNamedNumber("lat");     // y
 
-                    Lokacija novaLokacija = new Lokacija();
+                    Tuple<double, double> novaLokacija = new Tuple<double, double>(0, 0);
 
-                    novaLokacija.X = longitude;
+                    novaLokacija = new Tuple<double, double>(latitude, longitude);
 
-                    novaLokacija.Y = latitude;
+
 
                     novi.Location = novaLokacija;
                 }

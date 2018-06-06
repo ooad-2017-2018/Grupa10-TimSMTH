@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Vicinor.Model
 {
-    public class RegistrovaniKorisnik: KorisnikUSistemu
+    public class RegistrovaniKorisnik : KorisnikUSistemu
     {
         String firstName, lastName, email;
         Boolean banned;
@@ -70,7 +70,7 @@ namespace Vicinor.Model
             }
         }
 
-     
+
 
         public Boolean Banned
         {
@@ -110,7 +110,7 @@ namespace Vicinor.Model
                 image = value;
             }
         }
-        
+
         public virtual ICollection<Restoran> ListOfRestaurants
         {
             get
@@ -123,9 +123,9 @@ namespace Vicinor.Model
                 listOfRestaurants = value;
             }
         }
-        Lokacija location;
+        Tuple<double, double> location;
 
-        public virtual Lokacija Location
+        public virtual Tuple<double, double> Location
         {
             get
             {
@@ -137,13 +137,6 @@ namespace Vicinor.Model
                 location = value;
             }
         }
-        /*
-        public System.Drawing.Image GetBitmap()
-        {
-            using (var stream = new MemoryStream(Image))
-            {
-                return System.Drawing.Image.FromStream(stream);
-            }
-        }   */
+
     }
 }

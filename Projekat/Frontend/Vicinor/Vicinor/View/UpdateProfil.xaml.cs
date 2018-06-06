@@ -13,6 +13,11 @@ using Windows.Storage.Streams;
 
 namespace Vicinor.Forme
 {
+    interface IComponent
+    {
+        void prevediLabele();
+    }
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -46,17 +51,17 @@ namespace Vicinor.Forme
             if (changePassword)
             {
                 NewPassword.Visibility = Visibility.Visible;
-                textBlock5.Visibility = Visibility.Visible;
+                newPasswordTextBlock.Visibility = Visibility.Visible;
                 changePasswordButton.Content = "Cancle change";
             }
             else
             {
                 NewPassword.Visibility = Visibility.Collapsed;
-                textBlock5.Visibility = Visibility.Collapsed;
+                newPasswordTextBlock.Visibility = Visibility.Collapsed;
                 changePasswordButton.Content = "Change password";
             }
-          
-         
+
+
         }
 
         private async void AddImage_Click(object sender, RoutedEventArgs e)
@@ -86,7 +91,7 @@ namespace Vicinor.Forme
             this.InitializeComponent();
 
             NewPassword.Visibility = Visibility.Collapsed;
-            textBlock5.Visibility = Visibility.Collapsed;
+            newPasswordTextBlock.Visibility = Visibility.Collapsed;
             Password.Visibility = Visibility.Collapsed;
             Initiale();
         }
@@ -97,24 +102,26 @@ namespace Vicinor.Forme
             p = PocetnaFormaViewModel.getPasswordG();
             if (u != null)
                 Username.Text = u;
-            if (p != null) {
+            if (p != null)
+            {
                 Password.Text = p;
                 pTextBox.Password = p;
             }
-               
+
             bool i = await upvm.Initial(u, p);
             regUser = upvm.dajKorisnika();
-            if (regUser != null) {
+            if (regUser != null)
+            {
                 id = regUser.KorisnikId;
-                if (regUser.FirstName!= null)   firstName.Text = regUser.FirstName;
-                if (regUser.LastName != null)  lastName.Text = regUser.LastName;
-                if (regUser.Email != null)  Email.Text = regUser.Email;
-                if (regUser.DateOfBirth != null)  DateTextBox.Text = regUser.DateOfBirth.Day.ToString() + "/" + regUser.DateOfBirth.Month.ToString() + "/" + regUser.DateOfBirth.Year.ToString();
+                if (regUser.FirstName != null) firstName.Text = regUser.FirstName;
+                if (regUser.LastName != null) lastName.Text = regUser.LastName;
+                if (regUser.Email != null) Email.Text = regUser.Email;
+                if (regUser.DateOfBirth != null) DateTextBox.Text = regUser.DateOfBirth.Day.ToString() + "/" + regUser.DateOfBirth.Month.ToString() + "/" + regUser.DateOfBirth.Year.ToString();
             }
 
             byte[] buffer = regUser.Image;
-     
-                 using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
                 using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
                 {
@@ -122,11 +129,11 @@ namespace Vicinor.Forme
                     await writer.StoreAsync();
                 }
                 BitmapImage image = new BitmapImage();
-               // await image.SetSourceAsync(stream);
+                // await image.SetSourceAsync(stream);
                 Picture.Source = image;
 
             }
-     //       Picture.Source = new BitmapImage(new Uri("ms-appx:///Assets/vicinor-logo.png"));
+            //       Picture.Source = new BitmapImage(new Uri("ms-appx:///Assets/vicinor-logo.png"));
 
 
         }
@@ -145,7 +152,7 @@ namespace Vicinor.Forme
             newUsername = Username.Text;
             newEmail = Email.Text;
             String poruka = "";
-                
+
             if (newFirstName != regUser.FirstName)
             {
                 Tuple<bool, String> rez = ValidacijaUser.validateFirstName(newFirstName);
@@ -153,7 +160,7 @@ namespace Vicinor.Forme
                 if (rez.Item1)
                 {
                     //Vrsimo upis novih podataka u bazu 
-                    if (await upvm.changeFirstName(id, newFirstName)) regUser.FirstName=newFirstName;
+                    if (await upvm.changeFirstName(id, newFirstName)) regUser.FirstName = newFirstName;
                 }
             }
             if (newLastName != regUser.LastName)
@@ -181,7 +188,8 @@ namespace Vicinor.Forme
                 {
                     poruka += rez2.Item2 + "\n";
                 }
-                else {                 
+                else
+                {
                     poruka += "New password is valid.\n";
                     //Vrsimo upis u bazu
                     bool izmjenjen = await upvm.changePassword(id, newPassword);
@@ -192,7 +200,7 @@ namespace Vicinor.Forme
                     }
                 }
 
-                
+
 
             }
             if (newEmail != regUser.Email)
@@ -203,7 +211,7 @@ namespace Vicinor.Forme
                 {
                     //Vrsimo upis novih podataka u bazu 
                     if (await upvm.changeEmail(id, newEmail)) regUser.Email = newEmail;
-                    
+
                 }
 
             }
@@ -217,15 +225,16 @@ namespace Vicinor.Forme
                     poruka += "New username is valid.\n";
                     //Vrsimo upis novih podataka u bazu 
                     bool izmjenjen = await upvm.changeUsername(id, newUsername);
-                
+
                     if (izmjenjen)
                     {
                         PocetnaFormaViewModel.setUsernameG(newUsername);
-                        regUser.Username= newUsername;
+                        regUser.Username = newUsername;
                     }
 
                 }
-                else {
+                else
+                {
                     if (!rez1.Item1)
                     {
                         poruka += rez1.Item2;
@@ -236,15 +245,15 @@ namespace Vicinor.Forme
                         poruka += "\n" + rez2.Item2;
                     }
                 }
-                
+
             }
 
-           
+
             messageDialog(poruka);
             //Refresh form
 
-        
-        
+
+
 
             //this.Frame.Navigate(typeof(SearchRestaurants));
         }

@@ -95,7 +95,6 @@
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\KorisnikUSistemu.cs" />
-    <Compile Include="Model\Lokacija.cs" />
     <Compile Include="Model\NeregistrovaniKorisnik.cs" />
     <Compile Include="Model\Pretraga.cs" />
     <Compile Include="Model\Recenzija.cs" />

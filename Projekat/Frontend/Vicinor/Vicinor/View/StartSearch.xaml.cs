@@ -44,30 +44,7 @@ namespace Vicinor.Forme
 
         }
 
-        /*private void logOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.Frame.Navigate(typeof(PocetnaForma));
-        }
-
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.Frame.Navigate(typeof(UpdateProfil));
-        }
-
-        private void searchButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.Frame.Navigate(typeof(SearchRestaurants));
-        }
-
-        private void favListButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Otvaranje forme za registraciju korisnika
-            this.Frame.Navigate(typeof(FavouritesList));
-        }*/
-
+       
         private void flip_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
