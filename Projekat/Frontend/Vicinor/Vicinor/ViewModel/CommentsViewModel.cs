@@ -19,10 +19,10 @@ namespace Vicinor.ViewModel
         }
 
         List<string> listaKomentara;
-        public async Task OdradiListuKomentara()
+        public async Task ucitajListuKomentara()
         {
             listaKomentara = new List<string>();
-
+     
             var client = new HttpClient();
 
             var restoran = StartSearch1.dRestorani[StartSearch1.idRestoranaKliknuto];

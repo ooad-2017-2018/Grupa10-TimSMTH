@@ -86,7 +86,7 @@ namespace Vicinor.ViewModel
             a = listaKorisnika.Find(x => x.Username == name && x.Banned == false);
             if (a != null)
             {
-                b = await banovanje(a.KorisnikId);
+                b = await banujKorisnika(a.KorisnikId);
             
             }
             return b;
@@ -106,7 +106,7 @@ namespace Vicinor.ViewModel
         }
 
 
-        private async Task<Boolean> banovanje(int id)
+        private async Task<Boolean> banujKorisnika(int id)
         {
 
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();

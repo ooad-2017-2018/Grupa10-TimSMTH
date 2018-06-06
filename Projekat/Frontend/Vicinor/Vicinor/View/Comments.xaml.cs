@@ -29,10 +29,10 @@ namespace Vicinor.View
         {
             this.InitializeComponent();
             Rating.setRating(StartSearch1.rating);
-            asyncodradi();
+            DobaviKomentare();
         }
 
-        private async void asyncodradi()
+        private async void DobaviKomentare()
         {
             listaKomentara = new List<string>();
 

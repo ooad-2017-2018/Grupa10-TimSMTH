@@ -24,7 +24,6 @@ namespace Vicinor.Forme
             loginUC.onNavigateParentReadyAdminStartPage += LoginUC_onNavigateParentReadyAdminStartPage;
             loginUC.onNavigateParentReadySearchForRestaurants += LoginUC_onNavigateParentReadySearchForRestaurants;
             loginUC.onNavigateParentReadyUserStartPage += LoginUC_onNavigateParentReadyUserStartPage; ;
-
         }
 
         private void LoginUC_onNavigateParentReadyUserStartPage(object source, EventArgs e)

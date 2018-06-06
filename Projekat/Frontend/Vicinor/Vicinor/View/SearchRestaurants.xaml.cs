@@ -41,7 +41,6 @@ namespace Vicinor.Forme
         {
             listaDobavljenih = new List<Restoran>();
             listaRecommended = new List<Restoran>();
-            // Initial();
             listaRecommended = UserStartPage.listaRecommended;
             this.InitializeComponent();
 
@@ -100,9 +99,6 @@ namespace Vicinor.Forme
 
         private async Task cancelGeolocationTimerAsync()
         {
-            //delay should be less than 7sec (cause 7sec is the default timeout of the geolocator)
-            //if a delay > 7sec is needed a timer with a value set higher than the value here should 
-            //be set to the geolocator manually
             await Task.Delay(2000);
             if (_geolocationCancelationTokenSource != null)
             {

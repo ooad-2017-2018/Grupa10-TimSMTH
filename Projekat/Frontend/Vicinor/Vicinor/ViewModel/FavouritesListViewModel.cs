@@ -29,11 +29,7 @@ namespace Vicinor.ViewModel
         public async Task<Boolean> getDataUser(int id)
         {
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
-            //Add a user-agent header to the GET request. 
             var headers = httpClient.DefaultRequestHeaders;
-
-            //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
-            //especially if the header value is coming from user input.
             string header = "ie";
             if (!headers.UserAgent.TryParseAdd(header))
             {
@@ -45,18 +41,13 @@ namespace Vicinor.ViewModel
             {
                 throw new Exception("Invalid header value: " + header);
             }
-
-            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + username + "&Password=" + pw);
-
             Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetFavList/" + id.ToString());
-
-            //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
             string httpResponseBody = "";
             try
             {
-                //Send the GET request
+               
                 httpResponse = await httpClient.GetAsync(requestUri);
 
                 httpResponse.EnsureSuccessStatusCode();
