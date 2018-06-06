@@ -42,8 +42,7 @@ namespace Vicinor.Forme
             brRegistrovanihTextBox.Text = asvm.GetNumberOfRegisteredUsers().ToString();
             brBanovanihTextBox.Text = asvm.GetNumberOfBannedUsers().ToString();
             procenatRegTextBox.Text = asvm.GetPrecentageOfRegistered().ToString()+"%";
-            procenatNeregTextBox.Text = asvm.GetPrecentageOfUnregistered().ToString()+"%";
-
+            procenatNeregTextBox.Text = asvm.GetPrecentageOfUnregistered().ToString() + "%";
         }
 
     }

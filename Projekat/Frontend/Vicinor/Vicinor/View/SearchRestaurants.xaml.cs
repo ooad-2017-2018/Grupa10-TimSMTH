@@ -205,11 +205,17 @@ namespace Vicinor.Forme
                     JsonObject root2 = JsonValue.Parse(jsonString2).GetObject();
 
                     JsonObject podaci = root2.GetNamedObject("result");
+                    try
+                    {
 
-                    String phonenumber = podaci.GetNamedString("international_phone_number");
+                        String phonenumber = podaci.GetNamedString("international_phone_number");
 
-                    novi.PhoneNumber = phonenumber;
-
+                        novi.PhoneNumber = phonenumber;
+                    }
+                    catch(Exception ex)
+                    {
+                        novi.PhoneNumber = "";
+                    }
                 }
 
 
@@ -231,13 +237,16 @@ namespace Vicinor.Forme
 
                     double MAX_WIDTH = objekatPhotos.GetNamedNumber("width");
 
-                    novi.SlikaURL = objekatPhotos.GetNamedString("photo_reference"); 
+                    novi.SlikaURL = objekatPhotos.GetNamedString("photo_reference");
 
                     novi.Slika = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri("https://maps.googleapis.com/maps/api/place/photo?photoreference=" +
                         slikaReferenca + "&sensor=false&maxheight=" + MAX_HEIGHT.ToString() +
                         "&maxwidth=" + MAX_WIDTH.ToString() + "&key=AIzaSyBIl5KmMwk5NiP69tCPnhGZJ3CAr-ml65s", UriKind.Absolute));
                 }
-                else novi.SlikaURL = "";
+                else
+                {
+                    novi.SlikaURL = "";
+                }
 
 
                 // dobavljanje lokacije

@@ -12,6 +12,29 @@
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="komenatriListView.(FrameworkElement.Width)" Value="303"/>
+                        <Setter Target="komenatriListView.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,10,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="Rating.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,41,29</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="Rating.(Grid.Column)" Value="1"/>
+                        <Setter Target="Rating.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="Rating.(FrameworkElement.Height)" Value="40"/>
+                        <Setter Target="commentsTextBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,0,0,10</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="commentsTextBlock.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="commentsTextBlock.(FrameworkElement.Height)" Value="40"/>
+                    </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger/>
                     </VisualState.StateTriggers>
@@ -42,9 +65,9 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="586*"/>
+            <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="123*"/>
-            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="100*"/>
 
 
         </Grid.ColumnDefinitions>
@@ -52,7 +75,7 @@
         <TextBlock x:Name="commentsTextBlock" HorizontalAlignment="Left" Height="40" Margin="180,39
                    ,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top" Width="107" RenderTransformOrigin="2.636,0.475"/>
 
-        <ListView x:Name="komenatriListView" HorizontalAlignment="Left" Height="679" Margin="180,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="982">
+        <ListView x:Name="komenatriListView" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
         </ListView>
 
 

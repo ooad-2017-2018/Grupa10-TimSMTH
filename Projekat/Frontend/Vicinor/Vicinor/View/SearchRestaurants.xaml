@@ -9,6 +9,43 @@
     mc:Ignorable="d">
 
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="flip.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,149,0,178</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="flip.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="flip.(FrameworkElement.Width)" Value="374"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="300" MinWindowWidth="300"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="flip.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,162,0,10</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="flip.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="flip.(FrameworkElement.Width)" Value="513"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <TextBlock x:Name="inputRadiusTextBlock" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" TextWrapping="Wrap" Text="Input Radius:" VerticalAlignment="Top" Width="119" />
         <TextBox x:Name="radiusTextBox" HorizontalAlignment="Left" Margin="134,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <Button x:Name="startSearchButton" Content="Start Search" HorizontalAlignment="Left" Height="36" Margin="134,47,0,0" VerticalAlignment="Top" Width="192" Click="startSearchButton_Click">
@@ -30,7 +67,7 @@
                         <TextBlock FontSize="30" Text="{x:Bind Name}" HorizontalAlignment="Center" />
                         <TextBlock FontSize="20" Text="{x:Bind Description}" HorizontalAlignment="Center"/>
                         <TextBlock FontSize="15" Text="{x:Bind PhoneNumber}" HorizontalAlignment="Center"/>
-                    
+
                     </StackPanel>
                 </DataTemplate>
             </FlipView.ItemTemplate>

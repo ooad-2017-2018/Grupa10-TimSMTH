@@ -10,8 +10,84 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,84,0">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Phone"/>
-                <VisualState x:Name="Desktop"/>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="300" MinWindowWidth="300"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="flip.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,81,0,-0.5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="flip.(Grid.Row)" Value="1"/>
+                        <Setter Target="flip.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="flip.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="flip.(FrameworkElement.Width)" Value="468"/>
+                        <Setter Target="flip.(Control.FontSize)" Value="10"/>
+                        <Setter Target="flip.(Control.FontWeight)">
+                            <Setter.Value>
+                                <FontWeight>Normal</FontWeight>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>112,10,1171,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Top"/>
+                        <Setter Target="textBlock.(Grid.Row)" Value="1"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="10"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="366"/>
+                        <Setter Target="textBlock.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>184,22,0,18</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="25"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="flip.(Grid.Row)" Value="1"/>
+                        <Setter Target="flip.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="flip.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>45,-10,0,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>81,10,927,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Top"/>
+                        <Setter Target="textBlock.(FrameworkElement.Height)" Value="33"/>
+                        <Setter Target="textBlock.(Grid.Row)" Value="1"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="10"/>
+                        <Setter Target="textBlock.(TextBlock.FontWeight)">
+                            <Setter.Value>
+                                <FontWeight>Normal</FontWeight>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="flip.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="flip.(FrameworkElement.Width)" Value="579"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
@@ -23,11 +99,11 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="20,49,0,28" Grid.RowSpan="3" SelectionChanged="FlipView_SelectionChanged" Background="White">
+        <FlipView ItemsSource="{x:Bind dRestorani}" x:Name="flip" Margin="20,49,0,28" Grid.RowSpan="3" SelectionChanged="FlipView_SelectionChanged" Background="White" d:LayoutOverrides="TopPosition, BottomPosition">
             <FlipView.ItemTemplate>
                 <DataTemplate x:DataType="local:Restoran">
                     <StackPanel HorizontalAlignment="Center" Name="sp" Width="1355" Margin="96,85,49,18">
-                        <Image Height="358" Source="{x:Bind Slika}" Margin="142,0,132,0" RenderTransformOrigin="0.5,0.5">
+                        <Image Height="358" Source="{x:Bind Slika}" Margin="142,0,132,0" RenderTransformOrigin="0.5,0.5" >
 
                         </Image>
                         <TextBlock FontSize="30" Text="{x:Bind Name}" HorizontalAlignment="Center" />
@@ -63,7 +139,7 @@
             </FlipView.ItemTemplate>
         </FlipView>
 
-        <TextBlock Text="Pick your favourite..." Grid.Row="0" HorizontalAlignment="Center" Margin="650,10,633,0" Height="20" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" Text="Pick your favourite..." FontSize="10px" Grid.Row="0" HorizontalAlignment="Left" Margin="650,10,633,0" Height="20" VerticalAlignment="Top"/>
 
 
     </Grid>

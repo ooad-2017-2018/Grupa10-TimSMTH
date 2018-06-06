@@ -56,7 +56,7 @@ namespace Vicinor.View
             {
                 JsonObject komentar = komentari.GetObjectAt(i);
 
-                komenatriListView.Items.Add(komentar.GetNamedString("text") + " by: " + komentar.GetNamedString("author_name"));
+                komenatriListView.Items.Add("-"+komentar.GetNamedString("author_name")+": "+komentar.GetNamedString("text"));
             }
         }
 
