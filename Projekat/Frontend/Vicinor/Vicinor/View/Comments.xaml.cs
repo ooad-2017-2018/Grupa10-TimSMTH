@@ -23,6 +23,7 @@ namespace Vicinor.View
     /// </summary>
     public sealed partial class Comments : Page
     {
+
         List<string> listaKomentara;
 
         public Comments()
@@ -60,5 +61,9 @@ namespace Vicinor.View
             }
         }
 
+        private void returnButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(StartSearch1));
+        }
     }
 }

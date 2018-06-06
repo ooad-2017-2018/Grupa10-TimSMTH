@@ -84,7 +84,7 @@
 
             </SplitView>
             <UserControls:welcomeLogoUserControl x:Name ="userControlUser" HorizontalAlignment="Left" Margin="230,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-
+            
 
         </Grid>
     </ScrollViewer>

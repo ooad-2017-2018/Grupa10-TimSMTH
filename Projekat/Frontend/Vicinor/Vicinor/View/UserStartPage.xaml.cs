@@ -32,6 +32,7 @@ namespace Vicinor.View
         public static List<Restoran> listaRecommended;
         public UserStartPage()
         {
+            
             this.InitializeComponent();
             listaRecommended = new List<Restoran>();
             id_korisnika = PocetnaFormaViewModel.KORISNIK_ID;

@@ -75,12 +75,20 @@
         <TextBlock x:Name="commentsTextBlock" HorizontalAlignment="Left" Height="40" Margin="180,39
                    ,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top" Width="107" RenderTransformOrigin="2.636,0.475"/>
 
-        <ListView x:Name="komenatriListView" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
+        <ListView x:Name="komenatriListView" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan ="2" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
         </ListView>
 
 
 
         <UserControls:RatingCont x:Name="Rating" Grid.Column="1" HorizontalAlignment="Right" Margin="0,20,20,0" VerticalAlignment="Top" Height="40" Width="195"/>
+        <Button x:Name="returnButton" Content="Return" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Bottom" Margin="20,20,20,20" Click="returnButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D8EBB"/>
+                    <GradientStop Color="#FF67D6F7" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>
