@@ -80,7 +80,11 @@ namespace Vicinor.Forme
 
         private void star1Button_Click(object sender, RoutedEventArgs e)
         {
-       
+            if (PocetnaForma.guestUser)
+            {
+                DisplayGuestDialog();
+                return;
+            }
             Restoran r = dRestorani[flip.SelectedIndex];
             ssvm.AddToFavourite(r);
 
@@ -113,5 +117,21 @@ namespace Vicinor.Forme
 
             this.Frame.Navigate(typeof(Comments));
         }
+
+        private async void DisplayGuestDialog()
+        {
+            ContentDialog guestDialog = new ContentDialog()
+            {
+                Title = "Message",
+                Content = "This option is only available for registered users!",
+                PrimaryButtonText = "Ok",
+
+            };
+
+            await guestDialog.ShowAsync();
+
+        }
     }
+
+
 }
