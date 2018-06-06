@@ -42,8 +42,8 @@ Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 Ovaj proces mora biti automatizovan. Kada korisnik zatraži spisak restorana/mjesta za jesti, proces mora prvo provjeriti da li je lokacija ispravno uspostavljena i nakon toga mora pokupiti sva mjesta za jesti koja se nalaze u radijusu koji je definisan unaprijed od strane korisnika (možda korisnik ne želi previše hodati/putovati, samim tim ima mogućnost da bira radjius).
 Kada korisnik pokrene pretragu mora dobiti određene restorane unutar tog radijusa u odnosu na poziciju gdje se nalazi. Naravno spisak restorana će biti organizovan u listu, pri čemu korisnik može sačuvati neke restorane kao željene odnosno može ih sačuvati u /wish list/-i. Element liste će sadržiti detaljne informacije o restoranu/mjestu za jesti. Nakon što korisnik izabere (ako izabere, jer ne mora nužno izabrati nijedan od ponuđenih restorana, ili se može desiti da nema restorana u određenom radijusu), korisnik dobija upute preko google maps, odnosno dobija najkraći put koji mora preći da bi došao do odabranog restorana.
 
-#### Proces recenzije restorana
-Korisinik (mislimo na registrovanog korisnika jer on jedini ima ovu mogućnost) će moći davati recenzije i rating-e za određene restorane. 
+#### Proces prikaza recenzija nekog restorana
+Korisinik će moći pregledati recenzije i rating-e za određene restorane (googlemaps/api komentare) pri čemu mu te recenzije mogu pomoći pri odabiru restorana. 
 
 #### Prikaz broja za poziv restorana
 Korisnik ima mogućnost da dobije broj svakog restorana (koji se dobije pomoću api-a) iz liste restorana. Jednostavni klik na tu opciju mu to i omogućava.
@@ -61,12 +61,11 @@ Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) ko
 * Mogućnost dobijanja uputa do odabranog restorana
 * Mogućnost dobijanja broja za poziv restorana/objekta, prilikom izbora restorana
 * Mogućnost izbora iz skupa restorana preporučenih od strane aplikacije
+* Mogućnost pregleda feedbacka u vidu ratinga i komantara
 
 #### Registrovani korisnik:
 * Mogućnost uređivanje korisničkog profila
 * Mogućnost pravljenja liste želja (lista omiljenih restorana)
-* Mogućnost ostavljanja feedbacka u vidu ratinga i komantara (neobavezno)
-* Mogućnost pregleda historije obiđenih restorana
 
 #### Neregistrovani korisnik: 
 * Mogućnost registracije korisnika
