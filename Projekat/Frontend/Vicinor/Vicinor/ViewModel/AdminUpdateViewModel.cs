@@ -49,7 +49,8 @@ namespace Vicinor.ViewModel
             }
 
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/GetAccount?Username=" + u + "&Password=" + p);
+           // Uri requestUri = new Uri("http://localhost:6796/Administrators/GetAccount?Username=" + u + "&Password=" + p);
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/Administrators/GetAccount?Username=" + u + "&Password=" + p);
 
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
@@ -95,7 +96,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id + "?Username=" + name);
+           // Uri requestUri = new Uri("http://localhost:6796/Administrators/changeUsername/" + id + "?Username=" + name);
+  
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/Administrators/changeUsername/" + id + "?Username=" + name);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -140,7 +143,10 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/Administrators/changePassword/" + id + "?Password=" + password);
+            //Uri requestUri = new Uri("http://localhost:6796/Administrators/changePassword/" + id + "?Password=" + password);
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/Administrators/changePassword/" + id + "?Password=" + password);
+
+
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 

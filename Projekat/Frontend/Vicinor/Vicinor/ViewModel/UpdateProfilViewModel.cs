@@ -49,8 +49,10 @@ namespace Vicinor.ViewModel
             }
 
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + u + "&Password=" + p);
+            // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=" + u + "&Password=" + p);
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/GetAccount?Username=" + u + "&Password=" + p);
 
+        
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
@@ -95,7 +97,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeUsername/" + id + "?Username=" + name);
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeUsername/" + id + "?Username=" + name);
+        
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/changeUsername/" + id + "?Username=" + name);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -140,7 +144,12 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changePassword/" + id + "?Password=" + password);
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changePassword/" + id + "?Password=" + password);
+    
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/changePassword/" + id + "?Password=" + password);
+
+
+
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
@@ -184,7 +193,11 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeEmail/" + id + "?Email=" + email);
+           // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeEmail/" + id + "?Email=" + email);
+        
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/changeEmail/" + id + "?Email=" + email);
+
+
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
@@ -228,7 +241,11 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeFirstName/" + id + "?FirstName=" + fName);
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeFirstName/" + id + "?FirstName=" + fName);
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/changeFirstName/" + id + "?FirstName=" + fName);
+
+        
+
             //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=Masha&Password=sifraHaris");
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
@@ -273,7 +290,11 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeLastName/" + id + "?LastName=" + lName);
+        // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/changeLastName/" + id + "?LastName=" + lName);
+        
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/changeLastName/" + id + "?LastName=" + lName);
+
+
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 

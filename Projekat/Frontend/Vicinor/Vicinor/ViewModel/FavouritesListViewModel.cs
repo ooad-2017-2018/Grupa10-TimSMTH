@@ -41,7 +41,9 @@ namespace Vicinor.ViewModel
             {
                 throw new Exception("Invalid header value: " + header);
             }
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetFavList/" + id.ToString());
+
+            // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetFavList/" + id.ToString());
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/GetFavList/" + id.ToString());
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
             string httpResponseBody = "";

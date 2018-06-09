@@ -50,8 +50,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAll");
-
+            //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAll");
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/GetAll");
+      
             //Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAccount?Username=Masha&Password=sifraHaris");
 
             //Send the GET request asynchronously and retrieve the response as a string.
@@ -127,7 +128,8 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/BanUser/" + id);
+           // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/BanUser/" + id);
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/BanUser/" + id);
 
 
             //Send the PUT request asynchronously and retrieve the response as a string.
@@ -174,8 +176,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/UnbanUser/" + id);
-
+        // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/UnbanUser/" + id);
+        
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/UnbanUser/" + id);
 
             //Send the PUT request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();

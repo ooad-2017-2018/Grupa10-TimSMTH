@@ -83,8 +83,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAll");
-
+            // Uri requestUri = new Uri("http://localhost:6796/RegistrovaniKorisniks/GetAll");
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/RegistrovaniKorisniks/GetAll");
+       
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
@@ -129,9 +130,9 @@ namespace Vicinor.ViewModel
                 throw new Exception("Invalid header value: " + header);
             }
 
-            Uri requestUri = new Uri("http://localhost:6796/NeregistrovaniKorisniks/GetAll");
-
-
+            //Uri requestUri = new Uri("http://localhost:6796/NeregistrovaniKorisniks/GetAll");
+            Uri requestUri = new Uri("https://vicinor.azurewebsites.net/NeregistrovaniKorisniks/GetAll");
+        
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
 
