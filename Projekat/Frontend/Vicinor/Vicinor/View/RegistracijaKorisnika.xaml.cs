@@ -56,12 +56,20 @@ namespace Vicinor.Forme
 
         private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            if (buffer == null) buffer = new byte[0];
+            if (Password.Text == "" || Username.Text == "" || FirstName.Text == "" || LastName.Text == "" || Email.Text == "")
+            {
+                messageDialog("Enter all data!");
+                return;
+            }
+            Boolean b = await rkvm.Registruj(Password.Text, Username.Text, FirstName.Text, LastName.Text, Email.Text, false, DateOfBirth.Date.DateTime, buffer);
 
-            Boolean b = await rkvm.Registruj(Password.Text, Username.Text, FirstName.Text, LastName.Text, Email.Text, false, DateOfBirth.Date.DateTime,buffer);
             if (b) {
                 messageDialog("Registration succesful");
                 this.Frame.Navigate(typeof(PocetnaForma));
             }
+            else messageDialog("Try again!");
+
         }
         private async void UploadButton_Click(object sender, RoutedEventArgs e)
         {
