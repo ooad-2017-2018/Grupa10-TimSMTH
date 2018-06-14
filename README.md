@@ -13,7 +13,7 @@
 - Haris Mašović 
 - Samra Salihić
 
-## Opis teme
+## Opis projekta
 
 "Basically tinder for restaurants" - Mašović Haris
 
@@ -21,7 +21,7 @@ Vicinor je aplikacija koja omogućava korisniku (user-u) da na jednostavan nači
 
 Često korisnik dolazi u situaciju gdje ne može odlučiti gdje jesti, te pomoću ove aplikacije ima izbor restorana/fast food-ova (generalno food places) u određenom radijusu u odnosu na trenutnu lokaciju. Korisnik može izabrati određeni restoran i/ili dodati u listu svojih omiljenih restorana ponuđene restorane od strane aplikacije ili restorane u odnosu na trenutnu lokaciju definisane određenim radijusom kojeg je korisnik zadao. 
 
-Nakon toga aplikacija daje upustva kako doći na određenu lokaciju koju je korisnik izabrao. Iz napisanih karakteristika, aplikacija omogućava uklanjane dvojbe korisnika vezane za izbor restorana/mjesta gdje može da jede što predstavlja glavni motiv za potražnju aplikacije.
+Nakon toga aplikacija daje upustva kako doći na određenu lokaciju koju je korisnik izabrao pomoću mape. Iz napisanih karakteristika, aplikacija omogućava uklanjane dvojbe korisnika vezane za izbor restorana/mjesta gdje može da jede što predstavlja glavni motiv za potražnju aplikacije.
 
 Inače naziv vicinor (vicino - ital. znači nearby/close - blizu, a r kao restorani).
 
@@ -48,7 +48,7 @@ Korisinik će moći pregledati recenzije i rating-e za određene restorane (goog
 #### Prikaz broja za poziv restorana
 Korisnik ima mogućnost da dobije broj svakog restorana (koji se dobije pomoću api-a) iz liste restorana. Jednostavni klik na tu opciju mu to i omogućava.
 
-#### Generisanje preporučenih restorana
+#### Generisanje/prikaz preporučenih restorana
 Aplikacija ima za mogućnost da korisniku ponudi spisak restorana (generalno) koji su po nekom algoritmu generisani (npr. top tier restorani, restorani sa najboljom ocjenom, najviše posjećeni restorani pomoću naše aplikacije itd).
 
 
